@@ -63,6 +63,10 @@
 		63F571D11D88F249002761B7 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571D01D88F249002761B7 /* PageContentView.swift */; };
 		63F571D31D88F3DB002761B7 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571D21D88F3DB002761B7 /* UIColor-Extension.swift */; };
 		770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770BF40B23A4E09E0053FAA2 /* BasisLearning.swift */; };
+		771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31A823CF32DB003C784B /* WBHomeViewController.swift */; };
+		771A31AB23CF3317003C784B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */; };
+		771A31AD23CF3323003C784B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AC23CF3323003C784B /* WBProfileViewController.swift */; };
+		771A31AF23CF3330003C784B /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AE23CF3330003C784B /* WBMainViewController.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -149,6 +153,10 @@
 		63F571D21D88F3DB002761B7 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		678BB79C5E664F5183D33499 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
 		770BF40B23A4E09E0053FAA2 /* BasisLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisLearning.swift; sourceTree = "<group>"; };
+		771A31A823CF32DB003C784B /* WBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		771A31AC23CF3323003C784B /* WBProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		771A31AE23CF3330003C784B /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +280,7 @@
 		63774C9D1D86598500DCC727 = {
 			isa = PBXGroup;
 			children = (
+				771A319F23CF32B3003C784B /* Weibo */,
 				63774CA81D86598500DCC727 /* DYZB */,
 				63774CA71D86598500DCC727 /* Products */,
 				7DBEE80F939F92D9A14C24EC /* Pods */,
@@ -422,6 +431,81 @@
 				63744BEE1D8F83E600BF4B96 /* NSDate-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		771A319F23CF32B3003C784B /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				771A31A023CF32B3003C784B /* ViewModel */,
+				771A31A123CF32B3003C784B /* Tools */,
+				771A31A223CF32B3003C784B /* Model */,
+				771A31A323CF32B3003C784B /* View */,
+			);
+			path = Weibo;
+			sourceTree = "<group>";
+		};
+		771A31A023CF32B3003C784B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		771A31A123CF32B3003C784B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		771A31A223CF32B3003C784B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		771A31A323CF32B3003C784B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				771A31A423CF32B3003C784B /* Home */,
+				771A31A523CF32B3003C784B /* Discover */,
+				771A31A623CF32B3003C784B /* Profile */,
+				771A31A723CF32B3003C784B /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		771A31A423CF32B3003C784B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				771A31A823CF32DB003C784B /* WBHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		771A31A523CF32B3003C784B /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		771A31A623CF32B3003C784B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				771A31AC23CF3323003C784B /* WBProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		771A31A723CF32B3003C784B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				771A31AE23CF3330003C784B /* WBMainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
@@ -648,8 +732,10 @@
 				63517CE61DAB89EC00ACACBF /* BaseViewModel.swift in Sources */,
 				77A8C00223CB5A820039970F /* PositionTableViewController.swift in Sources */,
 				632FDC601D92228000B6C536 /* CollectionCycleCell.swift in Sources */,
+				771A31AD23CF3323003C784B /* WBProfileViewController.swift in Sources */,
 				638C60E71DA8EDD000A370F1 /* GameModel.swift in Sources */,
 				6332FCF51DB0698A002F1054 /* FunnyViewModel.swift in Sources */,
+				771A31AF23CF3330003C784B /* WBMainViewController.swift in Sources */,
 				638C60E91DA8EEA200A370F1 /* BaseGameModel.swift in Sources */,
 				632FDC5D1D921F7800B6C536 /* CycleModel.swift in Sources */,
 				77E3315923A6467800E3416D /* HttpTools.swift in Sources */,
@@ -664,6 +750,7 @@
 				63A977391DAC744D00DB9157 /* AmuseMenuView.swift in Sources */,
 				632FCEA91D8E779600C9F8D6 /* CollectionNormalCell.swift in Sources */,
 				632FDC681D9230FC00B6C536 /* CollectionGameCell.swift in Sources */,
+				771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */,
 				770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */,
 				63744BEA1D8F7C2900BF4B96 /* NetworkTools.swift in Sources */,
 				6332FCFD1DB07C0C002F1054 /* RoomShowViewController.swift in Sources */,
@@ -672,6 +759,7 @@
 				63F571C81D88D917002761B7 /* HomeViewController.swift in Sources */,
 				63744BED1D8F7FA600BF4B96 /* RecommendViewModel.swift in Sources */,
 				63744BF31D8F875B00BF4B96 /* AnchorModel.swift in Sources */,
+				771A31AB23CF3317003C784B /* WBDiscoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

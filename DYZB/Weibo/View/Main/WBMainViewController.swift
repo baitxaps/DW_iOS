@@ -9,8 +9,13 @@
 import UIKit
 
 class WBMainViewController: UITabBarController {
+// MARK:- lazy var composedButton
     private lazy var composedButton:UIButton = UIButton(imageName:
         "tabbar_compose_icon_add", backImageName:"tabbar_compose_button")
+    
+    @objc private func clickComposedButton() {
+        print("clickComposedButton")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +41,12 @@ extension WBMainViewController {
         
         let count = children.count
         let width = tabBar.bounds.width / CGFloat(count)
-        // oc :CGRectInset
+        /// OC :CGRectInset
         composedButton.frame = tabBar.bounds.insetBy(dx:2*width,dy: 0);
+        
+        composedButton.addTarget(self,action:#selector(clickComposedButton),for:.touchUpInside)
     }
-    
+// MARK:- addChild
     private func addChild() {
         tabBar.tintColor = UIColor.orange
         addChild(vc: WBHomeTableViewController(),title: "首页",imageName: "tabbar_home")

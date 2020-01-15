@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBHomeTableViewController: UITableViewController {
+class WBHomeTableViewController: VisitorTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +31,4 @@ class WBHomeTableViewController: UITableViewController {
          
           return cell
       }
-
 }

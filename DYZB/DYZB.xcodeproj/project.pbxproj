@@ -67,6 +67,8 @@
 		771A31AB23CF3317003C784B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */; };
 		771A31AD23CF3323003C784B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AC23CF3323003C784B /* WBProfileViewController.swift */; };
 		771A31AF23CF3330003C784B /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AE23CF3330003C784B /* WBMainViewController.swift */; };
+		771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B123CF47CA003C784B /* MessageTableViewController.swift */; };
+		771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B423CF63DA003C784B /* UIButton+Extension.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -157,6 +159,8 @@
 		771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		771A31AC23CF3323003C784B /* WBProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		771A31AE23CF3330003C784B /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		771A31B123CF47CA003C784B /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		771A31B423CF63DA003C784B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -454,6 +458,7 @@
 		771A31A123CF32B3003C784B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				771A31B323CF63B5003C784B /* Extension */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 		771A31A323CF32B3003C784B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				771A31B023CF47B1003C784B /* Message */,
 				771A31A423CF32B3003C784B /* Home */,
 				771A31A523CF32B3003C784B /* Discover */,
 				771A31A623CF32B3003C784B /* Profile */,
@@ -506,6 +512,22 @@
 				771A31AE23CF3330003C784B /* WBMainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		771A31B023CF47B1003C784B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				771A31B123CF47CA003C784B /* MessageTableViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		771A31B323CF63B5003C784B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				771A31B423CF63DA003C784B /* UIButton+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
@@ -748,6 +770,8 @@
 				63744BEF1D8F83E600BF4B96 /* NSDate-Extension.swift in Sources */,
 				63744BF51D8FC37600BF4B96 /* CollectionBaseCell.swift in Sources */,
 				63A977391DAC744D00DB9157 /* AmuseMenuView.swift in Sources */,
+				771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */,
+				771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */,
 				632FCEA91D8E779600C9F8D6 /* CollectionNormalCell.swift in Sources */,
 				632FDC681D9230FC00B6C536 /* CollectionGameCell.swift in Sources */,
 				771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */,

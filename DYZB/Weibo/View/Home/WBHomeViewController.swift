@@ -12,8 +12,9 @@ class WBHomeTableViewController: VisitorTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        visitorView?.setupInfo(imageName: nil,title:"登录后，别人评论你的微博")
     }
+
     // MARK: - Table view data source
 
       override func numberOfSections(in tableView: UITableView) -> Int {

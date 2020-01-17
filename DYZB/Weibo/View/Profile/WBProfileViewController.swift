@@ -8,12 +8,11 @@
 
 import UIKit
 
-class WBProfileTableViewController: UIViewController {
+class WBProfileTableViewController: VisitorTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        visitorView?.setupInfo(imageName: nil,title:"关注一些人，回这里看看有什么惊喜")
     }
     
 

@@ -80,6 +80,7 @@
 		77A8C00823CB73A70039970F /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8C00723CB73A70039970F /* PositionCell.swift */; };
 		77DBD5DD23A7BBBE005C6DB3 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */; };
 		77E3315923A6467800E3416D /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E3315823A6467800E3416D /* HttpTools.swift */; };
+		77EDE5DB23D0A16700C33036 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDE5DA23D0A16700C33036 /* VisitorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -173,6 +174,7 @@
 		77A8C00723CB73A70039970F /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		77E3315823A6467800E3416D /* HttpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
+		77EDE5DA23D0A16700C33036 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */,
+				77EDE5DA23D0A16700C33036 /* VisitorView.swift */,
 			);
 			path = Visitor;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				632FDC631D922CF000B6C536 /* RecommendGameView.swift in Sources */,
 				632FCEAD1D8E7CF400C9F8D6 /* CollectionPrettyCell.swift in Sources */,
 				63744BEF1D8F83E600BF4B96 /* NSDate-Extension.swift in Sources */,
+				77EDE5DB23D0A16700C33036 /* VisitorView.swift in Sources */,
 				63744BF51D8FC37600BF4B96 /* CollectionBaseCell.swift in Sources */,
 				63A977391DAC744D00DB9157 /* AmuseMenuView.swift in Sources */,
 				771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */,

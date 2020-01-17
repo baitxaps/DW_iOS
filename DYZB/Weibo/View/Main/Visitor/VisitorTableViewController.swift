@@ -9,7 +9,9 @@
 import UIKit
 
 class VisitorTableViewController: UITableViewController {
-    private var userLogon = true
+    private var userLogon = false
+    
+    var visitorView :VisitorView?
     
     override func loadView() {
         userLogon ? super.loadView():setupVisitorView()
@@ -19,7 +21,7 @@ class VisitorTableViewController: UITableViewController {
 //    }
     
     private func setupVisitorView() {
-        view = UIView()
-        view.backgroundColor = UIColor.green
+        visitorView = VisitorView()
+        view = visitorView
     }
 }

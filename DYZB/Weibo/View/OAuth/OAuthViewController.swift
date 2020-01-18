@@ -72,10 +72,30 @@ extension OAuthViewController:UIWebViewDelegate {
         NetworkTools.requestData(.post, URLString: urlString, parameters: params) { (result) in
             print(result)
             // 解析模型...
+            guard let resultDict = result as? [String : AnyObject] else { return }
             
+            let account = UserAccount(dict:resultDict)
+            print(account)
             self.close()
         }
-
         return false
+    }
+    
+    //MARK:- loadUserInfo
+    private func loadUserInfo(userAccount:UserAccount) {
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        guard let uid = userAccount.uid else {
+            return
+        }
+        
+        let params = ["uid": uid ]
+        NetworkTools.requestData(.post, URLString: urlString, parameters:params as [String : AnyObject]) { (result) in
+            print(result)
+            guard let response = result as? [String : AnyObject] else {
+                return
+            }
+            userAccount.avator_large = response["avator_large"] as? String
+            userAccount.screen_name = response["screen_name"] as? String
+        }
     }
 }

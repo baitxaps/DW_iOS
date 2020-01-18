@@ -76,7 +76,7 @@ class VisitorView: UIView {
 
 }
 
-// 扩展中不能用存储属性
+// 扩展中不能定义存储属性，只许写便得构造水函数，而不能写指定构造函数
 extension VisitorView {
     private func setupUI() {
         addSubview(iconView)

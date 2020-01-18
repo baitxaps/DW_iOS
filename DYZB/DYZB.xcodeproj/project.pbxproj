@@ -70,6 +70,7 @@
 		771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B423CF63DA003C784B /* UIButton+Extension.swift */; };
 		771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */; };
 		771BC1CD23D31295006A2AF3 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */; };
+		771BC1CF23D343C4006A2AF3 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BC1CE23D343C4006A2AF3 /* UserAccount.swift */; };
 		77306F2E23D1F93C0041A5AE /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2D23D1F93C0041A5AE /* UILabel+Extension.swift */; };
 		77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */; };
 		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
@@ -168,6 +169,7 @@
 		771A31B423CF63DA003C784B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorTableViewController.swift; sourceTree = "<group>"; };
 		771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		771BC1CE23D343C4006A2AF3 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		77306F2D23D1F93C0041A5AE /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -452,8 +454,8 @@
 		771A319F23CF32B3003C784B /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
-				771A31A023CF32B3003C784B /* ViewModel */,
 				771A31A123CF32B3003C784B /* Tools */,
+				771A31A023CF32B3003C784B /* ViewModel */,
 				771A31A223CF32B3003C784B /* Model */,
 				771A31A323CF32B3003C784B /* View */,
 			);
@@ -478,6 +480,7 @@
 		771A31A223CF32B3003C784B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				771BC1CE23D343C4006A2AF3 /* UserAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				63517CE11DAB82CE00ACACBF /* AmuseViewController.swift in Sources */,
 				63F571D11D88F249002761B7 /* PageContentView.swift in Sources */,
 				63F571CB1D88DC33002761B7 /* UIBarButtonItem-Extension.swift in Sources */,
+				771BC1CF23D343C4006A2AF3 /* UserAccount.swift in Sources */,
 				632FDC631D922CF000B6C536 /* RecommendGameView.swift in Sources */,
 				632FCEAD1D8E7CF400C9F8D6 /* CollectionPrettyCell.swift in Sources */,
 				63744BEF1D8F83E600BF4B96 /* NSDate-Extension.swift in Sources */,

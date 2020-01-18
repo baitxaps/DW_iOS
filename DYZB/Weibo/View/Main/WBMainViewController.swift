@@ -48,7 +48,6 @@ extension WBMainViewController {
     }
 // MARK:- addChild
     private func addChild() {
-        tabBar.tintColor = UIColor.orange
         addChild(vc: WBHomeTableViewController(),title: "首页",imageName: "tabbar_home")
         addChild(vc: MessageTableViewController(),title: "消息",imageName: "tabbar_home")
      // addChild(vc: UIViewController(),title:"" ,imageName:"")

@@ -22,6 +22,25 @@ class VisitorTableViewController: UITableViewController {
     
     private func setupVisitorView() {
         visitorView = VisitorView()
+        visitorView?.delegate = self
         view = visitorView
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style:.plain, target: self, action: #selector(visitorViewDidRegister))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style:.plain, target: self, action: #selector(visitorViewDidLogin))
+    }
+}
+
+extension VisitorTableViewController : VisitorViewDelegate {
+    @objc func visitorViewDidRegister() {
+        print("register")
+    }
+    
+    @objc func visitorViewDidLogin() {
+        print("login")
+        let vc = OAuthViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(nav, animated: true, completion: nil)
     }
 }

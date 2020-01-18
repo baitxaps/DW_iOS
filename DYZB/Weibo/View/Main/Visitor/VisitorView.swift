@@ -10,7 +10,23 @@
 import UIKit
 import SnapKit
 
+protocol VisitorViewDelegate:NSObjectProtocol {
+    func visitorViewDidRegister()
+    func visitorViewDidLogin()
+}
+
 class VisitorView: UIView {
+   // MARK:- delegate
+    weak var delegate:VisitorViewDelegate?
+    
+    @objc private func clickLogin() {
+        delegate?.visitorViewDidLogin()
+    }
+    
+    @objc private func clickRegister() {
+        delegate?.visitorViewDidRegister()
+    }
+    
     func setupInfo(imageName:String?,title:String) {
         messageLabel.text = title
         guard let imgName = imageName else {
@@ -24,6 +40,7 @@ class VisitorView: UIView {
         sendSubviewToBack(maskIconView)
     }
     
+    // MARK:- animation
     private func startAnim() {
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         anim.toValue = 2*Double.pi
@@ -45,37 +62,18 @@ class VisitorView: UIView {
         setupUI()
     }
     
-    private lazy var iconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    private lazy var iconView:UIImageView = UIImageView(imageName: "visitordiscover_feed_image_smallicon")
     
-    private lazy var maskIconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
+    private lazy var maskIconView:UIImageView = UIImageView(imageName: "visitordiscover_feed_mask_smallicon")
     
-    private lazy var homeIconView :UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
+    private lazy var homeIconView :UIImageView = UIImageView(imageName:  "visitordiscover_feed_image_house")
     
-    private lazy var messageLabel:UILabel = {
-        let label = UILabel()
-        label.text = "关注一些人，回这里看看有什么惊喜"
-        label.textColor = UIColor.darkGray
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        return label
-    }()
+    private lazy var messageLabel:UILabel = UILabel(title: "关注一些人，回这里看看有什么惊喜")
     
-    private lazy var reginsterButton:UIButton = {
-        let button = UIButton()
-        button.setTitle("注册", for: .normal)
-        button.setTitleColor(UIColor.orange, for: .normal)
-        button.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .normal)
-        return button
-    }()
+    private lazy var reginsterButton:UIButton = UIButton(title: "注册", color: UIColor.orange, imageName: "common_button_white_disable")
     
-    private lazy var loginButton:UIButton = {
-        let button = UIButton()
-        button.setTitle("登录", for: .normal)
-        button.setTitleColor(UIColor.darkGray, for: .normal)
-        button.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .normal)
-        return button
-    }()
+    private lazy var loginButton:UIButton = UIButton(title:"登录", color: UIColor.darkGray, imageName: "common_button_white_disable")
+
 }
 
 // 扩展中不能用存储属性
@@ -87,7 +85,10 @@ extension VisitorView {
         addSubview(messageLabel)
         addSubview(reginsterButton)
         addSubview(loginButton)
+        
         backgroundColor = UIColor(white: 237/255.0, alpha: 1.0)
+        loginButton.addTarget(self, action: #selector(clickLogin),for: .touchUpInside)
+        reginsterButton.addTarget(self, action: #selector(clickRegister),for: .touchUpInside)
         
         iconView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview().offset(-60)
@@ -128,9 +129,9 @@ extension VisitorView {
 
 
 /*
-        iconView.translatesAutoresizingMaskIntoConstraints = false
-        addConstraint(NSLayoutConstraint(item: iconView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: iconView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
+  iconView.translatesAutoresizingMaskIntoConstraints = false
+  addConstraint(NSLayoutConstraint(item: iconView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+  addConstraint(NSLayoutConstraint(item: iconView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
  
  // 6> 遮罩图像
   // views: 定义 VFL 中的控件名称和实际名称映射关系

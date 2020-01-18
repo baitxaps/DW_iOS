@@ -12,8 +12,30 @@
 // option + K:˚
 
 import UIKit
+
+
 //http://c.m.163.com/nc/article/list/T1348649079062/0-20.html
 class HttpTools: NSObject {
+    // 1
+    static var instance:HttpTools?
+    class func shared()-> HttpTools {
+        DispatchQueue.once(token:NSUUID().uuidString) { ()->Void in
+            instance = HttpTools()
+        }
+        return instance!
+    }
+    
+    //2
+    static let shared2:HttpTools = {
+        return HttpTools()
+    }()
+    
+    // 3
+//    static let shared3 = HttpTools()
+//    override init() {
+//        super.init()
+//    }
+    
     var finishedCb:((_ jsonData:String)->())?
     
     func loadData(_ finishedCallback:@escaping (_ jsonData:String)->()) {

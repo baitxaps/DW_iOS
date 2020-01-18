@@ -9,7 +9,7 @@
 // option + click xib-class switch
 // command +=
 // cmd +shift +O :打开文件
-// dmd + shift+J: 快速定位文件
+// cmd + shift+J: 快速定位文件
 import UIKit
  //////////////////////////////////////////////
  //it

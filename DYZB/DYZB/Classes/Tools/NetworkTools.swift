@@ -9,13 +9,22 @@
 import UIKit
 import Alamofire
 
+enum RequestMethod:String {
+    case GET = "GET"
+    case POST = "POST"
+}
+
 enum MethodType {
     case get
     case post
 }
 
+
+
 class NetworkTools {
-    class func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Any) -> ()) {
+    typealias RequestCallBack = (_ result : Any) -> ()
+    
+    class func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :@escaping (_ result : Any) -> ()/*RequestCallBack*/) {
         
         // 1.获取类型
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
@@ -25,7 +34,7 @@ class NetworkTools {
             
             // 3.获取结果
             guard let result = response.result.value else {
-                print(response.result.error)
+                print(response.result.error ?? "")
                 return
             }
             

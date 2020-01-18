@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     #if true
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        setupAppearance()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         window?.rootViewController = WBMainViewController()
@@ -28,5 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     #endif
+    
+    private func setupAppearance() {
+        UINavigationBar.appearance().tintColor = WBAppearanceTintColor
+        UITabBar.appearance().tintColor = WBAppearanceTintColor
+    }
 }
 

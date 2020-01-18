@@ -23,6 +23,8 @@ class MainViewController: UITabBarController {
         let obj = ItHemaView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         view.addSubview(obj)
         
+        print(HttpTools.shared2)
+        print(HttpTools.shared())
         
         obj.jsonTest()
 //        obj.classObjTest()

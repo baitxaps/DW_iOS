@@ -59,7 +59,6 @@
 		63F571C81D88D917002761B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571C71D88D917002761B7 /* HomeViewController.swift */; };
 		63F571CB1D88DC33002761B7 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571CA1D88DC33002761B7 /* UIBarButtonItem-Extension.swift */; };
 		63F571CD1D88E9D2002761B7 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571CC1D88E9D2002761B7 /* PageTitleView.swift */; };
-		63F571CF1D88EB19002761B7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571CE1D88EB19002761B7 /* Common.swift */; };
 		63F571D11D88F249002761B7 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571D01D88F249002761B7 /* PageContentView.swift */; };
 		63F571D31D88F3DB002761B7 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571D21D88F3DB002761B7 /* UIColor-Extension.swift */; };
 		770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770BF40B23A4E09E0053FAA2 /* BasisLearning.swift */; };
@@ -70,6 +69,11 @@
 		771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B123CF47CA003C784B /* MessageTableViewController.swift */; };
 		771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B423CF63DA003C784B /* UIButton+Extension.swift */; };
 		771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */; };
+		771BC1CD23D31295006A2AF3 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */; };
+		77306F2E23D1F93C0041A5AE /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2D23D1F93C0041A5AE /* UILabel+Extension.swift */; };
+		77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */; };
+		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
+		77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -152,7 +156,6 @@
 		63F571C71D88D917002761B7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63F571CA1D88DC33002761B7 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		63F571CC1D88E9D2002761B7 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
-		63F571CE1D88EB19002761B7 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		63F571D01D88F249002761B7 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		63F571D21D88F3DB002761B7 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		678BB79C5E664F5183D33499 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +167,11 @@
 		771A31B123CF47CA003C784B /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		771A31B423CF63DA003C784B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorTableViewController.swift; sourceTree = "<group>"; };
+		771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		77306F2D23D1F93C0041A5AE /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -379,8 +387,8 @@
 		63774CC11D865C9E00DCC727 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				77306F3323D209070041A5AE /* Common.swift */,
 				63F571C91D88DC0A002761B7 /* Extension */,
-				63F571CE1D88EB19002761B7 /* Common.swift */,
 				63744BE91D8F7C2900BF4B96 /* NetworkTools.swift */,
 			);
 			path = Tools;
@@ -477,6 +485,7 @@
 		771A31A323CF32B3003C784B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				771BC1CB23D31270006A2AF3 /* OAuth */,
 				771A31B023CF47B1003C784B /* Message */,
 				771A31A423CF32B3003C784B /* Home */,
 				771A31A523CF32B3003C784B /* Discover */,
@@ -531,6 +540,9 @@
 			isa = PBXGroup;
 			children = (
 				771A31B423CF63DA003C784B /* UIButton+Extension.swift */,
+				77306F2D23D1F93C0041A5AE /* UILabel+Extension.swift */,
+				77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */,
+				77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -542,6 +554,14 @@
 				77EDE5DA23D0A16700C33036 /* VisitorView.swift */,
 			);
 			path = Visitor;
+			sourceTree = "<group>";
+		};
+		771BC1CB23D31270006A2AF3 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
@@ -748,6 +768,7 @@
 				632FDC591D92179E00B6C536 /* RecommendCycleView.swift in Sources */,
 				771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */,
 				63774CAA1D86598500DCC727 /* AppDelegate.swift in Sources */,
+				771BC1CD23D31295006A2AF3 /* OAuthViewController.swift in Sources */,
 				777A6A6023BCAB7B00D8229B /* KThread.swift in Sources */,
 				63517CE31DAB853600ACACBF /* AmuseViewModel.swift in Sources */,
 				632FCEA51D8E751000C9F8D6 /* CollectionHeaderView.swift in Sources */,
@@ -758,6 +779,7 @@
 				63517CE81DAB8B2700ACACBF /* BaseAnchorViewController.swift in Sources */,
 				638C60E31DA8E91700A370F1 /* GameViewController.swift in Sources */,
 				632FCEA21D8E6CCB00C9F8D6 /* RecommendViewController.swift in Sources */,
+				77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */,
 				63744BF11D8F862C00BF4B96 /* AnchorGroup.swift in Sources */,
 				63A9773E1DAC788300DB9157 /* AmuseMenuViewCell.swift in Sources */,
 				6332FD011DB07FA0002F1054 /* CustomNavigationController.swift in Sources */,
@@ -766,8 +788,10 @@
 				7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */,
 				63F571C61D88D8DF002761B7 /* MainViewController.swift in Sources */,
 				63F571CD1D88E9D2002761B7 /* PageTitleView.swift in Sources */,
+				77306F2E23D1F93C0041A5AE /* UILabel+Extension.swift in Sources */,
 				63517CE61DAB89EC00ACACBF /* BaseViewModel.swift in Sources */,
 				77A8C00223CB5A820039970F /* PositionTableViewController.swift in Sources */,
+				77306F3423D209070041A5AE /* Common.swift in Sources */,
 				632FDC601D92228000B6C536 /* CollectionCycleCell.swift in Sources */,
 				771A31AD23CF3323003C784B /* WBProfileViewController.swift in Sources */,
 				638C60E71DA8EDD000A370F1 /* GameModel.swift in Sources */,
@@ -779,7 +803,6 @@
 				63517CE11DAB82CE00ACACBF /* AmuseViewController.swift in Sources */,
 				63F571D11D88F249002761B7 /* PageContentView.swift in Sources */,
 				63F571CB1D88DC33002761B7 /* UIBarButtonItem-Extension.swift in Sources */,
-				63F571CF1D88EB19002761B7 /* Common.swift in Sources */,
 				632FDC631D922CF000B6C536 /* RecommendGameView.swift in Sources */,
 				632FCEAD1D8E7CF400C9F8D6 /* CollectionPrettyCell.swift in Sources */,
 				63744BEF1D8F83E600BF4B96 /* NSDate-Extension.swift in Sources */,
@@ -794,6 +817,7 @@
 				770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */,
 				63744BEA1D8F7C2900BF4B96 /* NetworkTools.swift in Sources */,
 				6332FCFD1DB07C0C002F1054 /* RoomShowViewController.swift in Sources */,
+				77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */,
 				7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */,
 				77A8C00823CB73A70039970F /* PositionCell.swift in Sources */,
 				63F571C81D88D917002761B7 /* HomeViewController.swift in Sources */,

@@ -21,8 +21,9 @@ import UIKit
  guard let dict = result as? [String:AnyObject] else {}
 */
 
+@objcMembers
 class UserAccount: NSObject,NSCoding {
-    var access_toke:String?
+    var access_token:String?
     var uid:String?
     var expiresDate:NSDate?
     var screen_name:String?
@@ -48,7 +49,7 @@ class UserAccount: NSObject,NSCoding {
     
     // 解档
     required init?(coder: NSCoder) {
-        access_toke = coder.decodeObject(forKey: "access_toke") as? String
+        access_token = coder.decodeObject(forKey: "access_toke") as? String
         uid = coder.decodeObject(forKey: "uid") as? String
         screen_name = coder.decodeObject(forKey: "screen_name") as? String
         avator_large = coder.decodeObject(forKey: "avator_large") as? String
@@ -57,7 +58,7 @@ class UserAccount: NSObject,NSCoding {
     
     // 归档
     func encode(with coder: NSCoder) {
-        coder.encode(access_toke, forKey: "access_toke")
+        coder.encode(access_token, forKey: "access_toke")
         coder.encode(uid, forKey: "uid")
         coder.encode(screen_name, forKey: "screen_name")
         coder.encode(avator_large, forKey: "avator_large")

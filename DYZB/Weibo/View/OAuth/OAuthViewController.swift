@@ -25,8 +25,8 @@ class OAuthViewController: UIViewController {
     }
     
     @objc func autoFill() {
-        let js = "document.getElementById('userId').value = '10086@sina.cn'; " +
-        "document.getElementById('passwd').value = '123$123';"
+        let js = "document.getElementById('userId').value = 'chenhairong_2008@sina.com'; " +
+        "document.getElementById('passwd').value = 'rt12345';"
         webView.stringByEvaluatingJavaScript(from: js)
     }
     
@@ -60,42 +60,15 @@ extension OAuthViewController:UIWebViewDelegate {
         
         // code=15be12d79321e474c599210ef637c978
         let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
-        let urlString = "https://api.weibo.com/oauth2/access_token"
-        let params = ["client_id": WBAppKey,
-                      "client_secret": WBAppSecret,
-                      "grant_type": "authorization_code",
-                      "code": code,
-                      "redirect_uri": WBRedirectURI]
-        
-        print("授权码 - \(code)")
-        // 使用授权码获取[换取] AccessToken
-        NetworkTools.requestData(.post, URLString: urlString, parameters: params) { (result) in
-            print(result)
-            // 解析模型...
-            guard let resultDict = result as? [String : AnyObject] else { return }
-            
-            let account = UserAccount(dict:resultDict)
-            print(account)
-            self.close()
+        UserAccountViewModel.shared.loacAccessToken(code: code) { (isSuccess) in
+            if isSuccess {
+                print("success.")
+                print(UserAccountViewModel.shared.account ?? "")
+                self.close()
+            }else {
+                print("failure.")
+            }
         }
         return false
-    }
-    
-    //MARK:- loadUserInfo
-    private func loadUserInfo(userAccount:UserAccount) {
-        let urlString = "https://api.weibo.com/2/users/show.json"
-        guard let uid = userAccount.uid else {
-            return
-        }
-        
-        let params = ["uid": uid ]
-        NetworkTools.requestData(.post, URLString: urlString, parameters:params as [String : AnyObject]) { (result) in
-            print(result)
-            guard let response = result as? [String : AnyObject] else {
-                return
-            }
-            userAccount.avator_large = response["avator_large"] as? String
-            userAccount.screen_name = response["screen_name"] as? String
-        }
     }
 }

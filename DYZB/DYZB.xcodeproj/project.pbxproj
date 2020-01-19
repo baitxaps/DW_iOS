@@ -75,6 +75,7 @@
 		77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */; };
 		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
 		77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */; };
+		773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -174,6 +175,7 @@
 		77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisatchQueue+Extension.swift"; sourceTree = "<group>"; };
+		773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 		771A31A023CF32B3003C784B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */,
 				770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */,
 				63744BEA1D8F7C2900BF4B96 /* NetworkTools.swift in Sources */,
+				773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */,
 				6332FCFD1DB07C0C002F1054 /* RoomShowViewController.swift in Sources */,
 				77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */,
 				7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */,
@@ -988,7 +992,7 @@
 				INFOPLIST_FILE = DYZB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.520it.DYZB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itouchtv.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = xmgprofile;
@@ -1006,7 +1010,7 @@
 				INFOPLIST_FILE = DYZB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.520it.DYZB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itouchtv.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = xmgprofile;

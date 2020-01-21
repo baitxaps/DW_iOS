@@ -24,6 +24,13 @@ enum MethodType {
 class NetworkTools {
     typealias RequestCallBack = (_ result : Any) -> ()
     
+    private var tokenDict:[String:String]? {
+        if let token = UserAccountViewModel.shared.accesstoken {
+            return ["access_token":token]
+        }
+        return nil
+    }
+    
     class func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :@escaping (_ result : Any) -> ()/*RequestCallBack*/) {
         
         // 1.获取类型

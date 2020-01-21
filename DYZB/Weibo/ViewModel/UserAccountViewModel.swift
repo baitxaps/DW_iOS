@@ -18,6 +18,13 @@ class UserAccountViewModel {
     
     var account:UserAccount?
     
+    var accesstoken :String? {
+        if !isExpired {
+            return account?.access_token
+        }
+        return nil
+    }
+    
     var userLogin:Bool {
         return account?.access_token != nil && !isExpired //false//
     }

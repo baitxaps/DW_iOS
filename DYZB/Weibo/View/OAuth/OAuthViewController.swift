@@ -26,7 +26,7 @@ class OAuthViewController: UIViewController {
     
     @objc func autoFill() {
         let js = "document.getElementById('userId').value = 'chenhairong_2008@sina.com'; " +
-        "document.getElementById('passwd').value = 'rt12345';"
+        "document.getElementById('passwd').value = '~Vs059581004';"
         webView.stringByEvaluatingJavaScript(from: js)
     }
     
@@ -42,7 +42,6 @@ class OAuthViewController: UIViewController {
         let request = URLRequest(url: url)
         webView.loadRequest(request)
     }
-
 }
 
 extension OAuthViewController:UIWebViewDelegate {
@@ -58,8 +57,12 @@ extension OAuthViewController:UIWebViewDelegate {
             return false
         }
         
-        // code=15be12d79321e474c599210ef637c978
-        let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
+        guard let query = request.url?.query else {return false }
+        
+        if query.count<4 { return false}
+           
+        /* code=15be12d79321e474c599210ef637c978*/
+        let code = (query as NSString).substring(from:"code=".count)
         UserAccountViewModel.shared.loacAccessToken(code: code) { (isSuccess) in
             if isSuccess {
                 print("success.")

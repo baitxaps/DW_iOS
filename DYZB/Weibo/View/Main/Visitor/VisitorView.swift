@@ -91,38 +91,40 @@ extension VisitorView {
         reginsterButton.addTarget(self, action: #selector(clickRegister),for: .touchUpInside)
         
         iconView.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview().offset(-60)
-            make.centerX.equalToSuperview()
+            make.centerY.equalTo(self.snp.centerY).offset(-60)
+            make.centerX.equalTo(self.snp.centerX)
         }
         
         maskIconView.snp.makeConstraints { (make) in
-            make.centerX.equalTo(iconView)
-            make.bottom.equalTo(iconView)
+            make.top.equalTo(self.snp.top)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            make.bottom.equalTo(reginsterButton.snp.bottom)
         }
         
         homeIconView.snp.makeConstraints { (make) in
-            make.center.equalTo(iconView)
+            make.center.equalTo(iconView.snp.center)
         }
         
         messageLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(iconView.snp_bottomMargin).offset(15)
-            make.left.equalTo(15)
-            make.right.equalTo(-15)
-            make.centerX.equalTo(iconView)
+            make.centerX.equalTo(iconView.snp.centerX)
+            make.top.equalTo(iconView.snp.bottom).offset(15)
+            make.width.equalTo(224)
+            make.height.equalTo(36)
         }
         
         reginsterButton.snp.makeConstraints { (make) in
-            make.top.equalTo(messageLabel.snp_bottomMargin).offset(15)
-            make.right.equalTo(iconView.snp_centerXWithinMargins).offset(-15)
+            make.top.equalTo(messageLabel.snp.bottom).offset(16)
+            make.left.equalTo(messageLabel.snp.left)
             make.width.equalTo(100)
             make.height.equalTo(36)
         }
         
         loginButton.snp.makeConstraints { (make) in
-             make.top.equalTo(messageLabel.snp_bottomMargin).offset(15)
-             make.left.equalTo(iconView.snp_centerXWithinMargins).offset(15)
-             make.width.equalTo(100)
-             make.height.equalTo(36)
+            make.top.equalTo(reginsterButton.snp.top)
+            make.right.equalTo(messageLabel.snp.right)
+            make.width.equalTo(reginsterButton.snp.width)
+            make.height.equalTo(reginsterButton.snp.height)
          }
     }
 }

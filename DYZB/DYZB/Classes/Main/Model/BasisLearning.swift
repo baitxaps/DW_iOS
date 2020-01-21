@@ -8,8 +8,10 @@
 // block->vc->tools->block
 // option + click xib-class switch
 // command +=
+// cmd+L:跳到指定的行
 // cmd +shift +O :打开文件
 // cmd + shift+J: 快速定位文件
+
 import UIKit
  //////////////////////////////////////////////
  //it
@@ -315,7 +317,7 @@ class ItHemaView:UIView {
         var range = (str as NSString).substring(with: NSMakeRange(2, 4))
         print(range)
         let s2 = (str as NSString).substring(from:1)
-        // let s2 = str.substring(from: "1234".endIndex)
+       //  let s3 = str.substring(from: "1234".endIndex)
         
         print(s2)
         

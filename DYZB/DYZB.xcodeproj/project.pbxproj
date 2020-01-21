@@ -76,6 +76,7 @@
 		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
 		77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */; };
 		773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */; };
+		774DA1E923D5EED7003A2EF2 /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -176,6 +177,7 @@
 		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 		771A31A723CF32B3003C784B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				774DA1E723D5EE7B003A2EF2 /* NewFeature */,
 				771A31B623CF6CC1003C784B /* Visitor */,
 				771A31AE23CF3330003C784B /* WBMainViewController.swift */,
 			);
@@ -568,6 +571,14 @@
 				771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		774DA1E723D5EE7B003A2EF2 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
@@ -825,6 +836,7 @@
 				63744BEA1D8F7C2900BF4B96 /* NetworkTools.swift in Sources */,
 				773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */,
 				6332FCFD1DB07C0C002F1054 /* RoomShowViewController.swift in Sources */,
+				774DA1E923D5EED7003A2EF2 /* NewFeatureViewController.swift in Sources */,
 				77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */,
 				7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */,
 				77A8C00823CB73A70039970F /* PositionCell.swift in Sources */,

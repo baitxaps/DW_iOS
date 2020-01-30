@@ -36,7 +36,9 @@ class WelcomeViewController: UIViewController {
         }) { (_) in
             UIView.animate(withDuration: 0.8, animations: {
                 self.welcomLabel.alpha = 1
-            }) { (_) in }
+            }) { (_) in
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification),object: nil)
+            }
         }
     }
     

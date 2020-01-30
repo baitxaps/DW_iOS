@@ -64,7 +64,7 @@ class HttpTools: NSObject {
 //    }
 //}
 
-func post(name:String,password:String) {
+func POST(name:String,password:String) {
     
     let session = URLSession(configuration: .default)
     // 设置URL(该地址不可用，写你自己的服务器地址)

@@ -18,6 +18,9 @@ let kScreenH = UIScreen.main.bounds.height
 
 // the same like .pch file
 let WBAppearanceTintColor = UIColor.orange
+
+// switch rootvc for notification
+let WBSwitchRootViewControllerNotification = "WBSwitchRootViewControllerNotification"
 // MARK: - 应用程序信息
 /// 应用程序 ID
 let WBAppKey = "2630329609"

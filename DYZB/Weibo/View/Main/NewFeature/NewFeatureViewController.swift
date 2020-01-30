@@ -75,7 +75,7 @@ private class NewFeatureCell:UICollectionViewCell {
     }
     
     @objc private func clickStartButton() {
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: nil)
     }
     
     fileprivate func showButtonAnim() {

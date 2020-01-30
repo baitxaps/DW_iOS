@@ -85,6 +85,7 @@
 		77A8C00423CB5AA80039970F /* Position.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A8C00323CB5AA80039970F /* Position.storyboard */; };
 		77A8C00623CB5EC10039970F /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8C00523CB5EC10039970F /* Position.swift */; };
 		77A8C00823CB73A70039970F /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8C00723CB73A70039970F /* PositionCell.swift */; };
+		77D964D423E2FF2500964BC3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D964D323E2FF2500964BC3 /* WelcomeViewController.swift */; };
 		77DBD5DD23A7BBBE005C6DB3 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */; };
 		77E3315923A6467800E3416D /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E3315823A6467800E3416D /* HttpTools.swift */; };
 		77EDE5DB23D0A16700C33036 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDE5DA23D0A16700C33036 /* VisitorView.swift */; };
@@ -186,6 +187,7 @@
 		77A8C00323CB5AA80039970F /* Position.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Position.storyboard; sourceTree = "<group>"; };
 		77A8C00523CB5EC10039970F /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		77A8C00723CB73A70039970F /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
+		77D964D323E2FF2500964BC3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		77E3315823A6467800E3416D /* HttpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
 		77EDE5DA23D0A16700C33036 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */,
+				77D964D323E2FF2500964BC3 /* WelcomeViewController.swift */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DBD5DD23A7BBBE005C6DB3 /* NewsModel.swift in Sources */,
+				77D964D423E2FF2500964BC3 /* WelcomeViewController.swift in Sources */,
 				632FDC591D92179E00B6C536 /* RecommendCycleView.swift in Sources */,
 				771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */,
 				63774CAA1D86598500DCC727 /* AppDelegate.swift in Sources */,

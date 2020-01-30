@@ -114,7 +114,7 @@ private class NewFeatureCell:UICollectionViewCell {
         
         startButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.bottom.equalTo(self.snp.bottom).multipliedBy(0.7)
+            make.bottom.equalTo(self.snp.bottom).multipliedBy(0.7)//multipliedBy read only.不能更新
         }
     }
     

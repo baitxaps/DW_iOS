@@ -29,6 +29,10 @@ class UserAccountViewModel {
         return account?.access_token != nil && !isExpired //false//
     }
     
+    var avatarUrl:URL {
+        return URL(string: account?.avator_large ?? "http://www.avator.com")!
+    }
+    
     // 计算型属性，类似于有返回值的函数
     private var accountPath:String {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!

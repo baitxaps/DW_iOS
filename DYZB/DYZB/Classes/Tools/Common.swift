@@ -28,3 +28,10 @@ let WBAppKey = "2630329609"
 let WBAppSecret = "b6d86db3a453c7298855335ddd525e4a"
 /// 回调地址 - 登录完成调转的 URL，参数以 get 形式拼接
 let WBRedirectURI = "https://sns.whalecloud.com/sina2/callback"
+
+
+func delay(delta:Double,execute closure:@escaping ()->()) {
+    DispatchQueue.main.asyncAfter(deadline:.now() + delta) {
+        closure()
+    }
+}

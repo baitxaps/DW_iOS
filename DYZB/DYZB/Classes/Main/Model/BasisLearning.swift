@@ -5,6 +5,7 @@
 //  Created by hairong chen on 2019/12/14.
 //  Copyright @huse.cn  All rights reserved.
 
+// --no-repo-update
 // block->vc->tools->block
 // option + click xib-class switch
 // command +=

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class OAuthViewController: UIViewController {
 
     private lazy var webView = UIWebView()
+    private var indicator = NVActivityIndicatorView(frame:CGRect(x: kScreenW/2.0, y:kScreenH/2.0 ,width:60, height:60),type:.ballPulse, color:UIColor.black)
     
     override func loadView() {
         view = webView
@@ -32,6 +34,7 @@ class OAuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         
         /// OAuth URL
         /// - see:[http://open.weibo.com/wiki/Oauth2/authorize](http://open.weibo,com/wiki/Oquth2/authorize)
         let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppKey)&redirect_uri=\(WBRedirectURI)"
@@ -56,7 +59,7 @@ extension OAuthViewController:UIWebViewDelegate {
             close()
             return false
         }
-        
+    
         guard let query = request.url?.query else {return false }
         
         if query.count<4 { return false}
@@ -76,5 +79,13 @@ extension OAuthViewController:UIWebViewDelegate {
             }
         }
         return false
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+       indicator.startAnimating()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        indicator.stopAnimating()
     }
 }

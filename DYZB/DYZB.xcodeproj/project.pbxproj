@@ -78,6 +78,8 @@
 		773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */; };
 		774DA1E923D5EED7003A2EF2 /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */; };
 		7753597123E438F400F178F5 /* UIView+IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597023E438F400F178F5 /* UIView+IndicatorView.swift */; };
+		7753597323E4663000F178F5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597223E4663000F178F5 /* Status.swift */; };
+		7753597523E4757B00F178F5 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597423E4757B00F178F5 /* StatusListViewModel.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -183,6 +185,8 @@
 		773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
 		7753597023E438F400F178F5 /* UIView+IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IndicatorView.swift"; sourceTree = "<group>"; };
+		7753597223E4663000F178F5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		7753597423E4757B00F178F5 /* StatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -477,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */,
+				7753597423E4757B00F178F5 /* StatusListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				771BC1CE23D343C4006A2AF3 /* UserAccount.swift */,
+				7753597223E4663000F178F5 /* Status.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -795,6 +801,7 @@
 			files = (
 				77DBD5DD23A7BBBE005C6DB3 /* NewsModel.swift in Sources */,
 				77D964D423E2FF2500964BC3 /* WelcomeViewController.swift in Sources */,
+				7753597523E4757B00F178F5 /* StatusListViewModel.swift in Sources */,
 				632FDC591D92179E00B6C536 /* RecommendCycleView.swift in Sources */,
 				771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */,
 				63774CAA1D86598500DCC727 /* AppDelegate.swift in Sources */,
@@ -852,6 +859,7 @@
 				6332FCFD1DB07C0C002F1054 /* RoomShowViewController.swift in Sources */,
 				774DA1E923D5EED7003A2EF2 /* NewFeatureViewController.swift in Sources */,
 				77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */,
+				7753597323E4663000F178F5 /* Status.swift in Sources */,
 				7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */,
 				77A8C00823CB73A70039970F /* PositionCell.swift in Sources */,
 				63F571C81D88D917002761B7 /* HomeViewController.swift in Sources */,

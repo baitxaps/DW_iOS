@@ -73,10 +73,10 @@ extension AppDelegate {
         print(version)
         
         let sandboxVersKey = "sandboxVersKey"
-        let sandboxVersion = UserDefaults.standard.double(forKey: sandboxVersKey)
+        let sandboxVersion = UserDefaults.standard.double(forKey:sandboxVersKey)
         print(sandboxVersion)
         
-        UserDefaults.standard.set(sandboxVersion,forKey: sandboxVersKey)
+        UserDefaults.standard.set(currentVersion,forKey:sandboxVersKey)
         return version > sandboxVersion
     }
 }

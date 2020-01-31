@@ -14,7 +14,7 @@ let kTabbarH : CGFloat = 44
 
 let kScreenW = UIScreen.main.bounds.width
 let kScreenH = UIScreen.main.bounds.height
-
+let kIndicator:CGFloat = 100
 
 // the same like .pch file
 let WBAppearanceTintColor = UIColor.orange

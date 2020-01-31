@@ -1,2 +1,2 @@
-# DouYuZB
+# DouYu & WeiBo
 DouYU & WeiBo

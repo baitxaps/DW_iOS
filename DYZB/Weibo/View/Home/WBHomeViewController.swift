@@ -53,5 +53,25 @@ extension WBHomeTableViewController {
         cell.viewModel = self.listViewModel.statusList[indexPath.row]
         return cell
     }
+    
+    
+    //-------------------------
+    func testFunc() {
+        // 1.
+        self.callBack (finished:{()->() in
+            print("hello")
+        })
+        // 2.
+        self.callBack(finished:hi)
+    }
+    
+    func hi()-> () {
+        print("hi")
+    }
+    
+    func callBack(finished:()->()) {
+        finished()
+    }
+    //-------------------------
 }
 

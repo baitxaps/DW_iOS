@@ -60,13 +60,15 @@ extension StatusCell {
         contentLabel.snp.makeConstraints { (make) in
             make.top.equalTo(topView.snp.bottom).offset(StatusCellMargin)
             make.left.equalTo(contentView.snp.left).offset(StatusCellMargin)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-StatusCellMargin)
         }
         
-//        bottomView.snp.makeConstraints { (make) in
-//            make.top.equalTo(contentLabel.snp.bottom).offset(StatusCellMargin)
-//            make.left.equalTo(contentView.snp.left).offset(StatusCellMargin)
-//        }
+        bottomView.snp.makeConstraints { (make) in
+            make.top.equalTo(contentLabel.snp.bottom).offset(StatusCellMargin)
+            make.left.equalTo(contentView.snp.left)
+            make.right.equalTo(contentView.snp.right)
+            make.height.equalTo(44)
+            make.bottom.equalTo(contentView.snp.bottom)
+        }
     }
 }
 

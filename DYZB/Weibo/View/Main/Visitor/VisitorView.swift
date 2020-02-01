@@ -68,9 +68,9 @@ class VisitorView: UIView {
     
     private lazy var messageLabel:UILabel = UILabel(title: "关注一些人，回这里看看有什么惊喜")
     
-    private lazy var reginsterButton:UIButton = UIButton(title: "注册", color: UIColor.orange, imageName: "common_button_white_disable")
+    private lazy var reginsterButton:UIButton = UIButton(title: "注册", color: UIColor.orange, backImageName: "common_button_white_disable")
     
-    private lazy var loginButton:UIButton = UIButton(title:"登录", color: UIColor.darkGray, imageName: "common_button_white_disable")
+    private lazy var loginButton:UIButton = UIButton(title:"登录", color: UIColor.darkGray, backImageName: "common_button_white_disable")
 
 }
 

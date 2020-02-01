@@ -14,7 +14,7 @@
 // cmd+L:跳到指定的行
 // cmd +shift +O :打开文件
 // cmd + shift+J: 快速定位文件
-
+// ctrl+ cmd +E :全局修改关键字
 /*
  as:转换
  1.String as NSString

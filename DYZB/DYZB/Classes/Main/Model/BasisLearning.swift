@@ -5,6 +5,8 @@
 //  Created by hairong chen on 2019/12/14.
 //  Copyright @huse.cn  All rights reserved.
 
+// 代码行数数统计 (wc:word count)
+// find . -name ".swift" | xargs wc -l
 // --no-repo-update
 // block->vc->tools->block
 // option + click xib-class switch
@@ -12,6 +14,20 @@
 // cmd+L:跳到指定的行
 // cmd +shift +O :打开文件
 // cmd + shift+J: 快速定位文件
+
+/*
+ as:转换
+ 1.String as NSString
+ 2.NSArray as [array]
+ 3.NSDictionary as [String:AnyObjec]
+ 
+其他类型
+ tmp是?.!, 后转换也as?,as!
+ var tmp:String? ==> uid as? String
+ 
+ guard let as后用? :as?
+ guard let dict = result as? [String:AnyObject] else {}
+*/
 
 import UIKit
  //////////////////////////////////////////////

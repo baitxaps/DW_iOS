@@ -7,19 +7,6 @@
 //
 
 import UIKit
-/*
- as:转换
- 1.String as NSString
- 2.NSArray as [array]
- 3.NSDictionary as [String:AnyObjec]
- 
-其他类型
- tmp是?.!, 后转换也as?,as!
- var tmp:String? ==> uid as? String
- 
- guard let as后用? :as?
- guard let dict = result as? [String:AnyObject] else {}
-*/
 
 @objcMembers
 class UserAccount: NSObject,NSCoding {

@@ -9,7 +9,7 @@
 import Foundation
 
 class StatusListViewModel {
-    lazy var statusList = [Status]()
+    lazy var statusList = [StatusViewModel]()
     
     private var tokenDict:[String:String]? {
         if let token = UserAccountViewModel.shared.accesstoken {
@@ -39,9 +39,9 @@ class StatusListViewModel {
                 finished(false)
                 return
             }
-            var dataList = [Status]()
+            var dataList = [StatusViewModel]()
             for dict in array {
-                dataList.append(Status(dict:dict))
+                dataList.append(StatusViewModel(status: Status(dict:dict)))
             }
             print(dataList)
             // join the data

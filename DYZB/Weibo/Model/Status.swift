@@ -14,15 +14,27 @@ class Status: NSObject {
     var created_at:String?  // 微博创建时间
     var text :String?       // 微博信息内容
     var source :String?     // 微博来源
+    var user:User?          // User model
     
     init(dict:[String:AnyObject]) {
         super.init()
         setValuesForKeys(dict)
     }
     
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        if key == "user" {
+            if let dict = value as? [String:AnyObject] {
+                user = User(dict:dict)
+            }
+            return
+        }
+        super.setValue(value, forKey: key)
+    }
+    
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     override var description: String {
-        let keys = ["id","created_at","text","source"]
+        let keys = ["id","created_at","text","source","user"]
         return dictionaryWithValues(forKeys: keys).description
     }
 }

@@ -20,7 +20,9 @@ class WBHomeTableViewController: VisitorTableViewController {
     }
     
     private func prepareTabaleView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: StatusCellNormalId)
+        tableView.register(StatusCell.self, forCellReuseIdentifier: StatusCellNormalId)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
     }
 }
 
@@ -46,9 +48,9 @@ extension WBHomeTableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:StatusCellNormalId, for: indexPath)
-        cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].text
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier:StatusCellNormalId, for: indexPath) as! StatusCell
+        //cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].status?.text
+        cell.viewModel = self.listViewModel.statusList[indexPath.row]
         return cell
     }
 }

@@ -4,8 +4,6 @@
 //
 //  Created by hairong chen on 2020/1/16.
 //  Copyright © 2020 @huse.cn. All rights reserved.~Vs059581004
-// 代码行数数统计 (wc:word count)
-// find . -name ".swift" | xargs wc -l
 
 import UIKit
 import SnapKit

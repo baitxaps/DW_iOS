@@ -45,12 +45,27 @@ class StatusViewModel:CustomStringConvertible {
         }
     }
     
+    //!!! thumbnailUrls
+    var thumbnailUrls:[URL]?
+    
     init(status:Status) {
         self.status = status
+        
+        //
+        if status.pic_urls?.count ?? 0 > 0 {
+            thumbnailUrls = [URL]()
+            
+            for dict in status.pic_urls! {
+                // dict按照key来取值，如果key错误，返回nil
+                let url = URL(string: dict["thumbnail_pic"]!)
+                // 相信服务器返回的url字符串一定能够生成
+                thumbnailUrls?.append(url!)
+            }
+        }
     }
     
-    // description
+    // CustomStringConvertible (description)
     var description: String {
-        return self.status.description
+        return self.status.description + "配图数组\(thumbnailUrls ?? [])"
     }
 }

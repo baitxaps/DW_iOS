@@ -15,6 +15,7 @@ class Status: NSObject {
     var text :String?       // 微博信息内容
     var source :String?     // 微博来源
     var user:User?          // User model
+    var pic_urls:[[String:String]]?// key:thumbnail_pic
     
     init(dict:[String:AnyObject]) {
         super.init()
@@ -34,7 +35,7 @@ class Status: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     override var description: String {
-        let keys = ["id","created_at","text","source","user"]
+        let keys = ["id","created_at","text","source","user","pic_urls"]
         return dictionaryWithValues(forKeys: keys).description
     }
 }

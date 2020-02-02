@@ -76,6 +76,7 @@
 		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
 		77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */; };
 		773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */; };
+		773C3A2023E6AF9B00112F40 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C3A1F23E6AF9B00112F40 /* StatusPictureView.swift */; };
 		774DA1E923D5EED7003A2EF2 /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */; };
 		7753597123E438F400F178F5 /* UIView+IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597023E438F400F178F5 /* UIView+IndicatorView.swift */; };
 		7753597323E4663000F178F5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597223E4663000F178F5 /* Status.swift */; };
@@ -188,6 +189,7 @@
 		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		773C3A1F23E6AF9B00112F40 /* StatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		774DA1E823D5EED7003A2EF2 /* NewFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
 		7753597023E438F400F178F5 /* UIView+IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IndicatorView.swift"; sourceTree = "<group>"; };
 		7753597223E4663000F178F5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 				77C413CE23E5A2EB008EE41D /* StatusCell.swift */,
 				77C413D023E5A344008EE41D /* StatusCellTopView.swift */,
 				77C413D223E5A35F008EE41D /* StatusCellBottomView.swift */,
+				773C3A1F23E6AF9B00112F40 /* StatusPictureView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				6332FD011DB07FA0002F1054 /* CustomNavigationController.swift in Sources */,
 				6332FCFF1DB07C29002F1054 /* RoomNormalViewController.swift in Sources */,
 				6332FCF31DB0659F002F1054 /* FunnyViewController.swift in Sources */,
+				773C3A2023E6AF9B00112F40 /* StatusPictureView.swift in Sources */,
 				7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */,
 				77C413CA23E56E7C008EE41D /* User.swift in Sources */,
 				77C413CF23E5A2EB008EE41D /* StatusCell.swift in Sources */,

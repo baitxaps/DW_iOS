@@ -8,22 +8,26 @@
 
 import UIKit
 private let StatusCellNormalId = "StatusCellNormalId"
+
 class WBHomeTableViewController: VisitorTableViewController {
     private var listViewModel = StatusListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         visitorView?.setupInfo(imageName: nil,title:"登录后，别人评论你的微博")
+        
         prepareTabaleView()
         
         loadStatus() {}
     }
     
     private func prepareTabaleView() {
-        tableView.register(StatusCell.self, forCellReuseIdentifier: StatusCellNormalId)
+        guard let tableView = tableView  else {return}
+        
         tableView.separatorStyle = .none
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = 400//UITableView.automaticDimension
+        tableView.estimatedRowHeight = 400
+        tableView.register(StatusCell.self,forCellReuseIdentifier:StatusCellNormalId)
     }
 }
 
@@ -50,11 +54,17 @@ extension WBHomeTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:StatusCellNormalId, for: indexPath) as! StatusCell
-        //cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].status?.text
+      
         cell.viewModel = self.listViewModel.statusList[indexPath.row]
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let vm = listViewModel.statusList[indexPath.row]
+        let cell = StatusCell(style: .default, reuseIdentifier:StatusCellNormalId)
+        
+        return cell.rowHeight(vm: vm)
+    }
     
     //-------------------------
     func testFunc() {

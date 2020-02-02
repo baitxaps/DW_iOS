@@ -18,7 +18,23 @@ class StatusCell: UITableViewCell {
         didSet {
             topView.viewModel = viewModel
             contentLabel.text = viewModel?.status.text
+            
+            pictureView.viewModel = viewModel
+            
+            pictureView.snp.updateConstraints { (make) in
+                make.height.equalTo(pictureView.bounds.height)
+                make.width.equalTo(pictureView.bounds.width)
+            }
         }
+    }
+    
+    //
+    func rowHeight(vm:StatusViewModel) -> CGFloat {
+        viewModel = vm
+        
+        contentView.layoutIfNeeded()
+        
+        return bottomView.frame.maxY//CGRectGetMaxY(bottomView.frame)
     }
     
     //MARK:- init
@@ -33,6 +49,9 @@ class StatusCell: UITableViewCell {
     
     private lazy var topView : StatusCellTopView = StatusCellTopView()
     private lazy var contentLabel :UILabel = UILabel(title: "微博正文", fontSize: 15 ,color: UIColor.darkGray,screenInset: StatusCellMargin)
+    
+    private lazy var pictureView:StatusPictureView = StatusPictureView()
+    
     private lazy var bottomView:StatusCellBottomView = StatusCellBottomView()
     
     override func awakeFromNib() {
@@ -48,6 +67,7 @@ extension StatusCell {
     private func setupUI() {
         contentView.addSubview(topView)
         contentView.addSubview(contentLabel)
+        contentView.addSubview(pictureView)
         contentView.addSubview(bottomView)
         
         topView.snp.makeConstraints { (make) in
@@ -62,12 +82,19 @@ extension StatusCell {
             make.left.equalTo(contentView.snp.left).offset(StatusCellMargin)
         }
         
-        bottomView.snp.makeConstraints { (make) in
+        pictureView.snp.makeConstraints { (make) in
             make.top.equalTo(contentLabel.snp.bottom).offset(StatusCellMargin)
+            make.left.equalTo(contentLabel.snp.left)
+            make.height.equalTo(90)
+            make.width.equalTo(100)
+           // make.width.equalTo(contentView.snp.width).offset(-2 * StatusCellMargin)
+        }
+        
+        bottomView.snp.makeConstraints { (make) in
+            make.top.equalTo(pictureView.snp.bottom).offset(StatusCellMargin)
             make.left.equalTo(contentView.snp.left)
             make.right.equalTo(contentView.snp.right)
-            make.height.equalTo(44)
-            make.bottom.equalTo(contentView.snp.bottom)
+            make.height.equalTo(44)//make.bottom.equalTo(contentView.snp.bottom)
         }
     }
 }

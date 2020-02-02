@@ -21,6 +21,7 @@ class WBHomeTableViewController: VisitorTableViewController {
     
     private func prepareTabaleView() {
         tableView.register(StatusCell.self, forCellReuseIdentifier: StatusCellNormalId)
+        tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
     }

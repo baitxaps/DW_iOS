@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StatusViewModel {
+class StatusViewModel:CustomStringConvertible {
     var status:Status
     
     var userProfileUrl:URL {
@@ -47,5 +47,10 @@ class StatusViewModel {
     
     init(status:Status) {
         self.status = status
+    }
+    
+    // description
+    var description: String {
+        return self.status.description
     }
 }

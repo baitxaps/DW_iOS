@@ -54,7 +54,7 @@ extension StatusCell {
             make.top.equalTo(contentView.snp.top)
             make.left.equalTo(contentView.snp.left)
             make.right.equalTo(contentView.snp.right)
-            make.height.equalTo(StatusCellMargin + StatusCellIconWidth)
+            make.height.equalTo(2 * StatusCellMargin + StatusCellIconWidth)
         }
         
         contentLabel.snp.makeConstraints { (make) in

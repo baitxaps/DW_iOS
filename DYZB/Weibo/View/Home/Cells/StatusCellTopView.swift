@@ -31,6 +31,13 @@ class StatusCellTopView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private lazy var line:UIView = {
+        let line = UIView()
+        line.backgroundColor = UIColor.lightGray
+        return line
+    }()
+    
     private lazy var iconView:UIImageView = UIImageView(imageName: "avatar_default_big")
     private lazy var sourceLabel:UILabel = UILabel(title: "source", fontSize: 11)
     private lazy var nameLabel:UILabel = UILabel(title: "name", fontSize: 14)
@@ -41,7 +48,11 @@ class StatusCellTopView: UIView {
 
 extension StatusCellTopView {
     private func setupUI() {
-        backgroundColor = UIColor(white: 0.95, alpha: 1.0)
+        backgroundColor = UIColor.white
+        
+        // sep line
+        addSubview(line)
+        // subviews
         addSubview(iconView)
         addSubview(nameLabel)
         addSubview(memberIconView)
@@ -49,9 +60,16 @@ extension StatusCellTopView {
         addSubview(timeLabel)
         addSubview(sourceLabel)
         
+        line.snp.makeConstraints { (make) in
+            make.top.equalTo(self.snp.top)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            make.height.equalTo(StatusCellMargin)
+        }
+        
         iconView.snp.makeConstraints { (make) in
             make.left.equalTo(self.snp.left).offset(StatusCellMargin)
-            make.top.equalTo(self.snp.top).offset(StatusCellMargin)
+            make.top.equalTo(line.snp.bottom).offset(StatusCellMargin)
             make.height.width.equalTo(StatusCellIconWidth)
         }
         

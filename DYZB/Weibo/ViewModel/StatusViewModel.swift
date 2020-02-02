@@ -11,6 +11,8 @@ import UIKit
 class StatusViewModel:CustomStringConvertible {
     var status:Status
     
+    var rowHeight:CGFloat?
+    
     var userProfileUrl:URL {
         return URL(string: status.user?.profile_image_url ?? "")!
     }

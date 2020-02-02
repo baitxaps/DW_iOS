@@ -25,8 +25,8 @@ class WBHomeTableViewController: VisitorTableViewController {
         guard let tableView = tableView  else {return}
         
         tableView.separatorStyle = .none
-        tableView.rowHeight = 400//UITableView.automaticDimension
         tableView.estimatedRowHeight = 400
+        // tableView.rowHeight =  UITableView.automaticDimension//400
         tableView.register(StatusCell.self,forCellReuseIdentifier:StatusCellNormalId)
     }
 }
@@ -58,12 +58,19 @@ extension WBHomeTableViewController {
         cell.viewModel = self.listViewModel.statusList[indexPath.row]
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let vm = listViewModel.statusList[indexPath.row]
-        let cell = StatusCell(style: .default, reuseIdentifier:StatusCellNormalId)
         
-        return cell.rowHeight(vm: vm)
+        if  vm.rowHeight != nil {
+            return vm.rowHeight!
+        }
+        
+        let cell = StatusCell(style: .default, reuseIdentifier:StatusCellNormalId)
+        // 行高缓存
+        vm.rowHeight = cell.rowHeight(vm: vm)
+        
+        return vm.rowHeight!
     }
     
     //-------------------------

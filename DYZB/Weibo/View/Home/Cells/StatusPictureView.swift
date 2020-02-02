@@ -45,7 +45,11 @@ class StatusPictureView: UICollectionView {
 
 extension StatusPictureView:UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.thumbnailUrls?.count ?? 0
+//      return viewModel?.thumbnailUrls?.count ?? 0
+        guard let count = viewModel?.thumbnailUrls?.count else {
+            return 0
+        }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

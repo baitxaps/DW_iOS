@@ -7,7 +7,7 @@
 //
 
 import UIKit
-private let StatusCellNormalId = "StatusCellNormalId"
+let StatusCellNormalId = "StatusCellNormalId"
 
 class WBHomeTableViewController: VisitorTableViewController {
     private var listViewModel = StatusListViewModel()
@@ -47,30 +47,22 @@ extension WBHomeTableViewController {
     
     
     // MARK: - Table view data source
-      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  self.listViewModel.statusList.count 
-      }
-
+    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:StatusCellNormalId, for: indexPath) as! StatusCell
-      
+        
         cell.viewModel = self.listViewModel.statusList[indexPath.row]
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let vm = listViewModel.statusList[indexPath.row]
         
-        if  vm.rowHeight != nil {
-            return vm.rowHeight!
-        }
-        
-        let cell = StatusCell(style: .default, reuseIdentifier:StatusCellNormalId)
-        // 行高缓存
-        vm.rowHeight = cell.rowHeight(vm: vm)
-        
-        return vm.rowHeight!
+        return vm.rowHeight
     }
     
     //-------------------------

@@ -11,7 +11,11 @@ import UIKit
 class StatusViewModel:CustomStringConvertible {
     var status:Status
     
-    var rowHeight:CGFloat?
+    lazy var rowHeight:CGFloat = {
+        let cell = StatusCell(style: .default, reuseIdentifier:StatusCellNormalId)
+        
+        return cell.rowHeight(vm: self)
+    }()
     
     var userProfileUrl:URL {
         return URL(string: status.user?.profile_image_url ?? "")!

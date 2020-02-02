@@ -30,7 +30,7 @@ class UserAccountViewModel {
     }
     
     var avatarUrl:URL {
-        return URL(string: account?.avator_large ?? "http://www.avator.com")!
+        return URL(string: account?.avatar_large ?? "http://www.avator.com")!
     }
     
     // 计算型属性，类似于有返回值的函数
@@ -119,7 +119,7 @@ extension UserAccountViewModel {
                 finished(false)
                 return
             }
-            userAccount.avator_large = response["avator_large"] as? String
+            userAccount.avatar_large = response["avatar_large"] as? String
             userAccount.screen_name = response["screen_name"] as? String
             
             NSKeyedArchiver.archiveRootObject(userAccount, toFile: self.accountPath)

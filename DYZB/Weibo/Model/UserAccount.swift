@@ -14,7 +14,7 @@ class UserAccount: NSObject,NSCoding {
     var uid:String?
     var expiresDate:NSDate?
     var screen_name:String?
-    var avator_large:String?
+    var avatar_large:String?
     var expires_in:TimeInterval = 0 {
         didSet {
             //access_toke 计算过期日期
@@ -30,7 +30,7 @@ class UserAccount: NSObject,NSCoding {
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
     override var description:String {
-        let keys = ["access_token","expires_in","expiresDate","uid","avator_large","screen_name"]
+        let keys = ["access_token","expires_in","expiresDate","uid","avatar_large","screen_name"]
         return dictionaryWithValues(forKeys: keys).description
     }
     
@@ -39,7 +39,7 @@ class UserAccount: NSObject,NSCoding {
         access_token = coder.decodeObject(forKey: "access_toke") as? String
         uid = coder.decodeObject(forKey: "uid") as? String
         screen_name = coder.decodeObject(forKey: "screen_name") as? String
-        avator_large = coder.decodeObject(forKey: "avator_large") as? String
+        avatar_large = coder.decodeObject(forKey: "avatar_large") as? String
         expiresDate = coder.decodeObject(forKey: "expiresDate") as? NSDate
     }
     
@@ -48,7 +48,7 @@ class UserAccount: NSObject,NSCoding {
         coder.encode(access_token, forKey: "access_toke")
         coder.encode(uid, forKey: "uid")
         coder.encode(screen_name, forKey: "screen_name")
-        coder.encode(avator_large, forKey: "avator_large")
+        coder.encode(avatar_large, forKey: "avator_large")
         coder.encode(expiresDate, forKey: "expiresDate")
     }
     

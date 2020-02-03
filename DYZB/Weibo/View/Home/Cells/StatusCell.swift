@@ -24,6 +24,10 @@ class StatusCell: UITableViewCell {
             pictureView.snp.updateConstraints { (make) in
                 make.height.equalTo(pictureView.bounds.height)
                 make.width.equalTo(pictureView.bounds.width)
+                
+                let count = viewModel?.thumbnailUrls?.count
+                let os = ((count ?? 0) > 0) ? StatusCellMargin : 0
+                make.top.equalTo(contentLabel.snp.bottom).offset(os)
             }
         }
     }
@@ -87,8 +91,8 @@ extension StatusCell {
             make.top.equalTo(contentLabel.snp.bottom).offset(StatusCellMargin)
             make.left.equalTo(contentLabel.snp.left)
             make.height.equalTo(90)
-            make.width.equalTo(100)
-           // make.width.equalTo(contentView.snp.width).offset(-2 * StatusCellMargin)
+            make.width.equalTo(300)
+            //make.width.equalTo(contentView.snp.width).offset(-2 * StatusCellMargin)
         }
         
         bottomView.snp.makeConstraints { (make) in

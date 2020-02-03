@@ -7,15 +7,17 @@
 
 // 代码行数数统计 (wc:word count)
 // find . -name ".swift" | xargs wc -l
-// --no-repo-update
 
+// --no-repo-update
 // block->vc->tools->block
 // option + click xib-class switch
 // command +=
 // cmd+L:跳到指定的行
+// ctrl + 6 ：列出MARK列表
 // cmd +shift +O :打开文件
 // cmd + shift+J: 快速定位文件
 // ctrl+ cmd +E :全局修改关键字
+
 /*
  as:转换
  1.String as NSString
@@ -579,7 +581,7 @@ func KeyTest() {
   
     
     
-    //MARK: 17 白循环引用
+    //MARK: 17 循环引用
     //OC __weak/__unsafe_unretained(会产生野指针错误)
     //swift weak/unowned(会产生野指针错误,不能用于修饰可选类型)
     

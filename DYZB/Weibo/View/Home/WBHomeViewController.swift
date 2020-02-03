@@ -8,6 +8,7 @@
 
 import UIKit
 let StatusCellNormalId = "StatusCellNormalId"
+let StatusCellRetweetedId = "StatusCellRetweetedId"
 
 class WBHomeTableViewController: VisitorTableViewController {
     private var listViewModel = StatusListViewModel()
@@ -27,7 +28,9 @@ class WBHomeTableViewController: VisitorTableViewController {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 400
         // tableView.rowHeight =  UITableView.automaticDimension//400
-        tableView.register(StatusCell.self,forCellReuseIdentifier:StatusCellNormalId)
+       // tableView.register(StatusCell.self,forCellReuseIdentifier:StatusCellNormalId)
+        tableView.register(StatusRetweetedCell.self,forCellReuseIdentifier:StatusCellRetweetedId)
+        
     }
 }
 
@@ -53,7 +56,7 @@ extension WBHomeTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:StatusCellNormalId, for: indexPath) as! StatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:StatusCellRetweetedId, for: indexPath) as! StatusCell
         
         cell.viewModel = self.listViewModel.statusList[indexPath.row]
         return cell
@@ -65,7 +68,13 @@ extension WBHomeTableViewController {
         return vm.rowHeight
     }
     
-    //-------------------------
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("clicked:\(indexPath.row)")
+    }
+    
+    
+    
+    //MARK: - ----------test---------------
     func testFunc() {
         // 1.
         self.callBack (finished:{()->() in

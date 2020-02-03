@@ -12,7 +12,7 @@ class StatusViewModel:CustomStringConvertible {
     var status:Status
     
     lazy var rowHeight:CGFloat = {
-        let cell = StatusCell(style: .default, reuseIdentifier:StatusCellNormalId)
+        let cell = StatusRetweetedCell(style: .default, reuseIdentifier:StatusCellRetweetedId)
         
         return cell.rowHeight(vm: self)
     }()
@@ -51,17 +51,18 @@ class StatusViewModel:CustomStringConvertible {
         }
     }
     
-    //!!! thumbnailUrls
+    //!!! thumbnailUrls 存储型属性
+    // 如果是原创微博，可以有图，可以没有图
+    // 如果是转发微博，一定没有图，retweeted_status中，可以有图，可以没有图
+    // 一条微博，最多只有一个pic_urls数组
     var thumbnailUrls:[URL]?
     
     init(status:Status) {
         self.status = status
         
-        //
-        if status.pic_urls?.count ?? 0 > 0 {
+        if let urls = status.retweeted_status?.pic_urls ?? status.pic_urls {
             thumbnailUrls = [URL]()
-            
-            for dict in status.pic_urls! {
+            for dict in urls {
                 // dict按照key来取值，如果key错误，返回nil
                 let url = URL(string: dict["thumbnail_pic"]!)
                 // 相信服务器返回的url字符串一定能够生成

@@ -83,7 +83,12 @@ private class StatusPictureViewCell:UICollectionViewCell {
         }
     }
     
-    private lazy var iconView:UIImageView = UIImageView()
+    private lazy var iconView:UIImageView = {
+        var iv = UIImageView();
+        iv.layer.masksToBounds = true;
+        iv.contentMode = UIView.ContentMode.scaleAspectFill
+        return iv
+    }()
 }
 
 extension StatusPictureView {

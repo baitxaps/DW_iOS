@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Kingfisher
 
 class StatusListViewModel {
     lazy var statusList = [StatusViewModel]()
@@ -47,6 +48,41 @@ class StatusListViewModel {
             // join the data
             self.statusList = self.statusList + dataList
             finished(true)
+            
+            self.cacheSingleImage(dataList: dataList)
+        }
+    }
+    
+    private func cacheSingleImage(dataList:[StatusViewModel]) {
+        for vm in dataList {
+            
+            let group = DispatchGroup()
+            
+            let count = vm.thumbnailUrls?.count ?? 0
+            if count  > 1 || count == 0 {
+                continue
+            }
+            
+            let url = vm.thumbnailUrls![0]
+
+            group.enter()
+            
+            KingfisherManager.shared.downloader.downloadImage(with: url, options:[KingfisherOptionsInfoItem.forceRefresh,KingfisherOptionsInfoItem.onFailureImage(nil)]) { (result) in
+                //(Result<ImageLoadingResult, KingfisherError>
+                switch result {
+                case .failure(let error):
+                    print(error)
+                    group.leave()
+                case .success(let response):
+                    //response.image
+                    group.leave()
+                    print(response)
+                }
+            }
+            
+            group.notify(queue: DispatchQueue.main) {
+               print("finished")
+            }
         }
     }
 }

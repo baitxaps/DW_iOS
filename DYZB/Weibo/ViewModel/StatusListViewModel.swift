@@ -52,12 +52,12 @@ class StatusListViewModel {
             self.cacheSingleImage(dataList: dataList)
         }
     }
-    
+   
     private func cacheSingleImage(dataList:[StatusViewModel]) {
+        var dataLength = 0
+        let group = DispatchGroup()
+        
         for vm in dataList {
-            
-            let group = DispatchGroup()
-            
             let count = vm.thumbnailUrls?.count ?? 0
             if count  > 1 || count == 0 {
                 continue
@@ -66,7 +66,6 @@ class StatusListViewModel {
             let url = vm.thumbnailUrls![0]
 
             group.enter()
-            
             KingfisherManager.shared.downloader.downloadImage(with: url, options:[KingfisherOptionsInfoItem.forceRefresh,KingfisherOptionsInfoItem.onFailureImage(nil)]) { (result) in
                 //(Result<ImageLoadingResult, KingfisherError>
                 switch result {
@@ -75,13 +74,18 @@ class StatusListViewModel {
                     group.leave()
                 case .success(let response):
                     //response.image
+                    guard let data = (response.image.pngData() as NSData?) else {
+                        return
+                    }
+                    dataLength += data.length
+     
                     group.leave()
                     print(response)
                 }
             }
             
             group.notify(queue: DispatchQueue.main) {
-               print("finished")
+               print("cache dataLength:\(dataLength/1024) K")
             }
         }
     }

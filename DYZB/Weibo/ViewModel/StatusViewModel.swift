@@ -11,8 +11,18 @@ import UIKit
 class StatusViewModel:CustomStringConvertible {
     var status:Status
     
+    var cellId:String {
+        return status.retweeted_status != nil ? StatusCellRetweetedId:StatusCellNormalId
+    }
+    
     lazy var rowHeight:CGFloat = {
-        let cell = StatusRetweetedCell(style: .default, reuseIdentifier:StatusCellRetweetedId)
+        var cell:StatusCell
+        
+        if self.status.retweeted_status != nil {
+            cell = StatusRetweetedCell(style:.default,reuseIdentifier:StatusCellRetweetedId)
+        }else {
+            cell = StatusNormalCell(style:.default,reuseIdentifier:StatusCellNormalId)
+        }
         
         return cell.rowHeight(vm: self)
     }()
@@ -51,11 +61,21 @@ class StatusViewModel:CustomStringConvertible {
         }
     }
     
-    //!!! thumbnailUrls 存储型属性
+    // 存储型属性!!!
     // 如果是原创微博，可以有图，可以没有图
     // 如果是转发微博，一定没有图，retweeted_status中，可以有图，可以没有图
     // 一条微博，最多只有一个pic_urls数组
     var thumbnailUrls:[URL]?
+    
+    var retweetedText:String? {
+        guard let s = status.retweeted_status else {
+            return nil
+        }
+        
+        let retweet = "@" + (s.user?.screen_name ?? "")
+        
+        return (retweet + ":" + (s.text ?? ""))
+    }
     
     init(status:Status) {
         self.status = status
@@ -64,9 +84,9 @@ class StatusViewModel:CustomStringConvertible {
             thumbnailUrls = [URL]()
             for dict in urls {
                 // dict按照key来取值，如果key错误，返回nil
-                let url = URL(string: dict["thumbnail_pic"]!)
-                // 相信服务器返回的url字符串一定能够生成
-                thumbnailUrls?.append(url!)
+                if let url = URL(string: (dict["thumbnail_pic"]!)) {
+                    thumbnailUrls?.append(url)
+                }
             }
         }
     }

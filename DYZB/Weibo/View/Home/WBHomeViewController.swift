@@ -28,9 +28,8 @@ class WBHomeTableViewController: VisitorTableViewController {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 400
         // tableView.rowHeight =  UITableView.automaticDimension//400
-       // tableView.register(StatusCell.self,forCellReuseIdentifier:StatusCellNormalId)
+        tableView.register(StatusNormalCell.self,forCellReuseIdentifier:StatusCellNormalId)
         tableView.register(StatusRetweetedCell.self,forCellReuseIdentifier:StatusCellRetweetedId)
-        
     }
 }
 
@@ -56,9 +55,11 @@ extension WBHomeTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:StatusCellRetweetedId, for: indexPath) as! StatusCell
+        let vm = listViewModel.statusList[indexPath.row]
         
-        cell.viewModel = self.listViewModel.statusList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier:vm.cellId, for: indexPath) as! StatusCell
+        
+        cell.viewModel = vm
         return cell
     }
     

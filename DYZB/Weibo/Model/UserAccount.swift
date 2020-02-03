@@ -48,7 +48,7 @@ class UserAccount: NSObject,NSCoding {
         coder.encode(access_token, forKey: "access_toke")
         coder.encode(uid, forKey: "uid")
         coder.encode(screen_name, forKey: "screen_name")
-        coder.encode(avatar_large, forKey: "avator_large")
+        coder.encode(avatar_large, forKey: "avatar_large")
         coder.encode(expiresDate, forKey: "expiresDate")
     }
     

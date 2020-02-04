@@ -7,16 +7,19 @@
 
 // 代码行数数统计 (wc:word count)
 // find . -name ".swift" | xargs wc -l
-
 // --no-repo-update
+
 // block->vc->tools->block
+
 // option + click xib-class switch
 // command +=
 // cmd+L:跳到指定的行
 // ctrl + 6 ：列出MARK列表
-// cmd +shift +O :打开文件
-// cmd + shift+J: 快速定位文件
-// ctrl+ cmd +E :全局修改关键字
+// cmd +shift +o :打开文件
+// cmd + shift+j: 快速定位文件
+// ctrl+ cmd +e :全局修改关键字
+// cmd + option +enter:助理编辑器(option+点击)
+// cmd +shift + f:全局查找
 
 /*
  as:转换

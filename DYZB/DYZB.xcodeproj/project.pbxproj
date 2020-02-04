@@ -71,6 +71,8 @@
 		771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */; };
 		771BC1CD23D31295006A2AF3 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */; };
 		771BC1CF23D343C4006A2AF3 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BC1CE23D343C4006A2AF3 /* UserAccount.swift */; };
+		772A804A23E982C90058AA34 /* WBRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A804923E982C90058AA34 /* WBRefreshControl.swift */; };
+		772A804C23E9867B0058AA34 /* WBRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772A804B23E9867B0058AA34 /* WBRefreshView.xib */; };
 		77306F2E23D1F93C0041A5AE /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2D23D1F93C0041A5AE /* UILabel+Extension.swift */; };
 		77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */; };
 		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
@@ -186,6 +188,8 @@
 		771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorTableViewController.swift; sourceTree = "<group>"; };
 		771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		771BC1CE23D343C4006A2AF3 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		772A804923E982C90058AA34 /* WBRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBRefreshControl.swift; sourceTree = "<group>"; };
+		772A804B23E9867B0058AA34 /* WBRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBRefreshView.xib; sourceTree = "<group>"; };
 		77306F2D23D1F93C0041A5AE /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -537,6 +541,7 @@
 		771A31A423CF32B3003C784B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				772A804823E982780058AA34 /* RefreshView */,
 				77C413CD23E592BB008EE41D /* Cells */,
 				771A31A823CF32DB003C784B /* WBHomeViewController.swift */,
 			);
@@ -604,6 +609,15 @@
 				771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		772A804823E982780058AA34 /* RefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				772A804923E982C90058AA34 /* WBRefreshControl.swift */,
+				772A804B23E9867B0058AA34 /* WBRefreshView.xib */,
+			);
+			path = RefreshView;
 			sourceTree = "<group>";
 		};
 		774DA1E723D5EE7B003A2EF2 /* NewFeature */ = {
@@ -721,6 +735,7 @@
 				63774CAF1D86598500DCC727 /* Main.storyboard in Resources */,
 				63C0B2A11D868D300058ABDF /* Live.storyboard in Resources */,
 				63C0B29E1D868CF60058ABDF /* Home.storyboard in Resources */,
+				772A804C23E9867B0058AA34 /* WBRefreshView.xib in Resources */,
 				632FDC691D9230FC00B6C536 /* CollectionGameCell.xib in Resources */,
 				63A9773B1DAC746200DB9157 /* AmuseMenuView.xib in Resources */,
 				632FDC5B1D9217B500B6C536 /* RecommendCycleView.xib in Resources */,
@@ -867,6 +882,7 @@
 				63517CE61DAB89EC00ACACBF /* BaseViewModel.swift in Sources */,
 				77A8C00223CB5A820039970F /* PositionTableViewController.swift in Sources */,
 				77306F3423D209070041A5AE /* Common.swift in Sources */,
+				772A804A23E982C90058AA34 /* WBRefreshControl.swift in Sources */,
 				632FDC601D92228000B6C536 /* CollectionCycleCell.swift in Sources */,
 				77C413D323E5A35F008EE41D /* StatusCellBottomView.swift in Sources */,
 				771A31AD23CF3323003C784B /* WBProfileViewController.swift in Sources */,

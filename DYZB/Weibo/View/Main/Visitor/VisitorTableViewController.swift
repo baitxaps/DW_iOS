@@ -24,12 +24,12 @@ class VisitorTableViewController: UITableViewController {
         userLogon ? super.loadView():setupVisitorView()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if userLogon {
-            addPullToRefresh()
-        }
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        if userLogon {
+//            addPullToRefresh()
+//        }
+//    }
     
     private func setupVisitorView() {
         visitorView = VisitorView()

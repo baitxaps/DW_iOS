@@ -19,7 +19,7 @@ class WBHomeTableViewController: VisitorTableViewController {
         
         prepareTabaleView()
         
-        loadStatus() {}
+        loadStatus()
     }
     
     private func prepareTabaleView() {
@@ -27,9 +27,13 @@ class WBHomeTableViewController: VisitorTableViewController {
         
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 400
-        // tableView.rowHeight =  UITableView.automaticDimension//400
+     // tableView.rowHeight =  UITableView.automaticDimension//400
         tableView.register(StatusNormalCell.self,forCellReuseIdentifier:StatusCellNormalId)
         tableView.register(StatusRetweetedCell.self,forCellReuseIdentifier:StatusCellRetweetedId)
+        
+        //h:60
+        refreshControl = WBRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(loadStatus), for: UIControl.Event.valueChanged)
     }
 }
 
@@ -38,8 +42,12 @@ class WBHomeTableViewController: VisitorTableViewController {
 
 extension WBHomeTableViewController {
     /// - see:[https://open.weibo.com/wiki/2/statuses/home_timeline](获取当前登录用户及其所关注（授权）用户的最新微博)
-    func loadStatus(finished:()->()) {
+    @objc func loadStatus() {
+        refreshControl?.beginRefreshing()
+        
         listViewModel.loadStatus { (isSuccess) in
+            self.refreshControl?.endRefreshing()
+            
             if !isSuccess {
                 return
             }

@@ -47,13 +47,12 @@ class StatusListViewModel {
             print(dataList)
             // join the data
             self.statusList = self.statusList + dataList
-            finished(true)
-            
-            self.cacheSingleImage(dataList: dataList)
+           
+            self.cacheSingleImage(dataList: dataList,finished:finished)
         }
     }
    
-    private func cacheSingleImage(dataList:[StatusViewModel]) {
+    private func cacheSingleImage(dataList:[StatusViewModel],finished:@escaping (_ isSuccessed:Bool)->()) {
         var dataLength = 0
         let group = DispatchGroup()
         
@@ -74,7 +73,11 @@ class StatusListViewModel {
                     group.leave()
                 case .success(let response):
                     //response.image
-                    guard let data = (response.image.pngData() as NSData?) else {
+                    let image:UIImage? = response.image
+                    
+                    guard image != nil else { return }
+          
+                    guard let data = (image!.pngData() as NSData?) else {
                         return
                     }
                     dataLength += data.length
@@ -86,6 +89,7 @@ class StatusListViewModel {
             
             group.notify(queue: DispatchQueue.main) {
                print("cache dataLength:\(dataLength/1024) K")
+                finished(true)
             }
         }
     }

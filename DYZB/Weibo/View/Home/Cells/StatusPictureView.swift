@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 private let StatusPictureViewItemMargin :CGFloat = 6
 private let StatusPictureCellId = "StatusPictureCellId"
@@ -110,7 +111,26 @@ extension StatusPictureView {
         }
         
         if count == 1 {
-            let size = CGSize(width: 150, height: 120)
+            var size = CGSize(width: 150, height: 120)
+            
+            guard let url = viewModel?.thumbnailUrls?.first?.absoluteURL else {return size  }
+            guard let key = url.absoluteString.removingPercentEncoding else {return size }
+            guard let image =
+                KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: key) else {
+                return size
+            }
+            size = image.size
+            
+            // 过窄处理，针对长图
+            size.width = size.width < 40 ? 40 :size.width
+            //过宽的图片
+            if size.width > 300 {
+                //高等比缩放: h/w = heith/width
+                let w:CGFloat = 300
+                let h = size.height * CGFloat(w) / size.width
+                size = CGSize(width:w, height: h)
+            }
+            
             layout.itemSize = size
             return size
         }

@@ -12,6 +12,12 @@ let StatusCellRetweetedId = "StatusCellRetweetedId"
 
 class WBHomeTableViewController: VisitorTableViewController {
     private var listViewModel = StatusListViewModel()
+    
+    private lazy var pullupView:UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.color = UIColor.lightGray
+        return indicator
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +25,7 @@ class WBHomeTableViewController: VisitorTableViewController {
         
         prepareTabaleView()
         
-        loadStatus()
+        loadData()
     }
     
     private func prepareTabaleView() {
@@ -33,20 +39,26 @@ class WBHomeTableViewController: VisitorTableViewController {
         
         //h:60
         refreshControl = WBRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(loadStatus), for: UIControl.Event.valueChanged)
+        refreshControl?.addTarget(self, action: #selector(loadData), for: UIControl.Event.valueChanged)
+        
+        tableView.tableFooterView = pullupView
     }
 }
 
 
-//MARK:- loadStatus
+//MARK:- loadData
 
 extension WBHomeTableViewController {
     /// - see:[https://open.weibo.com/wiki/2/statuses/home_timeline](获取当前登录用户及其所关注（授权）用户的最新微博)
-    @objc func loadStatus() {
+    @objc func loadData() {
         refreshControl?.beginRefreshing()
+    
+        let since_id = self.listViewModel.statusList.first?.status.id ?? 0
+        let max_id = self.listViewModel.statusList.last?.status.id ?? 0
         
-        listViewModel.loadStatus { (isSuccess) in
+        listViewModel.loadStatus(withIsPull:pullupView.isAnimating, since_id:since_id, max_id:max_id) { (isSuccess) in
             self.refreshControl?.endRefreshing()
+            self.pullupView.stopAnimating()
             
             if !isSuccess {
                 return
@@ -54,7 +66,6 @@ extension WBHomeTableViewController {
             self.tableView.reloadData()
         }
     }
-    
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +79,12 @@ extension WBHomeTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier:vm.cellId, for: indexPath) as! StatusCell
         
         cell.viewModel = vm
+        
+        if indexPath.row == listViewModel.statusList.count - 1  && !pullupView.isAnimating {
+            pullupView.startAnimating()
+            loadData()
+        }
+        
         return cell
     }
     

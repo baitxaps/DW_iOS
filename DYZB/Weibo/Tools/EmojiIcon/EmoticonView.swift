@@ -8,19 +8,20 @@
 
 import UIKit
 
-private let EmojiIconViewCellId = "EmojiIconViewCellId"
+private let EmoticonViewCellId = "EmoticonViewCellId"
 
-class EmojiIconView: UIView {
+class EmoticonView: UIView {
     @objc func clickItem(item:UIBarButtonItem) {
         print(item.tag)
     }
     
     override init(frame:CGRect) {
         var rect = UIScreen.main.bounds
-        rect.size.height = 216 + safeBottomHeight()
+        rect.size.height = 226 + safeBottomHeight()
+//      rect.size.height = 216 + safeBottomHeight()
         super.init(frame:rect)
         
-        backgroundColor = UIColor.red
+//        backgroundColor = UIColor.red
         setupUI()
     }
     
@@ -61,7 +62,7 @@ class EmojiIconView: UIView {
     }
 }
 
-private extension EmojiIconView {
+private extension EmoticonView {
     private func setupUI() {
         addSubview(toolbar)
         addSubview(collectionView)
@@ -70,7 +71,7 @@ private extension EmojiIconView {
             make.bottom.equalTo(self.snp.bottom).offset(-safeBottomHeight())
             make.left.equalTo(self.snp.left)
             make.right.equalTo(self.snp.right)
-            make.height.equalTo(36)
+            make.height.equalTo(44)
         }
         
         collectionView.snp.makeConstraints { (make) in
@@ -106,25 +107,42 @@ private extension EmojiIconView {
     
     private func perpareCollectionView() {
         collectionView.backgroundColor = UIColor.lightGray
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: EmojiIconViewCellId)
+        collectionView.register(EmoticonViewCell.self, forCellWithReuseIdentifier: EmoticonViewCellId)
         
         collectionView.dataSource = self
     }
 }
 
 // MARK:- UICollectionViewDataSource
-extension EmojiIconView:UICollectionViewDataSource {
+extension EmoticonView:UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 21 * 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmojiIconViewCellId, for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmoticonViewCellId, for: indexPath) as! EmoticonViewCell
+        cell.emoticonButton.setTitle("\(indexPath.item)",for:.normal)
+        //cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
         return cell
+    }
+}
+
+private class EmoticonViewCell :UICollectionViewCell {
+    override init(frame:CGRect) {
+        super.init(frame:frame)
+        contentView.addSubview(emoticonButton)
+        emoticonButton.frame = bounds.insetBy(dx: 4,dy: 4)
+        emoticonButton.backgroundColor = UIColor.white
+        emoticonButton.setTitleColor(UIColor.black, for:.normal)
+        print(frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
+    fileprivate lazy var emoticonButton:UIButton = UIButton()
 }
 
 

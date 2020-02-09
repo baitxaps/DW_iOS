@@ -19,13 +19,43 @@ class EmoticonPackage: NSObject {
     // 懒加载的表情模型的空数组
     lazy var emoticons = [Emoticon]()
     
-    init(array:[[String:AnyObject]]) {
+    init(array:[[String:AnyObject]],dict:[String: AnyObject]) {
         super.init()
-        for d in array {
+        
+        groupName  = dict["groupName"] as? String ?? ""
+        directory = dict["directory"] as? String ?? ""
+        bgImageName = dict["bgImageName"] as? String ?? ""
+        
+        var index = 0
+        for var d in array {
+            if let png = d["png"] as? String,let dir = directory {
+                d["png"] = dir + "/" + png as AnyObject
+            }
             emoticons.append(Emoticon(dict:d))
+            
+            index += 1
+            if index == 20 {
+                emoticons.append(Emoticon(isRemoved:true))
+                index = 0
+            }
         }
+        appendEmptyEmoticon()
     }
-    /// 表情包目录，从目录下加载 info.plist 可以创建表情模型数组
+    
+    private func appendEmptyEmoticon() {
+        let count = emoticons.count % 21
+        if emoticons.count > 0 && count == 0 {
+            return
+        }
+        print("\(groupName ?? "") 剩余表情数量 \(count)")
+        
+        for _ in count..<20 {
+            emoticons.append(Emoticon(isEmpty:true))
+        }
+        emoticons.append(Emoticon(isRemoved:true))
+    }
+    
+    // 表情包目录，从目录下加载 info.plist 可以创建表情模型数组
 //    var directory: String? {
 //        didSet {
 //            // 当设置目录时，从目录下加载 info.plist

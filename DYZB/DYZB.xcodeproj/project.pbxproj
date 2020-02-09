@@ -103,7 +103,7 @@
 		77D8F14323EEE9F400935B2D /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77D8F14123EEE9F400935B2D /* Emoticons.bundle */; };
 		77D8F14723EEEB0B00935B2D /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D8F14623EEEB0B00935B2D /* Emoticon.swift */; };
 		77D8F14923EEEC9F00935B2D /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D8F14823EEEC9F00935B2D /* EmoticonPackage.swift */; };
-		77D8F14C23EEF29F00935B2D /* EmoticonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D8F14B23EEF29F00935B2D /* EmoticonViewModel.swift */; };
+		77D8F14C23EEF29F00935B2D /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D8F14B23EEF29F00935B2D /* EmoticonManager.swift */; };
 		77D964D423E2FF2500964BC3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D964D323E2FF2500964BC3 /* WelcomeViewController.swift */; };
 		77DBD5DD23A7BBBE005C6DB3 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */; };
 		77E3315923A6467800E3416D /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E3315823A6467800E3416D /* HttpTools.swift */; };
@@ -226,7 +226,7 @@
 		77D8F14123EEE9F400935B2D /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		77D8F14623EEEB0B00935B2D /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		77D8F14823EEEC9F00935B2D /* EmoticonPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
-		77D8F14B23EEF29F00935B2D /* EmoticonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonViewModel.swift; sourceTree = "<group>"; };
+		77D8F14B23EEF29F00935B2D /* EmoticonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
 		77D964D323E2FF2500964BC3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		77E3315823A6467800E3416D /* HttpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
@@ -679,7 +679,7 @@
 		77D8F14A23EEF26D00935B2D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				77D8F14B23EEF29F00935B2D /* EmoticonViewModel.swift */,
+				77D8F14B23EEF29F00935B2D /* EmoticonManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -910,7 +910,7 @@
 				63517CE81DAB8B2700ACACBF /* BaseAnchorViewController.swift in Sources */,
 				638C60E31DA8E91700A370F1 /* GameViewController.swift in Sources */,
 				632FCEA21D8E6CCB00C9F8D6 /* RecommendViewController.swift in Sources */,
-				77D8F14C23EEF29F00935B2D /* EmoticonViewModel.swift in Sources */,
+				77D8F14C23EEF29F00935B2D /* EmoticonManager.swift in Sources */,
 				77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */,
 				63744BF11D8F862C00BF4B96 /* AnchorGroup.swift in Sources */,
 				63A9773E1DAC788300DB9157 /* AmuseMenuViewCell.swift in Sources */,

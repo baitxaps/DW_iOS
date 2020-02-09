@@ -11,24 +11,36 @@ import UIKit
 private let EmoticonViewCellId = "EmoticonViewCellId"
 
 class EmoticonView: UIView {
+    
+    private var selectedEmoticonCallBack:(_ emoticon:Emoticon)->()
+    
     @objc func clickItem(item:UIBarButtonItem) {
         print(item.tag)
+        let indexPath = NSIndexPath(item:0,section:item.tag)
+        collectionView.scrollToItem(at:indexPath as IndexPath, at: .left, animated: true)
     }
     
-    override init(frame:CGRect) {
+    init(selectedEmoticon:@escaping (_:Emoticon)->()) {
+        
+        selectedEmoticonCallBack = selectedEmoticon
+        
         var rect = UIScreen.main.bounds
-        rect.size.height = 226 + safeBottomHeight()
-//      rect.size.height = 216 + safeBottomHeight()
+        rect.size.height = 226 + safeBottomHeight()//216
         super.init(frame:rect)
         
-//        backgroundColor = UIColor.red
         setupUI()
+        
+        let indexPath = NSIndexPath(item:0,section:1)
+        delay(delta: 0.3) {
+            self.collectionView.scrollToItem(at:indexPath as IndexPath, at: .left, animated: false)
+        }
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder:coder)
-        setupUI()
-    }
+    private lazy var packages = EmoticonManager.sharedManager.packages
     
     private lazy var collectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout:EmoticonLayout())
     
@@ -64,6 +76,7 @@ class EmoticonView: UIView {
 
 private extension EmoticonView {
     private func setupUI() {
+        backgroundColor = UIColor.white
         addSubview(toolbar)
         addSubview(collectionView)
         
@@ -92,9 +105,8 @@ private extension EmoticonView {
         toolbar.tintColor = UIColor.darkGray
         var items:[UIBarButtonItem] = [UIBarButtonItem]()
         var index = 0
-        for title in ["最近","默认","emoji","浪小花"] {
-            
-            items.append(UIBarButtonItem(title: title, style: .plain, target:self, action: #selector(clickItem)))
+        for title in packages {
+            items.append(UIBarButtonItem(title: title.groupName, style: .plain, target:self, action: #selector(clickItem)))
             items.last?.tag = index
             index = index + 1
 
@@ -110,30 +122,56 @@ private extension EmoticonView {
         collectionView.register(EmoticonViewCell.self, forCellWithReuseIdentifier: EmoticonViewCellId)
         
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
 }
 
 // MARK:- UICollectionViewDataSource
-extension EmoticonView:UICollectionViewDataSource {
+extension EmoticonView:UICollectionViewDataSource,UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return packages.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 21 * 3
+        return packages[section].emoticons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmoticonViewCellId, for: indexPath) as! EmoticonViewCell
-        cell.emoticonButton.setTitle("\(indexPath.item)",for:.normal)
-        //cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
+        cell.emotion = packages[indexPath.section].emoticons[indexPath.item]
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let em = packages[indexPath.section].emoticons[indexPath.item]
+        
+        selectedEmoticonCallBack(em)
     }
 }
 
 private class EmoticonViewCell :UICollectionViewCell {
+    var emotion:Emoticon? {
+        didSet {
+            emoticonButton.setImage(UIImage(contentsOfFile: emotion!.imagePath), for:.normal)
+            emoticonButton.setTitle(emotion?.emoji, for: .normal)
+            
+            if emotion!.isRemoved {
+                emoticonButton.setImage(UIImage(contentsOfFile: emotion!.deleteImagePath), for:.normal)
+            }
+        }
+    }
+    
     override init(frame:CGRect) {
         super.init(frame:frame)
         contentView.addSubview(emoticonButton)
         emoticonButton.frame = bounds.insetBy(dx: 4,dy: 4)
         emoticonButton.backgroundColor = UIColor.white
         emoticonButton.setTitleColor(UIColor.black, for:.normal)
+        emoticonButton.isUserInteractionEnabled = false
+        // font 的大小和高度相近
+        emoticonButton.titleLabel?.font = UIFont.systemFont(ofSize: 32)
         print(frame)
     }
     

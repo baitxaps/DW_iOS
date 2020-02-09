@@ -21,39 +21,38 @@ import Foundation
  png 在本地显示的图片名称
  code emoji的字符串编码
  */
-class EmoticonViewModel {
+class EmoticonManager {
+    static let sharedManager = EmoticonManager()
+    
     lazy var packages = [EmoticonPackage]()
-    init() {
+    private init() {
+
+        packages.append(EmoticonPackage(array:[],dict:(["groupName":"最近A"] as [String : AnyObject])))
+        
         guard let path = Bundle.main.path(forResource: "Emoticons.bundle", ofType: nil),
             let bundle = Bundle(path: path),
             let plist = bundle.path(forResource:"emoticons.plist", ofType: nil),
-            let data = NSArray(contentsOfFile: plist) as? [[String: String]]
+            let data = NSArray(contentsOfFile: plist) as? [[String: AnyObject]]
             else {
                 return
         }
         
-        for id:[String: String] in data  {
-            guard let dictory = id["directory"] else {continue}
+        for id:[String: AnyObject] in data  {
             //print(dictory)
-            loadInfoPlist(id: dictory)
-
-            loadOthers(dict: id)
+            loadInfoPlist(dict: id)
         }
+        print(packages)
     }
     
-    private func loadInfoPlist(id:String) {
-        let path = Bundle.main.path(forResource:"info.plist", ofType: nil,inDirectory: "Emoticons.bundle/Contents/Resources/\(id)")!
-        print(path)
-        let data = NSArray(contentsOfFile: path) as! [[String:AnyObject]]
-        print(data)
+    private func loadInfoPlist(dict:[String: AnyObject]) {
+        guard let dictory = dict["directory"] else {return}
         
-        packages.append(EmoticonPackage(array: data))
-    }
-    
-    private func loadOthers(dict:[String: String]) {
-        packages.last?.groupName  = dict["groupName"]
-        packages.last?.directory = dict["directory"]
-        packages.last?.bgImageName = dict["bgImageName"]
+        let path = Bundle.main.path(forResource:"info.plist", ofType: nil,inDirectory: "Emoticons.bundle/Contents/Resources/\(dictory)")!
+       // print(path)
+        let data = NSArray(contentsOfFile: path) as! [[String:AnyObject]]
+       // print(data)
+        
+        packages.append(EmoticonPackage(array:data,dict:dict))
     }
 }
 

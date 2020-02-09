@@ -20,33 +20,54 @@ class Emoticon: NSObject {
     var times: Int = 0
     // emoji 的字符串
     var emoji: String?
-    // 表情模型所在的目录
+    // id 表情模型所在的目录
     var directory: String?
+    
+    var isRemoved = false
+    
+    var isEmpty = false
     
     var code: String? {
         didSet {
-            guard let code = code else {
-                return
-            }
-            emoji = code.emoji
+            emoji = code?.emoji
         }
     }
+    
+    var imagePath:String {
+        if png == nil {
+            return ""
+        }
+        return Bundle.main.bundlePath + "/Emoticons.bundle/Contents/Resources/" + png!
+    }
+    
+    var deleteImagePath:String {
+         return Bundle.main.bundlePath + "/Emoticons.bundle/Contents/Resources/" + "compose_emotion_delete.png"
+    }
+    
     /// `图片`表情对应的图像
-    var image: UIImage? {
-        // 判断表情类型
-        if type {
-            return nil
-        }
-
-        guard let directory = directory,
-            let png = png,
-            let path = Bundle.main.path(forResource: "Emoticons.bundle", ofType: nil),
-            let bundle = Bundle(path: path)
-            else {
-                return nil
-        }
-
-        return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
+//    var image: UIImage? {
+//        // 判断表情类型
+//        if type {
+//            return nil
+//        }
+//
+//        guard let directory = directory,
+//            let png = png,
+//            let path = Bundle.main.path(forResource: "Emoticons.bundle", ofType: nil),
+//            let bundle = Bundle(path: path)
+//            else {
+//                return nil
+//        }
+//
+//        return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
+//    }
+    
+    init(isEmpty:Bool) {
+        self.isEmpty = isEmpty
+    }
+    
+    init(isRemoved:Bool) {
+        self.isRemoved = isRemoved
     }
     
     init(dict:[String:AnyObject]) {
@@ -57,7 +78,7 @@ class Emoticon: NSObject {
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
 
     override var description: String {
-        let keys = ["chs","png","code","type","times","emoji","directory"]
+        let keys = ["chs","png","code","type","times","emoji","directory","isRemoved"]
         return dictionaryWithValues(forKeys: keys).description
     }
 }

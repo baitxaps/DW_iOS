@@ -11,20 +11,20 @@ import UIKit
 class WBProfileTableViewController: VisitorTableViewController {
     
     private lazy var emoticonView:EmoticonView = EmoticonView {[weak self](emotion) in
-        self?.textView.text = emotion.chs
+//      self?.insertEmoticon(em: emotion)
+        self?.insertImageEmoticon(em: emotion)
     }
     
     fileprivate lazy var textView:UITextView = {
         let tv = UITextView()
         tv.frame = CGRect(x: 0, y: -200,width: kScreenW, height: 200)
+        tv.font = UIFont.systemFont(ofSize: 20.0)
         return tv
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         visitorView?.setupInfo(imageName: nil,title:"关注一些人，回这里看看有什么惊喜")
-        
         setupUI()
         print(EmoticonManager.sharedManager)
     }
@@ -36,22 +36,80 @@ class WBProfileTableViewController: VisitorTableViewController {
 }
 
 extension WBProfileTableViewController {
-    private func setupUI() {
+    
+    fileprivate func emotinText() {
+        if textView.attributedText.length == 0 {
+            return
+        }
+        guard let attrText = textView.attributedText else {return}
         
+        attrText.enumerateAttributes(in: NSRange(location: 0, length: attrText.length), options: [], using: { (dict, range, _) in
+            print("------")
+            let key : NSAttributedString.Key = NSAttributedString.Key(rawValue: "NSAttachment")
+            if dict[key] != nil {
+                print("png")
+            }else {
+               // guard let str:String = attrText as? String else {return}
+              //  let tmp = (str as NSString).substring(with: range)
+                print(attrText)
+            }
+        })
+    }
+    
+    fileprivate func insertImageEmoticon(em:Emoticon) {
+        
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(contentsOfFile: em.imagePath)
+        
+        // 线高表示字体的高度
+        let height = textView.font!.lineHeight
+        
+        // frame = center + bounds * transform
+        // bounds(x,y) = contentOffset
+        attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
+        // 图片属性文本
+        let imageText = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        // 设置字体属性
+        imageText.addAttribute(NSAttributedString.Key.font,value:textView.font!, range: NSRange(location: 0, length: 1))
+        
+        let attrStrM = NSMutableAttributedString(attributedString:textView.attributedText)
+        
+        attrStrM.replaceCharacters(in: textView.selectedRange, with: imageText)
+        
+        //
+        let range = textView.selectedRange
+        textView.attributedText = attrStrM
+        textView.selectedRange = NSRange(location: range.location + 1, length: 0)
+    }
+    
+    fileprivate func insertEmoticon(em:Emoticon) {
+        if em.isEmpty {return}
+        
+        if em.isRemoved {
+            textView.deleteBackward()
+            return
+        }
+        
+        if let emoji = em.emoji {
+            textView.replace(textView.selectedTextRange!, withText: emoji)
+            return
+        }
+    }
+    
+    
+    private func setupUI() {
         tableView.addSubview(textView)
         textView.inputView = emoticonView
-        textView.text = "滑动隐藏键盘"
+        //textView.text = "滑动隐藏键盘"
         
-//        textView.snp.makeConstraints { (make) in
-//            make.left.equalTo(tableView.snp.left)
-//            make.right.equalTo(tableView.snp.right)
-//            make.top.equalTo(-200)
-//            make.height.equalTo(200)
-//        }
         tableView.contentInset = UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         textView.resignFirstResponder()
-     }
+    }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        emotinText()
+    }
 }

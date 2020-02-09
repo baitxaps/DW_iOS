@@ -26,8 +26,11 @@ class EmoticonManager {
     
     lazy var packages = [EmoticonPackage]()
     private init() {
-
-        packages.append(EmoticonPackage(array:[],dict:(["groupName":"最近A"] as [String : AnyObject])))
+        loadPlist()
+    }
+    
+    private func loadPlist() {
+        packages.append(EmoticonPackage(array:[],dict:(["groupName":"最近"] as [String : AnyObject])))
         
         guard let path = Bundle.main.path(forResource: "Emoticons.bundle", ofType: nil),
             let bundle = Bundle(path: path),
@@ -48,9 +51,9 @@ class EmoticonManager {
         guard let dictory = dict["directory"] else {return}
         
         let path = Bundle.main.path(forResource:"info.plist", ofType: nil,inDirectory: "Emoticons.bundle/Contents/Resources/\(dictory)")!
-       // print(path)
+        // print(path)
         let data = NSArray(contentsOfFile: path) as! [[String:AnyObject]]
-       // print(data)
+        // print(data)
         
         packages.append(EmoticonPackage(array:data,dict:dict))
     }

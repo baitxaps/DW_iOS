@@ -20,6 +20,9 @@
 // ctrl+ cmd +e :全局修改关键字
 // cmd + option +enter:助理编辑器(option+点击)
 // cmd +shift + f:全局查找
+//上移：option+command+[：如果没选中，就移动光标所在行
+//下移：option+command+]：如果选中，就移动被选中的那几行
+
 
 /*
  as:转换

@@ -11,9 +11,6 @@ import UIKit
 private let EmoticonViewCellId = "EmoticonViewCellId"
 
 class EmoticonView: UIView {
-    
-    private var selectedEmoticonCallBack:(_ emoticon:Emoticon)->()
-    
     @objc func clickItem(item:UIBarButtonItem) {
         print(item.tag)
         let indexPath = NSIndexPath(item:0,section:item.tag)
@@ -39,6 +36,8 @@ class EmoticonView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private var selectedEmoticonCallBack:(_ emoticon:Emoticon)->()
     
     private lazy var packages = EmoticonManager.sharedManager.packages
     

@@ -64,10 +64,12 @@ class Emoticon: NSObject {
     
     init(isEmpty:Bool) {
         self.isEmpty = isEmpty
+        super.init()
     }
     
     init(isRemoved:Bool) {
         self.isRemoved = isRemoved
+        super.init()
     }
     
     init(dict:[String:AnyObject]) {

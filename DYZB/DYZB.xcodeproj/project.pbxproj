@@ -90,6 +90,7 @@
 		7766448D23EFF6B9002BC384 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7766448723EFF6B9002BC384 /* Emoticons.bundle */; };
 		7766448E23EFF6B9002BC384 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766448923EFF6B9002BC384 /* Emoticon.swift */; };
 		7766448F23EFF6B9002BC384 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766448A23EFF6B9002BC384 /* EmoticonPackage.swift */; };
+		776F936323F2EE3300F2057D /* EmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F936223F2EE3300F2057D /* EmoticonAttachment.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -213,6 +214,7 @@
 		7766448723EFF6B9002BC384 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		7766448923EFF6B9002BC384 /* Emoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		7766448A23EFF6B9002BC384 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
+		776F936223F2EE3300F2057D /* EmoticonAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAttachment.swift; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 			children = (
 				7766448923EFF6B9002BC384 /* Emoticon.swift */,
 				7766448A23EFF6B9002BC384 /* EmoticonPackage.swift */,
+				776F936223F2EE3300F2057D /* EmoticonAttachment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -941,6 +944,7 @@
 				77E3315923A6467800E3416D /* HttpTools.swift in Sources */,
 				77C413CC23E58FC8008EE41D /* StatusViewModel.swift in Sources */,
 				63517CE11DAB82CE00ACACBF /* AmuseViewController.swift in Sources */,
+				776F936323F2EE3300F2057D /* EmoticonAttachment.swift in Sources */,
 				63F571D11D88F249002761B7 /* PageContentView.swift in Sources */,
 				63F571CB1D88DC33002761B7 /* UIBarButtonItem-Extension.swift in Sources */,
 				771BC1CF23D343C4006A2AF3 /* UserAccount.swift in Sources */,

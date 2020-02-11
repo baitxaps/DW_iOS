@@ -38,27 +38,30 @@ class WBProfileTableViewController: VisitorTableViewController {
 extension WBProfileTableViewController {
     
     fileprivate func emotinText() {
-        if textView.attributedText.length == 0 {
-            return
-        }
-        guard let attrText = textView.attributedText else {return}
+        if textView.attributedText.length == 0 {return  }
+        guard let attText = textView.attributedText else {return}
+       
+        var strM = String()
         
-        attrText.enumerateAttributes(in: NSRange(location: 0, length: attrText.length), options: [], using: { (dict, range, _) in
+        attText.enumerateAttributes(in: NSRange(location: 0, length: attText.length), options: [], using: { (dict, range, _) in
             print("------")
             let key : NSAttributedString.Key = NSAttributedString.Key(rawValue: "NSAttachment")
-            if dict[key] != nil {
-                print("png")
+            if let attachemnt = dict[key] as? EmoticonAttachment {
+              //  print("pic:\(attachemnt.emoticon)")
+                strM += attachemnt.emoticon.chs ?? ""
             }else {
-               // guard let str:String = attrText as? String else {return}
-              //  let tmp = (str as NSString).substring(with: range)
-                print(attrText)
+                let str = (attText.string as NSString).substring(with: range)
+              //  print(str)
+                strM += str
             }
         })
+        print("res :\(strM)")
     }
+    
     
     fileprivate func insertImageEmoticon(em:Emoticon) {
         
-        let attachment = NSTextAttachment()
+        let attachment = EmoticonAttachment(emoticon: em)
         attachment.image = UIImage(contentsOfFile: em.imagePath)
         
         // 线高表示字体的高度
@@ -100,7 +103,7 @@ extension WBProfileTableViewController {
     private func setupUI() {
         tableView.addSubview(textView)
         textView.inputView = emoticonView
-        //textView.text = "滑动隐藏键盘"
+        textView.text = "滑动隐藏键盘"
         
         tableView.contentInset = UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0)
     }

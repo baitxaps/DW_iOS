@@ -38,6 +38,7 @@ class WBProfileTableViewController: VisitorTableViewController {
 extension WBProfileTableViewController {
 
     private func setupUI() {
+        guard let tableView = tableView else {return}
         tableView.addSubview(textView)
         textView.inputView = emoticonView
         textView.text = "滑动隐藏键盘"

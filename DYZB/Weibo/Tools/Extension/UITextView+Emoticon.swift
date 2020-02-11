@@ -36,18 +36,6 @@ extension UITextView {
     
     
     func insertImageEmoticon(em:Emoticon) {
-//        let attachment = EmoticonAttachment(emoticon: em)
-//        attachment.image = UIImage(contentsOfFile: em.imagePath)
-//        // 线高表示字体的高度
-//        let height = font!.lineHeight
-//        // frame = center + bounds * transform
-//        // bounds(x,y) = contentOffset
-//        attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
-//        // 图片属性文本
-//        let imageText = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
-//        // 设置字体属性
-//        imageText.addAttribute(NSAttributedString.Key.font,value:font!, range: NSRange(location: 0, length: 1))
-        
         // image var
         let imageText = EmoticonAttachment(emoticon: em).imageText(font: font!)
         // UITextView.attributedText -> NSMutableAttributedString

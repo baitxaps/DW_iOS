@@ -9,15 +9,17 @@
 import UIKit
 
 extension UIButton {
-    convenience init(imageName:String,backImageName:String) {
+    convenience init(imageName:String,backImageName:String?) {
         self.init()
         
         setImage(UIImage(named:imageName),for: UIControl.State.normal)
         setImage(UIImage(named:imageName+"_highlighted"),for:.highlighted)
         
-        setBackgroundImage(UIImage(named:backImageName),for:UIControl.State.normal)
+        if let backImageName = backImageName {
+            setBackgroundImage(UIImage(named:backImageName),for:UIControl.State.normal)
+            setBackgroundImage(UIImage(named:backImageName+"_highlighted"),for:.highlighted)
+        }
         
-        setBackgroundImage(UIImage(named:backImageName+"_highlighted"),for:.highlighted)
         sizeToFit()
     }
     

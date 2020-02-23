@@ -15,6 +15,17 @@ class WBMainViewController: UITabBarController {
     
     @objc private func clickComposedButton() {
         print("clickComposedButton")
+        
+        var vc:UIViewController
+        if UserAccountViewModel.shared.userLogin {
+            vc = ComposeViewController()
+        }else {
+            vc = OAuthViewController()
+        }
+    
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        present(nav, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {

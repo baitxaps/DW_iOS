@@ -110,6 +110,8 @@
 		77DBD5DD23A7BBBE005C6DB3 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */; };
 		77E3315923A6467800E3416D /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E3315823A6467800E3416D /* HttpTools.swift */; };
 		77EDE5DB23D0A16700C33036 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDE5DA23D0A16700C33036 /* VisitorView.swift */; };
+		77F489A424022748006D04DB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A324022748006D04DB /* ComposeViewController.swift */; };
+		77F489A8240244B1006D04DB /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */; };
 		F098FD8D4E4E6AA1645261FF /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +237,8 @@
 		77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		77E3315823A6467800E3416D /* HttpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
 		77EDE5DA23D0A16700C33036 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		77F489A324022748006D04DB /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,6 +549,7 @@
 		771A31A323CF32B3003C784B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				77F489A0240225D9006D04DB /* Compose */,
 				771BC1CB23D31270006A2AF3 /* OAuth */,
 				771A31B023CF47B1003C784B /* Message */,
 				771A31A423CF32B3003C784B /* Home */,
@@ -609,6 +614,7 @@
 				7753597023E438F400F178F5 /* UIView+IndicatorView.swift */,
 				77D8F13F23EEDF7700935B2D /* String+Emoji.swift */,
 				776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */,
+				77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -670,8 +676,8 @@
 		7766448823EFF6B9002BC384 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7766448923EFF6B9002BC384 /* Emoticon.swift */,
 				7766448A23EFF6B9002BC384 /* EmoticonPackage.swift */,
+				7766448923EFF6B9002BC384 /* Emoticon.swift */,
 				776F936223F2EE3300F2057D /* EmoticonAttachment.swift */,
 			);
 			path = Model;
@@ -688,6 +694,14 @@
 				773C3A1F23E6AF9B00112F40 /* StatusPictureView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		77F489A0240225D9006D04DB /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				77F489A324022748006D04DB /* ComposeViewController.swift */,
+			);
+			path = Compose;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
@@ -924,6 +938,7 @@
 				6332FCF31DB0659F002F1054 /* FunnyViewController.swift in Sources */,
 				773C3A2023E6AF9B00112F40 /* StatusPictureView.swift in Sources */,
 				7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */,
+				77F489A424022748006D04DB /* ComposeViewController.swift in Sources */,
 				7766448C23EFF6B9002BC384 /* EmoticonView.swift in Sources */,
 				77C413CA23E56E7C008EE41D /* User.swift in Sources */,
 				77C413CF23E5A2EB008EE41D /* StatusCell.swift in Sources */,
@@ -963,6 +978,7 @@
 				771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */,
 				771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */,
 				632FCEA91D8E779600C9F8D6 /* CollectionNormalCell.swift in Sources */,
+				77F489A8240244B1006D04DB /* UIBarButtonItem+Extension.swift in Sources */,
 				632FDC681D9230FC00B6C536 /* CollectionGameCell.swift in Sources */,
 				771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */,
 				770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */,
@@ -1144,7 +1160,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = xmgprofile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1162,7 +1178,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = xmgprofile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

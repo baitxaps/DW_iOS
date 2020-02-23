@@ -22,7 +22,9 @@
 // cmd +shift + f:全局查找
 //上移：option+command+[：如果没选中，就移动光标所在行
 //下移：option+command+]：如果选中，就移动被选中的那几行
-
+//局部折叠（折叠一个函数）：Command+Option+Left/Right
+//全局折叠（折叠当前文件下的全部函数）：Shift+Command+Option+Left/Right
+//折叠注释块：（/* */之间的文字）： Ctrl+Shift+Command+Left/Right
 
 /*
  as:转换

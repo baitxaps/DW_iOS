@@ -21,9 +21,25 @@ class ComposeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    //{"error":"Insufficient app permissions!","error_code":10014,request = "/2/statuses/update.json"}
+    //https://jingyan.baidu.com/article/fdffd1f8384e28f3e98ca1f0.html
+    
     @objc private func sendStatus() {
         print("send msg")
-       
+        let text = textView.emotinText
+    
+        ComposeViewModel.postStatus(status: text, image: nil) { (response, error) in
+            print(response)
+            
+            guard let response = response as? [String : AnyObject] else {return}
+            
+            let error = (response["error"]) as! String
+            if error.caseInsensitiveCompare("expired_token").rawValue == 0 {
+                print("expired_token")
+            }
+          
+        }
     }
     
     @objc private func selectEmoticon() {

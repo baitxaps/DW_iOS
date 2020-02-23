@@ -30,7 +30,7 @@ class OAuthViewController: UIViewController {
     
     @objc func autoFill() {
         let js = "document.getElementById('userId').value = 'chenhairong_2008@sina.com'; " +
-        "document.getElementById('passwd').value = '~Vs059581004';"
+        "document.getElementById('passwd').value = 'Rhc2008';"
         webView.stringByEvaluatingJavaScript(from: js)
     }
     
@@ -74,7 +74,8 @@ extension OAuthViewController:UIWebViewDelegate {
                 print(UserAccountViewModel.shared.account ?? "")
                
                 self.dismiss(animated: false) {
-                   NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: "welcome")
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: "welcome")
+//                   NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: "welcome")
                 }
             }else {
                 print("failure.")

@@ -112,6 +112,7 @@
 		77EDE5DB23D0A16700C33036 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDE5DA23D0A16700C33036 /* VisitorView.swift */; };
 		77F489A424022748006D04DB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A324022748006D04DB /* ComposeViewController.swift */; };
 		77F489A8240244B1006D04DB /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */; };
+		77F489AB24028782006D04DB /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489AA24028782006D04DB /* ComposeViewModel.swift */; };
 		F098FD8D4E4E6AA1645261FF /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */; };
 /* End PBXBuildFile section */
 
@@ -239,6 +240,7 @@
 		77EDE5DA23D0A16700C33036 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		77F489A324022748006D04DB /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		77F489AA24028782006D04DB /* ComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,9 +701,18 @@
 		77F489A0240225D9006D04DB /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				77F489A92402875F006D04DB /* ViewModel */,
 				77F489A324022748006D04DB /* ComposeViewController.swift */,
 			);
 			path = Compose;
+			sourceTree = "<group>";
+		};
+		77F489A92402875F006D04DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F489AA24028782006D04DB /* ComposeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
@@ -942,6 +953,7 @@
 				7766448C23EFF6B9002BC384 /* EmoticonView.swift in Sources */,
 				77C413CA23E56E7C008EE41D /* User.swift in Sources */,
 				77C413CF23E5A2EB008EE41D /* StatusCell.swift in Sources */,
+				77F489AB24028782006D04DB /* ComposeViewModel.swift in Sources */,
 				63F571C61D88D8DF002761B7 /* MainViewController.swift in Sources */,
 				63F571CD1D88E9D2002761B7 /* PageTitleView.swift in Sources */,
 				77306F2E23D1F93C0041A5AE /* UILabel+Extension.swift in Sources */,

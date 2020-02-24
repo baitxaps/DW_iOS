@@ -61,5 +61,9 @@ extension UITextView {
             replace(selectedTextRange!, withText: emoji)
             return
         }
+        
+        insertImageEmoticon(em: em)
+        
+        delegate?.textViewDidChange?(self)
     }
 }

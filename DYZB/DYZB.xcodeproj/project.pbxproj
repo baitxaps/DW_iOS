@@ -92,6 +92,7 @@
 		7766448F23EFF6B9002BC384 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766448A23EFF6B9002BC384 /* EmoticonPackage.swift */; };
 		776F936323F2EE3300F2057D /* EmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F936223F2EE3300F2057D /* EmoticonAttachment.swift */; };
 		776F936523F2FC6200F2057D /* UITextView+Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */; };
+		777179E52403C9A300CFD390 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777179E42403C9A300CFD390 /* ComposeViewModel.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -112,7 +113,6 @@
 		77EDE5DB23D0A16700C33036 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDE5DA23D0A16700C33036 /* VisitorView.swift */; };
 		77F489A424022748006D04DB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A324022748006D04DB /* ComposeViewController.swift */; };
 		77F489A8240244B1006D04DB /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */; };
-		77F489AB24028782006D04DB /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489AA24028782006D04DB /* ComposeViewModel.swift */; };
 		F098FD8D4E4E6AA1645261FF /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */; };
 /* End PBXBuildFile section */
 
@@ -220,6 +220,7 @@
 		7766448A23EFF6B9002BC384 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		776F936223F2EE3300F2057D /* EmoticonAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAttachment.swift; sourceTree = "<group>"; };
 		776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Emoticon.swift"; sourceTree = "<group>"; };
+		777179E42403C9A300CFD390 /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +241,6 @@
 		77EDE5DA23D0A16700C33036 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		77F489A324022748006D04DB /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
-		77F489AA24028782006D04DB /* ComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +522,7 @@
 		771A31A023CF32B3003C784B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				777179E42403C9A300CFD390 /* ComposeViewModel.swift */,
 				773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */,
 				7753597423E4757B00F178F5 /* StatusListViewModel.swift */,
 				77C413CB23E58FC8008EE41D /* StatusViewModel.swift */,
@@ -659,7 +660,6 @@
 		7766448323EFF6B9002BC384 /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
-				7766448423EFF6B9002BC384 /* ViewModel */,
 				7766448623EFF6B9002BC384 /* EmoticonView.swift */,
 				7766448723EFF6B9002BC384 /* Emoticons.bundle */,
 				7766448823EFF6B9002BC384 /* Model */,
@@ -667,17 +667,10 @@
 			path = Emoticon;
 			sourceTree = "<group>";
 		};
-		7766448423EFF6B9002BC384 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7766448523EFF6B9002BC384 /* EmoticonManager.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		7766448823EFF6B9002BC384 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7766448523EFF6B9002BC384 /* EmoticonManager.swift */,
 				7766448A23EFF6B9002BC384 /* EmoticonPackage.swift */,
 				7766448923EFF6B9002BC384 /* Emoticon.swift */,
 				776F936223F2EE3300F2057D /* EmoticonAttachment.swift */,
@@ -701,18 +694,9 @@
 		77F489A0240225D9006D04DB /* Compose */ = {
 			isa = PBXGroup;
 			children = (
-				77F489A92402875F006D04DB /* ViewModel */,
 				77F489A324022748006D04DB /* ComposeViewController.swift */,
 			);
 			path = Compose;
-			sourceTree = "<group>";
-		};
-		77F489A92402875F006D04DB /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				77F489AA24028782006D04DB /* ComposeViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
@@ -953,7 +937,7 @@
 				7766448C23EFF6B9002BC384 /* EmoticonView.swift in Sources */,
 				77C413CA23E56E7C008EE41D /* User.swift in Sources */,
 				77C413CF23E5A2EB008EE41D /* StatusCell.swift in Sources */,
-				77F489AB24028782006D04DB /* ComposeViewModel.swift in Sources */,
+				777179E52403C9A300CFD390 /* ComposeViewModel.swift in Sources */,
 				63F571C61D88D8DF002761B7 /* MainViewController.swift in Sources */,
 				63F571CD1D88E9D2002761B7 /* PageTitleView.swift in Sources */,
 				77306F2E23D1F93C0041A5AE /* UILabel+Extension.swift in Sources */,

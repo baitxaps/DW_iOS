@@ -22,11 +22,8 @@ extension ComposeViewModel {
     
     class func postStatus(status:String, image: UIImage?, finishedCallback :@escaping (_ result :Any,_ error:Error?) -> ()) {
     
-        guard let token = UserAccountViewModel.shared.accesstoken else { return }
-        
-        var params = [String:String]()
-        params["status"] = status
-        params["access_token"] = token
+        var parameters = [String:String]()
+        parameters["status"] = status
         
         var fileName: String?
         var data: Data?
@@ -38,15 +35,14 @@ extension ComposeViewModel {
         let urlString: String
         if image == nil {
             urlString = "https://api.weibo.com/2/statuses/update.json"
-            NetworkTools.requestData(.post, URLString: urlString, parameters:params) { (response, error) in
-                finishedCallback(response,error)
-            }
             
+            NetworkTools.tokenRequest(.post, URLString: urlString, parameters:parameters, finishedCallback:finishedCallback)
+
         } else {
             guard let data = data else {return}
             
             urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
-            NetworkTools.upload(URLString: urlString, parameters:params as [String : AnyObject], data: data, name:fileName!) { (response, error) in
+            NetworkTools.upload(URLString: urlString, parameters:parameters as [String : AnyObject], data: data, name:fileName!) { (response, error) in
                 
                 finishedCallback(response,error)
             }

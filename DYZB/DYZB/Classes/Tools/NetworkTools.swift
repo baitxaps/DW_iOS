@@ -75,6 +75,7 @@ class NetworkTools {
         // name:服务器接收文件的参数名（判断是哪一张图片）
         // fileName:服务器获取到图片的名称
         // mimeType:文件类型, 告诉服务器上传文件的类型，如果不想告诉，可以使用application/octet-stream
+        
         // image/* , ( image/png image/jpg image/gif)
         
         // php
@@ -82,8 +83,8 @@ class NetworkTools {
         //$file = isset($_FILES['file']) ? $_FILE['file'] : null;
         
         Alamofire.upload(multipartFormData: { (formData) in
-            // 这里传递更多参数
-            formData.append(data, withName: name, fileName: "picFile", mimeType: "application/octet-stream")
+            // 加更多参数
+            formData.append(data, withName: name, fileName: "pic", mimeType: "application/octet-stream")
             
         }, to: URL(string:URLString)!) { (result) in
             print("数据准备完成")
@@ -99,5 +100,36 @@ class NetworkTools {
                 break
             }
         }
+    }
+}
+
+
+extension NetworkTools {
+    class func appendToken(paramters:inout [String : Any]?) -> Bool {
+        guard let token = UserAccountViewModel.shared.accesstoken else {
+            return false
+        }
+        
+        if paramters == nil {
+            paramters = [String:Any]()
+        }
+        paramters!["access_token"] = token
+        
+        return true
+    }
+    
+    class func tokenRequest(_ type : MethodType, URLString : String,parameters:[String : Any]?=nil, finishedCallback :@escaping (_ result : Any,_ error:Error?) -> ()) {
+
+        guard let token = UserAccountViewModel.shared.accesstoken else {
+            
+            finishedCallback([:],NSError(domain: "huse.cn.error", code: -1001, userInfo: ["message":"token is nil"]))
+            return;
+        }
+        var tmpParams = [String : Any]()
+        
+        tmpParams["access_token"] = token
+        for(key,value) in (parameters ?? [:]) {tmpParams[key] = value}
+        
+        NetworkTools.requestData(type,URLString:URLString,parameters:tmpParams, finishedCallback:finishedCallback)
     }
 }

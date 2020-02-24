@@ -14,7 +14,7 @@ class Status: NSObject {
     var created_at:String?  // 微博创建时间
     var text :String?       // 微博信息内容
     var source :String?     // 微博来源
-    var user:User?          // User model
+    var user:User?        
     var pic_urls:[[String:String]]? // key:thumbnail_pic
     var retweeted_status:Status?    //被转发的原微博信息字段，当该微博为转发微博时返回
     

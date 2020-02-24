@@ -11,10 +11,9 @@ import UIKit
 class ComposeViewController: UIViewController {
     
     private lazy var emoticonView:EmoticonView = EmoticonView {[weak self](emotion) in
-//      self?.insertEmoticon(em: emotion)
+        // self?.insertEmoticon(em: emotion)
         self?.textView.insertImageEmoticon(em: emotion)
     }
-        
     
     @objc private func close() {
         textView.resignFirstResponder()
@@ -28,7 +27,8 @@ class ComposeViewController: UIViewController {
     @objc private func sendStatus() {
         print("send msg")
         let text = textView.emotinText
-    
+        if (text.count <= 0 ) { return  }
+
         ComposeViewModel.postStatus(status: text, image: nil) { (response, error) in
             print(response)
             
@@ -37,8 +37,10 @@ class ComposeViewController: UIViewController {
             let error = (response["error"]) as! String
             if error.caseInsensitiveCompare("expired_token").rawValue == 0 {
                 print("expired_token")
+                return
             }
-          
+            
+            self.close()
         }
     }
     
@@ -49,10 +51,10 @@ class ComposeViewController: UIViewController {
         // 如果是使用的是系统键盘，是nil
         textView.inputView = textView.inputView == nil ?  emoticonView :nil
         textView.becomeFirstResponder()
-     }
+    }
     
     @objc private func keyboardChange(n:NSNotification) {
-       print(n)
+        print(n)
         // struct : NSValue
         let rect = (n.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         print(rect)
@@ -77,8 +79,8 @@ class ComposeViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
         
-      //  let anim = toolbar.layer.animation(forKey: "position")
-      //  print("animted:\(anim?.duration)")
+        //  let anim = toolbar.layer.animation(forKey: "position")
+        //  print("animted:\(anim?.duration)")
     }
     
     override func viewDidLoad() {
@@ -93,12 +95,12 @@ class ComposeViewController: UIViewController {
         super.viewDidAppear(animated)
         textView.becomeFirstResponder()
     }
-
+    
     override func loadView() {
         view = UIView()
         setupUI()
     }
-
+    
     private lazy var toolbar = UIToolbar()
     
     private lazy var textView:UITextView = {
@@ -106,11 +108,20 @@ class ComposeViewController: UIViewController {
         tv.font = UIFont.systemFont(ofSize: 18)
         tv.textColor = UIColor.darkGray
         tv.alwaysBounceVertical = true
+        tv.delegate = self
         tv.keyboardDismissMode = .onDrag
         return tv
     }()
     
     private lazy var placeHolderLabel = UILabel(title: "分享新鲜事...", fontSize: 18, color: UIColor.lightGray)
+}
+
+// MARK: - UITextViewDelegate
+extension ComposeViewController:UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
+        placeHolderLabel.isHidden = textView.hasText
+    }
 }
 
 // MARK: - setupUI
@@ -131,7 +142,7 @@ private extension ComposeViewController {
             make.right.equalTo(view.snp.right)
             make.top.equalTo(view.snp.topMargin)
         }
-        textView.text = "分享新鲜事..."
+      //textView.text = "分享新鲜事..."
         textView.addSubview(placeHolderLabel)
         placeHolderLabel.snp.makeConstraints { (make) in
             make.top.equalTo(textView.snp.top).offset(8)
@@ -159,17 +170,18 @@ private extension ComposeViewController {
         var items = [UIBarButtonItem]()
         for dict in itemSettings {
             items.append(UIBarButtonItem(image: dict["imageName"]!,target: self,
-            actionName: dict["actionName"]))
+                                         actionName: dict["actionName"]))
             items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
         }
         items.removeLast()
         toolbar.items = items
     }
     
-   private func prepareNavigationBar() {
+    private func prepareNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(close));
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发布", style: .plain, target: self, action: #selector(sendStatus));
+        
+        navigationItem.rightBarButtonItem?.isEnabled = false
         
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 36))
         navigationItem.titleView = titleView

@@ -10,7 +10,6 @@ import UIKit
 
 @objcMembers
 class User: NSObject {
-    // 基本数据类型 & private 不能使用 KVC 设置
     var id: Int = 0
     /// 用户昵称
     var screen_name: String?

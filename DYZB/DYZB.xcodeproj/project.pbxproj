@@ -77,6 +77,7 @@
 		77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */; };
 		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
 		77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */; };
+		7732034D2405587F00330AE8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732034C2405587F00330AE8 /* UIImage+Extension.swift */; };
 		773956E423E819ED005AF55E /* StatusRetweetedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773956E323E819ED005AF55E /* StatusRetweetedCell.swift */; };
 		773956E623E84267005AF55E /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773956E523E84267005AF55E /* StatusNormalCell.swift */; };
 		773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */; };
@@ -93,6 +94,7 @@
 		776F936323F2EE3300F2057D /* EmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F936223F2EE3300F2057D /* EmoticonAttachment.swift */; };
 		776F936523F2FC6200F2057D /* UITextView+Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */; };
 		777179E52403C9A300CFD390 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777179E42403C9A300CFD390 /* ComposeViewModel.swift */; };
+		777179EA2403F15D00CFD390 /* PicturePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777179E92403F15D00CFD390 /* PicturePickerController.swift */; };
 		7772BD2A23CCA8E7006035AC /* PositionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2923CCA8E7006035AC /* PositionDetailController.swift */; };
 		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
 		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
@@ -205,6 +207,7 @@
 		77306F2F23D1FBDD0041A5AE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisatchQueue+Extension.swift"; sourceTree = "<group>"; };
+		7732034C2405587F00330AE8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		773956E323E819ED005AF55E /* StatusRetweetedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRetweetedCell.swift; sourceTree = "<group>"; };
 		773956E523E84267005AF55E /* StatusNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
 		773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 		776F936223F2EE3300F2057D /* EmoticonAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAttachment.swift; sourceTree = "<group>"; };
 		776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Emoticon.swift"; sourceTree = "<group>"; };
 		777179E42403C9A300CFD390 /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
+		777179E92403F15D00CFD390 /* PicturePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePickerController.swift; sourceTree = "<group>"; };
 		7772BD2923CCA8E7006035AC /* PositionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionDetailController.swift; sourceTree = "<group>"; };
 		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
 		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
@@ -552,6 +556,7 @@
 		771A31A323CF32B3003C784B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				777179E62403EFF600CFD390 /* PicturePicker */,
 				77F489A0240225D9006D04DB /* Compose */,
 				771BC1CB23D31270006A2AF3 /* OAuth */,
 				771A31B023CF47B1003C784B /* Message */,
@@ -618,6 +623,7 @@
 				77D8F13F23EEDF7700935B2D /* String+Emoji.swift */,
 				776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */,
 				77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */,
+				7732034C2405587F00330AE8 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -676,6 +682,14 @@
 				776F936223F2EE3300F2057D /* EmoticonAttachment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		777179E62403EFF600CFD390 /* PicturePicker */ = {
+			isa = PBXGroup;
+			children = (
+				777179E92403F15D00CFD390 /* PicturePickerController.swift */,
+			);
+			path = PicturePicker;
 			sourceTree = "<group>";
 		};
 		77C413CD23E592BB008EE41D /* Cells */ = {
@@ -962,6 +976,7 @@
 				776F936323F2EE3300F2057D /* EmoticonAttachment.swift in Sources */,
 				63F571D11D88F249002761B7 /* PageContentView.swift in Sources */,
 				63F571CB1D88DC33002761B7 /* UIBarButtonItem-Extension.swift in Sources */,
+				777179EA2403F15D00CFD390 /* PicturePickerController.swift in Sources */,
 				771BC1CF23D343C4006A2AF3 /* UserAccount.swift in Sources */,
 				632FDC631D922CF000B6C536 /* RecommendGameView.swift in Sources */,
 				632FCEAD1D8E7CF400C9F8D6 /* CollectionPrettyCell.swift in Sources */,
@@ -980,6 +995,7 @@
 				770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */,
 				63744BEA1D8F7C2900BF4B96 /* NetworkTools.swift in Sources */,
 				773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */,
+				7732034D2405587F00330AE8 /* UIImage+Extension.swift in Sources */,
 				6332FCFD1DB07C0C002F1054 /* RoomShowViewController.swift in Sources */,
 				774DA1E923D5EED7003A2EF2 /* NewFeatureViewController.swift in Sources */,
 				77306F3023D1FBDE0041A5AE /* UIImageView+Extension.swift in Sources */,

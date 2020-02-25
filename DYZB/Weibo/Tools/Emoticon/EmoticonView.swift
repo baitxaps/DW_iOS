@@ -178,7 +178,6 @@ private class EmoticonViewCell :UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     fileprivate lazy var emoticonButton:UIButton = UIButton()
 }
 

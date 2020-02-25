@@ -9,6 +9,7 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
+    private lazy var picturePickerController = PicturePickerController()
     
     private lazy var emoticonView:EmoticonView = EmoticonView {[weak self](emotion) in
         // self?.insertEmoticon(em: emotion)
@@ -20,16 +21,17 @@ class ComposeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
     //{"error":"Insufficient app permissions!","error_code":10014,request = "/2/statuses/update.json"}
     //https://jingyan.baidu.com/article/fdffd1f8384e28f3e98ca1f0.html
     
+// MARK: - sendStatus
     @objc private func sendStatus() {
         print("send msg")
         let text = textView.emotinText
         if (text.count <= 0 ) { return  }
 
-        ComposeViewModel.postStatus(status: text, image: nil) { (response, error) in
+        let image = picturePickerController.pictures.last
+        ComposeViewModel.postStatus(status: text, image: image) { (response, error) in
             print(response)
             
             guard let response = response as? [String : AnyObject] else {return}
@@ -44,6 +46,29 @@ class ComposeViewController: UIViewController {
         }
     }
     
+    @objc private func selectPicture() {
+        textView.resignFirstResponder()
+        
+        if picturePickerController.view.frame.height > 0 {
+            return
+        }
+ 
+        picturePickerController.view.snp.updateConstraints { (make) in
+            make.height.equalTo(view.bounds.height * 0.6)
+        }
+        
+        textView.snp.remakeConstraints { (make) in
+            make.bottom.equalTo(picturePickerController.view.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            make.top.equalTo(view.snp.topMargin)
+        }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
     @objc private func selectEmoticon() {
         print("selectEmoticon\(String(describing: textView.inputView))")
         
@@ -53,6 +78,7 @@ class ComposeViewController: UIViewController {
         textView.becomeFirstResponder()
     }
     
+    // MARK: - keyboardChange
     @objc private func keyboardChange(n:NSNotification) {
         print(n)
         // struct : NSValue
@@ -67,8 +93,9 @@ class ComposeViewController: UIViewController {
         let curve = (n.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).intValue
         
         let offset = -UIScreen.main.bounds.height + rect.origin.y
+        let isZero = (offset < 0) ? offset: -safeBottomHeight()
         toolbar.snp.updateConstraints { (make) in
-            make.bottom.equalTo(view.snp.bottom).offset(offset)//-rect.height
+            make.bottom.equalTo(view.snp.bottom).offset(isZero)//-rect.height
         }
         
         UIView.animate(withDuration: duration) {//CAAnimation 包装
@@ -83,6 +110,12 @@ class ComposeViewController: UIViewController {
         //  print("animted:\(anim?.duration)")
     }
     
+    // MARK: - loadView
+    override func loadView() {
+        view = UIView()
+        setupUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange),name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -93,12 +126,9 @@ class ComposeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        textView.becomeFirstResponder()
-    }
-    
-    override func loadView() {
-        view = UIView()
-        setupUI()
+        if picturePickerController.view.frame.height == 0 {
+            textView.becomeFirstResponder()
+        }
     }
     
     private lazy var toolbar = UIToolbar()
@@ -128,10 +158,24 @@ extension ComposeViewController:UITextViewDelegate {
 private extension ComposeViewController {
     func setupUI() {
         view.backgroundColor = UIColor.white
+        automaticallyAdjustsScrollViewInsets = false
         
         prepareNavigationBar()
         prepareToolbar()
         preparetextView()
+        preparePicturePicker()
+    }
+    
+    private func preparePicturePicker() {
+        addChild(picturePickerController)
+        view.insertSubview(picturePickerController.view, belowSubview: toolbar)
+       // view.addSubview(picturePickerController.view)
+        picturePickerController.view.snp.makeConstraints { (make) in
+            make.bottom.equalTo(view.snp.bottom)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            make.height.equalTo(0)//multipliedBy(0.6) read only
+        }
     }
     
     private func preparetextView() {
@@ -161,7 +205,7 @@ private extension ComposeViewController {
             make.height.equalTo(44)
         }
         
-        let itemSettings = [["imageName": "compose_toolbar_picture"],
+        let itemSettings = [["imageName": "compose_toolbar_picture","actionName": "selectPicture"],
                             ["imageName": "compose_mentionbutton_background"],
                             ["imageName": "compose_trendbutton_background"],
                             ["imageName": "compose_emoticonbutton_background", "actionName": "selectEmoticon"],

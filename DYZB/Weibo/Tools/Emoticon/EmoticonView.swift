@@ -22,7 +22,7 @@ class EmoticonView: UIView {
         selectedEmoticonCallBack = selectedEmoticon
         
         var rect = UIScreen.main.bounds
-        rect.size.height = 226 + safeBottomHeight()//216
+        rect.size.height = (isIPhoneXType() ? 226 : 200 ) + safeBottomHeight()//216 226
         super.init(frame:rect)
         
         setupUI()
@@ -58,7 +58,7 @@ class EmoticonView: UIView {
             let col :CGFloat = 7
             let row :CGFloat = 3
             let w :CGFloat = (collectionView!.bounds.width ) / col
-            let margin:CGFloat = (collectionView!.bounds.height - row * w ) * 0.499
+            let margin:CGFloat = (collectionView!.bounds.height - row * w ) * 0.499//0.499
             
             itemSize = CGSize(width: w, height: w)
             minimumInteritemSpacing = 0

@@ -61,7 +61,7 @@ class ComposeViewController: UIViewController {
             make.bottom.equalTo(picturePickerController.view.snp.top)
             make.left.equalTo(view.snp.left)
             make.right.equalTo(view.snp.right)
-            make.top.equalTo(view.snp.topMargin)
+            make.top.equalTo(view.snp.topMargin)//
         }
         
         UIView.animate(withDuration: 0.5) {
@@ -159,7 +159,8 @@ private extension ComposeViewController {
     func setupUI() {
         view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
-        
+        edgesForExtendedLayout = []
+      //  self.edgesForExtendedLayout = UIRectEdgeNone;
         prepareNavigationBar()
         prepareToolbar()
         preparetextView()

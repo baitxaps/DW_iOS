@@ -36,6 +36,7 @@ class StatusPictureView: UICollectionView {
         backgroundColor = UIColor(white: 0.8, alpha: 1.0)
         
         dataSource = self
+      //  delegate = self
         register(StatusPictureViewCell.self, forCellWithReuseIdentifier: StatusPictureCellId)
     }
     

@@ -16,6 +16,18 @@ class PhotoBrowserViewController: UIViewController {
     
     @objc private func save() {
         print("save")
+        let cell = collectionView.visibleCells[0] as! PhotoBrowserCell
+        guard let image = cell.imageView.image else {
+            return
+        }
+        
+        // Selector(("image:didFinishSavingWithError:contextInfo:"))
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc private func image(image:UIImage,didFinishSavingWithError error:NSError?, contextInfo:AnyObject?) {
+        let message = error == nil ? "保存成功":"保存失败"
+        print(message)
     }
     
     init(urls:[URL],indexPath:NSIndexPath) {
@@ -38,7 +50,7 @@ class PhotoBrowserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.setupUI()
+        collectionView.scrollToItem(at:currentIndexPath as IndexPath, at: .centeredHorizontally, animated: false)
     }
     
     private var urls:[URL]

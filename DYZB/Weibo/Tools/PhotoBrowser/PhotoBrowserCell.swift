@@ -144,7 +144,7 @@ class PhotoBrowserCell: UICollectionViewCell {
     }
     
     private lazy var scrollView:UIScrollView = UIScrollView()
-    private lazy var imageView:UIImageView = UIImageView()
+    lazy var imageView:UIImageView = UIImageView()
     private lazy var placeHolder:ProgressImageView = ProgressImageView()
 }
 

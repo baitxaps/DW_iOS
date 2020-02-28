@@ -22,8 +22,14 @@ let WBAppearanceTintColor = UIColor.orange
 // switch rootvc for notification
 let WBSwitchRootViewControllerNotification = "WBSwitchRootViewControllerNotification"
 
-// selected
+// SelectedPhoto
 let WBStatusSelectedPhotoNotification = "WBStatusSelectedPhotoNotification"
+
+//SelectedPhotoIndexPathKey
+let WBStatusSelectedPhotoIndexPathKey = "WBStatusSelectedPhotoIndexPathKey"
+
+//SelectedPhotoURLsKey
+let WBStatusSelectedPhotoURLsKey = "WBStatusSelectedPhotoURLsKey"
 
 // MARK: - 应用程序信息
 /// 应用程序 ID

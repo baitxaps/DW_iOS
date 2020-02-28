@@ -74,7 +74,7 @@ extension OAuthViewController:UIWebViewDelegate {
                 print(UserAccountViewModel.shared.account ?? "")
                
                 self.dismiss(animated: false) {
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: "welcome")
+                    NotificationCenter.default.post(name: NSNotification.Name( WBSwitchRootViewControllerNotification), object: "welcome")
 //                   NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: "welcome")
                 }
             }else {

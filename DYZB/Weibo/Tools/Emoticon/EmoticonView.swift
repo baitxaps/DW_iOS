@@ -22,7 +22,7 @@ class EmoticonView: UIView {
         selectedEmoticonCallBack = selectedEmoticon
         
         var rect = UIScreen.main.bounds
-        rect.size.height = (isIPhoneXType() ? 226 : 200 ) + safeBottomHeight()//216 226
+        rect.size.height = (isIPhoneXType() ? 226 : 196 ) + safeBottomHeight()//216 226
         super.init(frame:rect)
         
         setupUI()

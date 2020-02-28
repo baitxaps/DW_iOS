@@ -19,6 +19,11 @@ class WBHomeTableViewController: VisitorTableViewController {
         return indicator
     }()
 
+    // MARK:- deinit
+    deinit {
+         NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         visitorView?.setupInfo(imageName: nil,title:"登录后，别人评论你的微博")
@@ -26,6 +31,24 @@ class WBHomeTableViewController: VisitorTableViewController {
         prepareTabaleView()
         
         loadData()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(selectedPhoto),name: NSNotification.Name(WBStatusSelectedPhotoNotification), object: nil)
+        // notification->self
+        NotificationCenter.default.addObserver(forName:NSNotification.Name( WBStatusSelectedPhotoNotification), object: nil, queue:nil) {[weak self] (n) in
+           // print(n)
+            guard let indexPath = n.userInfo?[WBStatusSelectedPhotoIndexPathKey] as? NSIndexPath else {
+                return
+            }
+            
+            guard let urls = n.userInfo?[WBStatusSelectedPhotoURLsKey] as? [URL] else {
+                return
+            }
+            print(indexPath,urls)
+            
+            let vc = PhotoBrowserViewController(urls: urls, indexPath: indexPath)
+            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self?.present(vc, animated: true, completion: nil)
+        }
     }
     
     private func prepareTabaleView() {

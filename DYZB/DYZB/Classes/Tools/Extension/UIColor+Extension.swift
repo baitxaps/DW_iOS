@@ -1,5 +1,5 @@
 //
-//  UIColor-Extension.swift
+//  UIColor+Extension.swift
 //  DYZB
 //
 //  Created by hairong chen on  9/14.

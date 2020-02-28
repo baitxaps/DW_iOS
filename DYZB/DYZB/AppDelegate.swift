@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // NewFeatureViewController()
         window?.makeKeyAndVisible()
         
-        NotificationCenter.default.addObserver(forName:NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: nil, queue: nil) { [weak self] (notification) in
+        NotificationCenter.default.addObserver(forName:NSNotification.Name( WBSwitchRootViewControllerNotification), object: nil, queue: nil) { [weak self] (notification) in
             print(Thread.current)
             print(notification)
             if let _ = notification.object {
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: WBSwitchRootViewControllerNotification), object: nil)
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name( WBSwitchRootViewControllerNotification), object: nil)
     }
 }
 

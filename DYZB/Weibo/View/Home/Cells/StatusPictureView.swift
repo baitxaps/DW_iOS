@@ -36,7 +36,7 @@ class StatusPictureView: UICollectionView {
         backgroundColor = UIColor(white: 0.8, alpha: 1.0)
         
         dataSource = self
-      //  delegate = self
+        delegate = self
         register(StatusPictureViewCell.self, forCellWithReuseIdentifier: StatusPictureCellId)
     }
     
@@ -45,7 +45,7 @@ class StatusPictureView: UICollectionView {
     }
 }
 
-extension StatusPictureView:UICollectionViewDataSource {
+extension StatusPictureView:UICollectionViewDataSource ,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //      return viewModel?.thumbnailUrls?.count ?? 0
         guard let count = viewModel?.thumbnailUrls?.count else {
@@ -58,6 +58,15 @@ extension StatusPictureView:UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StatusPictureCellId, for: indexPath) as! StatusPictureViewCell
         cell.imageURL = viewModel?.thumbnailUrls![indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("click\(indexPath.item)\(String(describing: viewModel?.thumbnailUrls))")
+   
+        NotificationCenter.default.post(
+                             name: Notification.Name(WBStatusSelectedPhotoNotification) ,
+                             object:self,
+                             userInfo: [WBStatusSelectedPhotoIndexPathKey: indexPath,WBStatusSelectedPhotoURLsKey:viewModel!.thumbnailUrls!])
     }
 }
 

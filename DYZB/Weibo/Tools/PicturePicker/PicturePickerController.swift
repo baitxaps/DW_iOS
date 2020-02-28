@@ -99,8 +99,8 @@ extension PicturePickerController:PicturePickerCellDelegate {
         }
         
         pictures.remove(at: indexPath.item)
-        collectionView.deleteItems(at: [indexPath])
-       // collectionView.reloadData()
+        //collectionView.deleteItems(at: [indexPath])
+        collectionView.reloadData()
     }
 }
 

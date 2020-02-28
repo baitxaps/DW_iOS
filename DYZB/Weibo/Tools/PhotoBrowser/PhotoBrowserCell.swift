@@ -22,18 +22,33 @@ class PhotoBrowserCell: UICollectionViewCell {
             resetScrollView()
             
             // thumbnail
-            imageView.image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: imageURL.absoluteString)
-            imageView.sizeToFit()
-            imageView.center = scrollView.center
-            
+            let placeholder = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: imageURL.absoluteString)
+           setPlaceHolder(image: placeholder)
+
             // thumbnail
             // 清除之前的图片/如果之前图片也是异步下载，但时没有完成，取消之前的异步操作
-            imageView.kf.setImage(with: bmiddleURL(url: imageURL), placeholder: nil, options: [], progressBlock: nil) { (result) in
+            let cache      = KingfisherManager.shared.cache
+            let optionsInfo = [KingfisherOptionsInfoItem.transition(ImageTransition.fade(1)),
+              KingfisherOptionsInfoItem.targetCache(cache),
+              KingfisherOptionsInfoItem.processor(RoundCornerImageProcessor(cornerRadius: 1))]
+          
+            imageView.kf.setImage(with: bmiddleURL(url: imageURL),
+              placeholder: nil,
+              options: optionsInfo,
+              progressBlock: { (current, total) in
+                print("\(current)   \(total)")
+                
+                DispatchQueue.main.async {
+                  self.placeHolder.progress = CGFloat(current) / CGFloat(total)
+                }
+
+            }) { (result) in
                 switch result {
                 case .failure(let error):
                     print(error)
-                    
+
                 case .success(let response):
+                    self.placeHolder.isHidden = true
                     let image:UIImage? = response.image
                     self.setPositon(image: image!)
                 }
@@ -41,7 +56,21 @@ class PhotoBrowserCell: UICollectionViewCell {
         }
     }
     
+    private func setPlaceHolder(image:UIImage?) {
+        placeHolder.isHidden = false
+        
+        placeHolder.image = image
+        placeHolder.sizeToFit()
+        placeHolder.center = scrollView.center
+    }
+    
     private func resetScrollView() {
+        // 重设imageView内容属性, scrollView在处理缩放的时侯，
+        // 是调整代理方法返回视图的transform来实现的
+        // *第一张缩放2， 最后一张不能再缩放(己是2了)*
+        imageView.transform = CGAffineTransform.identity
+        
+        //重设scrollView 内容属性
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.contentOffset = CGPoint.zero
         scrollView.contentSize = CGSize.zero
@@ -101,6 +130,7 @@ class PhotoBrowserCell: UICollectionViewCell {
     private func setupUI() {
         contentView.addSubview(scrollView)
         scrollView.addSubview(imageView)
+        scrollView.addSubview(placeHolder)
        
         // 拖动有一个间隔
         var r = bounds
@@ -115,6 +145,7 @@ class PhotoBrowserCell: UICollectionViewCell {
     
     private lazy var scrollView:UIScrollView = UIScrollView()
     private lazy var imageView:UIImageView = UIImageView()
+    private lazy var placeHolder:ProgressImageView = ProgressImageView()
 }
 
 // MARK:- UIScrollViewDelegate

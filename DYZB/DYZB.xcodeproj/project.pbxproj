@@ -60,6 +60,7 @@
 		63F571CD1D88E9D2002761B7 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571CC1D88E9D2002761B7 /* PageTitleView.swift */; };
 		63F571D11D88F249002761B7 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571D01D88F249002761B7 /* PageContentView.swift */; };
 		63F571D31D88F3DB002761B7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F571D21D88F3DB002761B7 /* UIColor+Extension.swift */; };
+		77092AA524094534009D82AD /* ProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77092AA424094534009D82AD /* ProgressImageView.swift */; };
 		770BF40C23A4E09E0053FAA2 /* BasisLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770BF40B23A4E09E0053FAA2 /* BasisLearning.swift */; };
 		771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31A823CF32DB003C784B /* WBHomeViewController.swift */; };
 		771A31AB23CF3317003C784B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */; };
@@ -191,6 +192,7 @@
 		63F571D21D88F3DB002761B7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "../../../DYZB/Classes/Tools/Extension/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		678BB79C5E664F5183D33499 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
 		70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77092AA424094534009D82AD /* ProgressImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressImageView.swift; sourceTree = "<group>"; };
 		770BF40B23A4E09E0053FAA2 /* BasisLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisLearning.swift; sourceTree = "<group>"; };
 		771A31A823CF32DB003C784B /* WBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 			children = (
 				77A3E3022407CB4600D41E2F /* PhotoBrowserViewController.swift */,
 				77A3E3062407ECE500D41E2F /* PhotoBrowserCell.swift */,
+				77092AA424094534009D82AD /* ProgressImageView.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -940,6 +943,7 @@
 				77A8C00623CB5EC10039970F /* Position.swift in Sources */,
 				63F571D31D88F3DB002761B7 /* UIColor+Extension.swift in Sources */,
 				77A3E3032407CB4600D41E2F /* PhotoBrowserViewController.swift in Sources */,
+				77092AA524094534009D82AD /* ProgressImageView.swift in Sources */,
 				63517CE81DAB8B2700ACACBF /* BaseAnchorViewController.swift in Sources */,
 				638C60E31DA8E91700A370F1 /* GameViewController.swift in Sources */,
 				632FCEA21D8E6CCB00C9F8D6 /* RecommendViewController.swift in Sources */,

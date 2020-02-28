@@ -10,9 +10,6 @@ import UIKit
 private let PhotoBrowserViewCellId = "PhotoBrowserViewCellId"
 
 class PhotoBrowserViewController: UIViewController {
-    private var urls:[URL]
-    private var currentIndexPath:NSIndexPath
-    
     @objc private func close(){
         dismiss(animated: true, completion: nil)
     }
@@ -44,7 +41,9 @@ class PhotoBrowserViewController: UIViewController {
        // self.setupUI()
     }
     
-
+    private var urls:[URL]
+    private var currentIndexPath:NSIndexPath
+    
     private lazy var collectionView :UICollectionView = UICollectionView (frame:CGRect.zero,collectionViewLayout: PhotoBrowserViewLayout())
     private lazy var closeBtn :UIButton = UIButton(title: "关闭", fontSize: 14, color: UIColor.white, imageName:nil, backColor: UIColor.darkGray)
     

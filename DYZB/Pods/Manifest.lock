@@ -13,6 +13,7 @@ PODS:
   - RxSwift (5.0.1)
   - SnapKit (5.0.1)
   - SwiftyJSON (5.0.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - RxSwift (~> 5)
   - SnapKit (~> 5.0.0)
   - SwiftyJSON
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - SwiftyJSON
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -46,7 +49,8 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 16183c0e2f6236290f8d7d04d52a2485a2a05af8
+PODFILE CHECKSUM: 49ee5f51e68b971f8c916dd7b5feb40ee7404430
 
 COCOAPODS: 1.5.3

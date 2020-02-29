@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Kingfisher
+import Toast_Swift
 
 class PhotoBrowserCell: UICollectionViewCell {
     var imageURL:URL? {
@@ -44,9 +45,8 @@ class PhotoBrowserCell: UICollectionViewCell {
 
             }) { (result) in
                 switch result {
-                case .failure(let error):
-                    print(error)
-
+                case .failure(_)://let error
+                    self.makeToast("下载失败", duration: 3.0, position: .center)
                 case .success(let response):
                     self.placeHolder.isHidden = true
                     let image:UIImage? = response.image

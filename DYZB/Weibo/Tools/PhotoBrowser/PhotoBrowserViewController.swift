@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Toast_Swift
+
 private let PhotoBrowserViewCellId = "PhotoBrowserViewCellId"
 
 class PhotoBrowserViewController: UIViewController {
@@ -15,7 +17,7 @@ class PhotoBrowserViewController: UIViewController {
     }
     
     @objc private func save() {
-        print("save")
+       // print("save")
         let cell = collectionView.visibleCells[0] as! PhotoBrowserCell
         guard let image = cell.imageView.image else {
             return
@@ -27,7 +29,9 @@ class PhotoBrowserViewController: UIViewController {
     
     @objc private func image(image:UIImage,didFinishSavingWithError error:NSError?, contextInfo:AnyObject?) {
         let message = error == nil ? "保存成功":"保存失败"
-        print(message)
+     
+        self.view.makeToast(message, duration: 2.0, position: .center)
+    //  self.view.makeToast(message)
     }
     
     init(urls:[URL],indexPath:NSIndexPath) {

@@ -13,8 +13,9 @@ pod 'SnapKit', '~> 5.0.0'
 pod 'RxSwift', '~> 5'
 pod 'RxCocoa', '~> 5'
 pod 'NVActivityIndicatorView'
-
 pod 'DGElasticPullToRefresh'
+
+pod 'Toast-Swift', '~> 5.0.1' #https://github.com/scalessec/Toast-Swift
 
 end
 

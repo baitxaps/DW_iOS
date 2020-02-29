@@ -78,6 +78,7 @@
 		77306F3423D209070041A5AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3323D209070041A5AE /* Common.swift */; };
 		77306F3623D20FAD0041A5AE /* DisatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */; };
 		7732034D2405587F00330AE8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732034C2405587F00330AE8 /* UIImage+Extension.swift */; };
+		7735BA29240A3568001CC97E /* Toast+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735BA28240A3568001CC97E /* Toast+Extension.swift */; };
 		773956E423E819ED005AF55E /* StatusRetweetedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773956E323E819ED005AF55E /* StatusRetweetedCell.swift */; };
 		773956E623E84267005AF55E /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773956E523E84267005AF55E /* StatusNormalCell.swift */; };
 		773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */; };
@@ -210,6 +211,7 @@
 		77306F3323D209070041A5AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		77306F3523D20FAD0041A5AE /* DisatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		7732034C2405587F00330AE8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		7735BA28240A3568001CC97E /* Toast+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast+Extension.swift"; sourceTree = "<group>"; };
 		773956E323E819ED005AF55E /* StatusRetweetedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRetweetedCell.swift; sourceTree = "<group>"; };
 		773956E523E84267005AF55E /* StatusNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
 		773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
@@ -620,6 +622,7 @@
 				7732034C2405587F00330AE8 /* UIImage+Extension.swift */,
 				63F571D21D88F3DB002761B7 /* UIColor+Extension.swift */,
 				63744BEE1D8F83E600BF4B96 /* NSDate+Extension.swift */,
+				7735BA28240A3568001CC97E /* Toast+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				77D964D423E2FF2500964BC3 /* WelcomeViewController.swift in Sources */,
 				7753597523E4757B00F178F5 /* StatusListViewModel.swift in Sources */,
 				632FDC591D92179E00B6C536 /* RecommendCycleView.swift in Sources */,
+				7735BA29240A3568001CC97E /* Toast+Extension.swift in Sources */,
 				771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */,
 				63774CAA1D86598500DCC727 /* AppDelegate.swift in Sources */,
 				771BC1CD23D31295006A2AF3 /* OAuthViewController.swift in Sources */,

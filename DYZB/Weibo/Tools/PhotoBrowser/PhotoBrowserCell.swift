@@ -9,9 +9,24 @@
 import UIKit
 import Foundation
 import Kingfisher
-import Toast_Swift
+
+protocol PhotoBrowseCellDelegate:NSObjectProtocol {
+    func photoBrowserCellDidTapImage()
+}
 
 class PhotoBrowserCell: UICollectionViewCell {
+    weak var phtotDelegate:PhotoBrowseCellDelegate?
+    
+    @objc private func onTapImage() {
+        phtotDelegate?.photoBrowserCellDidTapImage()
+    }
+    
+    /*
+     手势识别是对 touch的一个封装，UIScrollView支持捏合手势，
+    一般做过手势监听的控件，都会屏蔽掉touch事件
+     */
+   // override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){}
+    
     var imageURL:URL? {
         didSet {
 //            KingfisherManager.shared.downloader.downloadImage(with:imageURL ?? URL(string: "")!, options:[]) { (result) in
@@ -46,7 +61,7 @@ class PhotoBrowserCell: UICollectionViewCell {
             }) { (result) in
                 switch result {
                 case .failure(_)://let error
-                    self.makeToast("下载失败", duration: 3.0, position: .center)
+                    self.Toast(text:"下载失败")
                 case .success(let response):
                     self.placeHolder.isHidden = true
                     let image:UIImage? = response.image
@@ -141,6 +156,10 @@ class PhotoBrowserCell: UICollectionViewCell {
         scrollView.delegate = self
         scrollView.minimumZoomScale = 0.5
         scrollView.maximumZoomScale = 2.0
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTapImage))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tap)
     }
     
     private lazy var scrollView:UIScrollView = UIScrollView()

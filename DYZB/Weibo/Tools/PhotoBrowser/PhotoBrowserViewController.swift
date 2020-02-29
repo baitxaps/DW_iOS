@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Toast_Swift
 
 private let PhotoBrowserViewCellId = "PhotoBrowserViewCellId"
 
@@ -29,8 +28,7 @@ class PhotoBrowserViewController: UIViewController {
     
     @objc private func image(image:UIImage,didFinishSavingWithError error:NSError?, contextInfo:AnyObject?) {
         let message = error == nil ? "保存成功":"保存失败"
-     
-        self.view.makeToast(message, duration: 2.0, position: .center)
+        self.view.Toast(text:message)
     //  self.view.makeToast(message)
     }
     
@@ -121,10 +119,17 @@ extension PhotoBrowserViewController:UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserViewCellId, for: indexPath) as! PhotoBrowserCell
         cell.backgroundColor = UIColor.black
         cell.imageURL = urls[indexPath.item]
+        cell.phtotDelegate = self
         return cell
     }
 }
 
+
+extension PhotoBrowserViewController:PhotoBrowseCellDelegate {
+    func photoBrowserCellDidTapImage() {
+        close()
+    }
+}
 
 
 

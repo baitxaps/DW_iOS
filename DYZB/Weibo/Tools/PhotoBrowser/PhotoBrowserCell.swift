@@ -162,7 +162,7 @@ class PhotoBrowserCell: UICollectionViewCell {
         imageView.addGestureRecognizer(tap)
     }
     
-    private lazy var scrollView:UIScrollView = UIScrollView()
+    lazy var scrollView:UIScrollView = UIScrollView()
     lazy var imageView:UIImageView = UIImageView()
     private lazy var placeHolder:ProgressImageView = ProgressImageView()
 }

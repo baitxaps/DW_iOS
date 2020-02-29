@@ -36,12 +36,19 @@ class WBHomeTableViewController: VisitorTableViewController {
             guard let urls = n.userInfo?[WBStatusSelectedPhotoURLsKey] as? [URL] else {
                 return
             }
-            print(indexPath,urls)
+            
+            // 判断是否cell 是否遵守了展现动画协议
+            guard let cell = n.object as? PhotoBrowserPresentDelegate else {
+                return
+            }
+           // print(indexPath,urls)
             
             let vc = PhotoBrowserViewController(urls: urls, indexPath: indexPath)
             vc.modalPresentationStyle = UIModalPresentationStyle.custom //.fullScreen
             vc.transitioningDelegate = self!.photoBrowserAnimator
-           
+            
+            self?.photoBrowserAnimator.setPresentDelegate(presentDelegate: cell, indexPath: indexPath,dismissDelegate: vc)
+         
             self?.present(vc, animated: true, completion: nil)
         }
     }

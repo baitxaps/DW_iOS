@@ -62,7 +62,10 @@ extension StatusPictureView:UICollectionViewDataSource ,UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("click\(indexPath.item)\(String(describing: viewModel?.thumbnailUrls))")
-   
+        
+       // photoBrowserPresentFromRect(indexPath: indexPath as NSIndexPath)
+       // photoBrowserPresentToRect(indexPath: indexPath as NSIndexPath)
+        
         NotificationCenter.default.post(
                              name: Notification.Name(WBStatusSelectedPhotoNotification) ,
                              object:self,
@@ -164,3 +167,88 @@ extension StatusPictureView {
         return CGSize(width: w, height: h)
     }
 }
+
+// MARK:- PhotoBrowserPresentDelegate
+
+extension StatusPictureView: PhotoBrowserPresentDelegate {
+    // 指定indexPath 对应的imageVIew 用来做动画效果
+    func imageViewForPresent(indexPath:NSIndexPath) -> UIImageView {
+        
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        if let url = viewModel?.thumbnailUrls?[indexPath.item] {
+            iv.kf.setImage(with: url)
+        }
+        
+        return iv
+    }
+     //动画转场的起始位置
+    func photoBrowserPresentFromRect(indexPath:NSIndexPath) -> CGRect {
+        let cell = self.cellForItem(at: indexPath as IndexPath)
+        //print(cell!)
+        
+        // self.是cell的父视图
+        // collectionView 将cell的 frame位置 转换的 keyWindow对应的 frame位置
+        let rect = self.convert(cell!.frame, to: UIApplication.shared.keyWindow)
+        
+        // test
+//        let v = UIView(frame: rect)
+//        v.backgroundColor = UIColor.red
+//        UIApplication.shared.keyWindow?.addSubview(v)
+        
+//        let v = imageViewForPresent(indexPath: indexPath)
+//        v.frame = rect
+//        UIApplication.shared.keyWindow?.addSubview(v)
+        
+        return rect
+    }
+     // 动画转场的目标位置
+    func photoBrowserPresentToRect(indexPath:NSIndexPath) -> CGRect {
+        guard let key = viewModel?.thumbnailUrls?[indexPath.item].absoluteString else {
+            return CGRect.zero
+        }
+        
+        guard let image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: key) else {
+            return CGRect.zero
+        }
+        
+        // 根据图像大小，计算全屏的大小
+        let w = UIScreen.main.bounds.width
+        let h = image.size.height * w / image.size.width
+        
+        let screenHeight = UIScreen.main.bounds.height
+        var y:CGFloat = 0
+        if h < screenHeight { // 图片短，垂直居中显示
+            y = (screenHeight - h ) * 0.5
+        }
+        
+        let rect = CGRect(x: 0, y: y, width: w, height: h);
+
+        // test
+//        let v = imageViewForPresent(indexPath: indexPath)
+//        v.frame = rect
+//        UIApplication.shared.keyWindow?.addSubview(v)
+        
+      return rect
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

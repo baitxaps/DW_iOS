@@ -28,7 +28,7 @@ class PhotoBrowserViewController: UIViewController {
     
     @objc private func image(image:UIImage,didFinishSavingWithError error:NSError?, contextInfo:AnyObject?) {
         let message = error == nil ? "保存成功":"保存失败"
-        self.view.Toast(text:message)
+        self.view.Toast(text:message,duration: 1.0)
     //  self.view.makeToast(message)
     }
     
@@ -124,13 +124,43 @@ extension PhotoBrowserViewController:UICollectionViewDataSource {
     }
 }
 
-
+// MARK - PhotoBrowseCellDelegate
 extension PhotoBrowserViewController:PhotoBrowseCellDelegate {
     func photoBrowserCellDidTapImage() {
+       // imageViewForDismiss()
         close()
     }
 }
 
+
+// MARK - PhotoBrowseCellDelegate
+
+extension PhotoBrowserViewController:PhotoBrowserDismissDelegate {
+     // 解除转场的图像视图
+    func imageViewForDismiss() -> UIImageView {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        
+        // 设置图像，从当前显示的cell中获取
+        let cell = collectionView.visibleCells[0] as! PhotoBrowserCell
+        iv.image = cell.imageView.image
+        
+        // 设置位置，坐标转换（由父视图进行转换)
+        let scrollView :UIScrollView = cell.scrollView
+        iv.frame = scrollView.convert(cell.imageView.frame, to: UIApplication.shared.keyWindow)
+        
+        //test
+        //UIApplication.shared.keyWindow?.addSubview(iv)
+        
+        return iv
+    }
+    
+    // 解除转场的图像索引
+    func indexPathForDismiss() -> NSIndexPath {
+        return collectionView.indexPathsForVisibleItems[0] as NSIndexPath
+    }
+}
 
 
 

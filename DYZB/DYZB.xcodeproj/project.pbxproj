@@ -79,6 +79,7 @@
 		7735BA4E240A4DAE001CC97E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735BA4D240A4DAE001CC97E /* UIColor+Extension.swift */; };
 		7735BA50240A4DD1001CC97E /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735BA4F240A4DD1001CC97E /* NetworkTools.swift */; };
 		7735BA52240A4DD9001CC97E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735BA51240A4DD9001CC97E /* Common.swift */; };
+		7735BA54240A58D4001CC97E /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735BA53240A58D4001CC97E /* PhotoBrowserAnimator.swift */; };
 		773956E423E819ED005AF55E /* StatusRetweetedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773956E323E819ED005AF55E /* StatusRetweetedCell.swift */; };
 		773956E623E84267005AF55E /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773956E523E84267005AF55E /* StatusNormalCell.swift */; };
 		773C0A1B23D48FAE00C05297 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */; };
@@ -212,6 +213,7 @@
 		7735BA4D240A4DAE001CC97E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7735BA4F240A4DD1001CC97E /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		7735BA51240A4DD9001CC97E /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		7735BA53240A58D4001CC97E /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		773956E323E819ED005AF55E /* StatusRetweetedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRetweetedCell.swift; sourceTree = "<group>"; };
 		773956E523E84267005AF55E /* StatusNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
 		773C0A1A23D48FAE00C05297 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
@@ -525,7 +527,6 @@
 				7735BA51240A4DD9001CC97E /* Common.swift */,
 				7735BA4F240A4DD1001CC97E /* NetworkTools.swift */,
 				77A3E3012407CAE300D41E2F /* PhotoBrowser */,
-				777179E62403EFF600CFD390 /* PicturePicker */,
 				7766448323EFF6B9002BC384 /* Emoticon */,
 				771A31B323CF63B5003C784B /* Extension */,
 			);
@@ -545,13 +546,12 @@
 		771A31A323CF32B3003C784B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				77F489A0240225D9006D04DB /* Compose */,
-				771BC1CB23D31270006A2AF3 /* OAuth */,
-				771A31B023CF47B1003C784B /* Message */,
 				771A31A423CF32B3003C784B /* Home */,
+				771A31A723CF32B3003C784B /* Main */,
+				77F489A0240225D9006D04DB /* Compose */,
+				771A31B023CF47B1003C784B /* Message */,
 				771A31A523CF32B3003C784B /* Discover */,
 				771A31A623CF32B3003C784B /* Profile */,
-				771A31A723CF32B3003C784B /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,6 +577,7 @@
 		771A31A623CF32B3003C784B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */,
 				771A31AC23CF3323003C784B /* WBProfileViewController.swift */,
 			);
 			path = Profile;
@@ -628,14 +629,6 @@
 			path = Visitor;
 			sourceTree = "<group>";
 		};
-		771BC1CB23D31270006A2AF3 /* OAuth */ = {
-			isa = PBXGroup;
-			children = (
-				771BC1CC23D31295006A2AF3 /* OAuthViewController.swift */,
-			);
-			path = OAuth;
-			sourceTree = "<group>";
-		};
 		772A804823E982780058AA34 /* RefreshView */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,17 +668,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		777179E62403EFF600CFD390 /* PicturePicker */ = {
-			isa = PBXGroup;
-			children = (
-				777179E92403F15D00CFD390 /* PicturePickerController.swift */,
-			);
-			path = PicturePicker;
-			sourceTree = "<group>";
-		};
 		77A3E3012407CAE300D41E2F /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				7735BA53240A58D4001CC97E /* PhotoBrowserAnimator.swift */,
+				777179E92403F15D00CFD390 /* PicturePickerController.swift */,
 				77A3E3022407CB4600D41E2F /* PhotoBrowserViewController.swift */,
 				77A3E3062407ECE500D41E2F /* PhotoBrowserCell.swift */,
 				77092AA424094534009D82AD /* ProgressImageView.swift */,
@@ -929,6 +916,7 @@
 				632FDC591D92179E00B6C536 /* RecommendCycleView.swift in Sources */,
 				7735BA29240A3568001CC97E /* Toast+Extension.swift in Sources */,
 				771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */,
+				7735BA54240A58D4001CC97E /* PhotoBrowserAnimator.swift in Sources */,
 				63774CAA1D86598500DCC727 /* AppDelegate.swift in Sources */,
 				771BC1CD23D31295006A2AF3 /* OAuthViewController.swift in Sources */,
 				777A6A6023BCAB7B00D8229B /* KThread.swift in Sources */,

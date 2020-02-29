@@ -11,14 +11,7 @@ let StatusCellNormalId = "StatusCellNormalId"
 let StatusCellRetweetedId = "StatusCellRetweetedId"
 
 class WBHomeTableViewController: VisitorTableViewController {
-    private var listViewModel = StatusListViewModel()
-    
-    private lazy var pullupView:UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(style: .whiteLarge)
-        indicator.color = UIColor.lightGray
-        return indicator
-    }()
-
+   
     // MARK:- deinit
     deinit {
          NotificationCenter.default.removeObserver(self)
@@ -46,7 +39,9 @@ class WBHomeTableViewController: VisitorTableViewController {
             print(indexPath,urls)
             
             let vc = PhotoBrowserViewController(urls: urls, indexPath: indexPath)
-            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            vc.modalPresentationStyle = UIModalPresentationStyle.custom //.fullScreen
+            vc.transitioningDelegate = self!.photoBrowserAnimator
+           
             self?.present(vc, animated: true, completion: nil)
         }
     }
@@ -66,6 +61,15 @@ class WBHomeTableViewController: VisitorTableViewController {
         
         tableView.tableFooterView = pullupView
     }
+    
+    private var listViewModel = StatusListViewModel()
+    private lazy var pullupView:UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.color = UIColor.lightGray
+        return indicator
+    }()
+    
+    private lazy var photoBrowserAnimator:PhotoBrowserAnimator = PhotoBrowserAnimator()
 }
 
 

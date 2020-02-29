@@ -33,7 +33,7 @@ class StatusPictureView: UICollectionView {
         layout.minimumInteritemSpacing = StatusPictureViewItemMargin
         
         super.init(frame: CGRect.zero, collectionViewLayout: layout)
-        backgroundColor = UIColor(white: 0.8, alpha: 1.0)
+        backgroundColor = UIColor(white:1, alpha: 1.0)
         
         dataSource = self
         delegate = self
@@ -88,6 +88,7 @@ private class StatusPictureViewCell:UICollectionViewCell {
     }
     
     private func setupUI() {
+        
         contentView.addSubview(iconView)
         iconView.snp.makeConstraints { (make) in
             make.edges.equalTo(contentView.snp.edges)

@@ -67,7 +67,7 @@ extension AppDelegate {
     }
     
     private var isNewVersion:Bool {
-       // print(Bundle.main.infoDictionary!)
+        // print(Bundle.main.infoDictionary!)
         let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         let version = Double(currentVersion)!
         print(version)

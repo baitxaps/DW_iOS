@@ -94,7 +94,7 @@ private extension PhotoBrowserViewController {
         
         saveBtn.snp.makeConstraints { (make) in
             make.bottom.equalTo(view.snp.bottom).offset(-(8 + safeBottomHeight()))
-            make.right.equalTo(view.snp.right).offset(-8)
+            make.right.equalTo(view.snp.right).offset(-28)
             make.size.equalTo(CGSize(width: 100, height: 36))
         }
         

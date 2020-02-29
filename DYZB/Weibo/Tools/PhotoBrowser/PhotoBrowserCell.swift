@@ -43,16 +43,16 @@ class PhotoBrowserCell: UICollectionViewCell {
 
             // thumbnail
             // 清除之前的图片/如果之前图片也是异步下载，但时没有完成，取消之前的异步操作
-            let cache      = KingfisherManager.shared.cache
-            let optionsInfo = [KingfisherOptionsInfoItem.transition(ImageTransition.fade(1)),
-              KingfisherOptionsInfoItem.targetCache(cache),
-              KingfisherOptionsInfoItem.processor(RoundCornerImageProcessor(cornerRadius: 1))]
+            let cache = KingfisherManager.shared.cache
+//            let optionsInfo = [KingfisherOptionsInfoItem.transition(ImageTransition.fade(1)),
+//              KingfisherOptionsInfoItem.targetCache(cache),
+//              KingfisherOptionsInfoItem.processor(RoundCornerImageProcessor(cornerRadius: 1))]
           
             imageView.kf.setImage(with: bmiddleURL(url: imageURL),
               placeholder: nil,
-              options: optionsInfo,
+              options:[KingfisherOptionsInfoItem.targetCache(cache)],
               progressBlock: { (current, total) in
-                print("\(current)   \(total)")
+               // print("\(current)   \(total)")
                 
                 DispatchQueue.main.async {
                   self.placeHolder.progress = CGFloat(current) / CGFloat(total)
@@ -64,7 +64,7 @@ class PhotoBrowserCell: UICollectionViewCell {
                     self.Toast(text:"下载失败")
                 case .success(let response):
                     self.placeHolder.isHidden = true
-                    delay(delta: 0.3) {
+                    delay(delta: 0.1) {
                         let image:UIImage? = response.image
                         self.setPositon(image: image!)
                     }

@@ -121,7 +121,7 @@ extension PicturePickerController:UIImagePickerControllerDelegate,UINavigationCo
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         // 控制内存
-        // 一般在100M 左右，再高就要水注言意了
+        // 一般在100M 左右，再高就要注意了
         let scaleImage = image.scalcToWith(width: 600)
         
         if selectedIndex >= pictures.count {

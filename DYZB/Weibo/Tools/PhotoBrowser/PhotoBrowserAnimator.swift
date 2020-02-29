@@ -61,7 +61,7 @@ class PhotoBrowserAnimator: NSObject,UIViewControllerTransitioningDelegate {
 extension PhotoBrowserAnimator:UIViewControllerAnimatedTransitioning {
     // 动画时长
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.35
+        return 0.3
     }
     
     // 实现具体的动画效果,一时实现了此方法，所有的动画代码都交由程序员负责

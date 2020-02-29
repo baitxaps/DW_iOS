@@ -64,8 +64,10 @@ class PhotoBrowserCell: UICollectionViewCell {
                     self.Toast(text:"下载失败")
                 case .success(let response):
                     self.placeHolder.isHidden = true
-                    let image:UIImage? = response.image
-                    self.setPositon(image: image!)
+                    delay(delta: 0.3) {
+                        let image:UIImage? = response.image
+                        self.setPositon(image: image!)
+                    }
                 }
             }
         }

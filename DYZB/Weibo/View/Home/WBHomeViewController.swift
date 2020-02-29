@@ -45,7 +45,7 @@ class WBHomeTableViewController: VisitorTableViewController {
             
             let vc = PhotoBrowserViewController(urls: urls, indexPath: indexPath)
             vc.modalPresentationStyle = UIModalPresentationStyle.custom //.fullScreen
-            vc.transitioningDelegate = self!.photoBrowserAnimator
+            vc.transitioningDelegate = self?.photoBrowserAnimator
             
             self?.photoBrowserAnimator.setPresentDelegate(presentDelegate: cell, indexPath: indexPath,dismissDelegate: vc)
          

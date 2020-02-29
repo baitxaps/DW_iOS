@@ -65,7 +65,7 @@ extension StatusPictureView:UICollectionViewDataSource ,UICollectionViewDelegate
         
        // photoBrowserPresentFromRect(indexPath: indexPath as NSIndexPath)
        // photoBrowserPresentToRect(indexPath: indexPath as NSIndexPath)
-        
+      
         NotificationCenter.default.post(
                              name: Notification.Name(WBStatusSelectedPhotoNotification) ,
                              object:self,

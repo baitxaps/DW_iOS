@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // WelcomeViewController()
         // WBMainViewController()
         // NewFeatureViewController()
+        
+        testSwiftBridgeOC()
+        
         window?.makeKeyAndVisible()
         
         NotificationCenter.default.addObserver(forName:NSNotification.Name( WBSwitchRootViewControllerNotification), object: nil, queue: nil) { [weak self] (notification) in
@@ -81,3 +84,15 @@ extension AppDelegate {
     }
 }
 
+//MARK:-  oc bridge file
+extension AppDelegate {
+    func testSwiftBridgeOC() {
+        
+         let p = Person()
+         p.name = "name"
+         print(p)
+        // 持久化连接，只做打开数据库动作，不做关闭数据库动作
+        // 后续再使用时，直接做读写操作,效率更高。通常移动端用持久化连接
+        SQLiteManager.sharedManager.openDB(dbName: "demo.db")
+    }
+}

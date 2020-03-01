@@ -88,6 +88,10 @@
 		7753597123E438F400F178F5 /* UIView+IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597023E438F400F178F5 /* UIView+IndicatorView.swift */; };
 		7753597323E4663000F178F5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597223E4663000F178F5 /* Status.swift */; };
 		7753597523E4757B00F178F5 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597423E4757B00F178F5 /* StatusListViewModel.swift */; };
+		7757550E240BCA9C00972562 /* InsertInto.sql in Resources */ = {isa = PBXBuildFile; fileRef = 7757550D240BCA9C00972562 /* InsertInto.sql */; };
+		77575510240BCCDA00972562 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7757550F240BCCDA00972562 /* libsqlite3.tbd */; };
+		77575513240BDF4B00972562 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 77575512240BDF4B00972562 /* Person.m */; };
+		77575517240BE8D200972562 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77575516240BE8D200972562 /* SQLiteManager.swift */; };
 		7766448B23EFF6B9002BC384 /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766448523EFF6B9002BC384 /* EmoticonManager.swift */; };
 		7766448C23EFF6B9002BC384 /* EmoticonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766448623EFF6B9002BC384 /* EmoticonView.swift */; };
 		7766448D23EFF6B9002BC384 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7766448723EFF6B9002BC384 /* Emoticons.bundle */; };
@@ -222,6 +226,12 @@
 		7753597023E438F400F178F5 /* UIView+IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IndicatorView.swift"; sourceTree = "<group>"; };
 		7753597223E4663000F178F5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7753597423E4757B00F178F5 /* StatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
+		7757550D240BCA9C00972562 /* InsertInto.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InsertInto.sql; sourceTree = "<group>"; };
+		7757550F240BCCDA00972562 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		77575511240BDF4B00972562 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		77575512240BDF4B00972562 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		77575514240BDF7A00972562 /* SQLite-Brideg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLite-Brideg.h"; sourceTree = "<group>"; };
+		77575516240BE8D200972562 /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		7766448523EFF6B9002BC384 /* EmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
 		7766448623EFF6B9002BC384 /* EmoticonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonView.swift; sourceTree = "<group>"; };
 		7766448723EFF6B9002BC384 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
@@ -260,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77575510240BCCDA00972562 /* libsqlite3.tbd in Frameworks */,
 				F098FD8D4E4E6AA1645261FF /* Pods_DYZB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +289,10 @@
 				77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */,
 				777A6A5F23BCAB7B00D8229B /* KThread.swift */,
 				77A8C00523CB5EC10039970F /* Position.swift */,
+				77575511240BDF4B00972562 /* Person.h */,
+				77575512240BDF4B00972562 /* Person.m */,
+				77575514240BDF7A00972562 /* SQLite-Brideg.h */,
+				77575516240BE8D200972562 /* SQLiteManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +517,7 @@
 		771A319F23CF32B3003C784B /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				7757550C240BCA8A00972562 /* Source */,
 				771A31A123CF32B3003C784B /* Tools */,
 				771A31A023CF32B3003C784B /* ViewModel */,
 				771A31A223CF32B3003C784B /* Model */,
@@ -647,6 +663,14 @@
 			path = NewFeature;
 			sourceTree = "<group>";
 		};
+		7757550C240BCA8A00972562 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7757550D240BCA9C00972562 /* InsertInto.sql */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		7766448323EFF6B9002BC384 /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +737,7 @@
 		B10D64E00A2560EDBAF2139D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7757550F240BCCDA00972562 /* libsqlite3.tbd */,
 				70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */,
 			);
 			name = Frameworks;
@@ -756,7 +781,7 @@
 					63774CA51D86598500DCC727 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 6MQB4ZQC42;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -798,6 +823,7 @@
 				772A804C23E9867B0058AA34 /* WBRefreshView.xib in Resources */,
 				632FDC691D9230FC00B6C536 /* CollectionGameCell.xib in Resources */,
 				63A9773B1DAC746200DB9157 /* AmuseMenuView.xib in Resources */,
+				7757550E240BCA9C00972562 /* InsertInto.sql in Resources */,
 				632FDC5B1D9217B500B6C536 /* RecommendCycleView.xib in Resources */,
 				632FDC611D92228000B6C536 /* CollectionCycleCell.xib in Resources */,
 				632FCEAE1D8E7CF400C9F8D6 /* CollectionPrettyCell.xib in Resources */,
@@ -919,6 +945,7 @@
 				7735BA54240A58D4001CC97E /* PhotoBrowserAnimator.swift in Sources */,
 				63774CAA1D86598500DCC727 /* AppDelegate.swift in Sources */,
 				771BC1CD23D31295006A2AF3 /* OAuthViewController.swift in Sources */,
+				77575513240BDF4B00972562 /* Person.m in Sources */,
 				777A6A6023BCAB7B00D8229B /* KThread.swift in Sources */,
 				63517CE31DAB853600ACACBF /* AmuseViewModel.swift in Sources */,
 				632FCEA51D8E751000C9F8D6 /* CollectionHeaderView.swift in Sources */,
@@ -984,6 +1011,7 @@
 				771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */,
 				771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */,
 				632FCEA91D8E779600C9F8D6 /* CollectionNormalCell.swift in Sources */,
+				77575517240BE8D200972562 /* SQLiteManager.swift in Sources */,
 				77F489A8240244B1006D04DB /* UIBarButtonItem+Extension.swift in Sources */,
 				632FDC681D9230FC00B6C536 /* CollectionGameCell.swift in Sources */,
 				771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */,
@@ -1158,6 +1186,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6MQB4ZQC42;
@@ -1168,6 +1197,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/DYZB/Classes/Main/Model/SQLite-Brideg.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1178,6 +1209,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6MQB4ZQC42;
@@ -1188,6 +1220,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/DYZB/Classes/Main/Model/SQLite-Brideg.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

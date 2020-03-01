@@ -25,7 +25,7 @@
 //局部折叠（折叠一个函数）：Command+Option+Left/Right
 //全局折叠（折叠当前文件下的全部函数）：Shift+Command+Option+Left/Right
 //折叠注释块：（/* */之间的文字）： Ctrl+Shift+Command+Left/Right
-
+//swift 中 桥接OC： 搜索 bridg -> 项目名称/SQLite-Brideg.h
 /*
  as:转换
  1.String as NSString
@@ -128,6 +128,10 @@ class ItHemaView:UIView {
         setupview()
     }
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented") }
+    
+    
+ 
+    
     
     // MARK:-11 JSON反序列化
     func jsonTest() {

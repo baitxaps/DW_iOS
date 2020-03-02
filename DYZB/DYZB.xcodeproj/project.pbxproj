@@ -88,7 +88,7 @@
 		7753597123E438F400F178F5 /* UIView+IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597023E438F400F178F5 /* UIView+IndicatorView.swift */; };
 		7753597323E4663000F178F5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597223E4663000F178F5 /* Status.swift */; };
 		7753597523E4757B00F178F5 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753597423E4757B00F178F5 /* StatusListViewModel.swift */; };
-		7757550E240BCA9C00972562 /* InsertInto.sql in Resources */ = {isa = PBXBuildFile; fileRef = 7757550D240BCA9C00972562 /* InsertInto.sql */; };
+		7757550E240BCA9C00972562 /* db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 7757550D240BCA9C00972562 /* db.sql */; };
 		77575510240BCCDA00972562 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7757550F240BCCDA00972562 /* libsqlite3.tbd */; };
 		77575513240BDF4B00972562 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 77575512240BDF4B00972562 /* Person.m */; };
 		77575517240BE8D200972562 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77575516240BE8D200972562 /* SQLiteManager.swift */; };
@@ -226,7 +226,7 @@
 		7753597023E438F400F178F5 /* UIView+IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IndicatorView.swift"; sourceTree = "<group>"; };
 		7753597223E4663000F178F5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7753597423E4757B00F178F5 /* StatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
-		7757550D240BCA9C00972562 /* InsertInto.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InsertInto.sql; sourceTree = "<group>"; };
+		7757550D240BCA9C00972562 /* db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
 		7757550F240BCCDA00972562 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		77575511240BDF4B00972562 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		77575512240BDF4B00972562 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 		7757550C240BCA8A00972562 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7757550D240BCA9C00972562 /* InsertInto.sql */,
+				7757550D240BCA9C00972562 /* db.sql */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -823,7 +823,7 @@
 				772A804C23E9867B0058AA34 /* WBRefreshView.xib in Resources */,
 				632FDC691D9230FC00B6C536 /* CollectionGameCell.xib in Resources */,
 				63A9773B1DAC746200DB9157 /* AmuseMenuView.xib in Resources */,
-				7757550E240BCA9C00972562 /* InsertInto.sql in Resources */,
+				7757550E240BCA9C00972562 /* db.sql in Resources */,
 				632FDC5B1D9217B500B6C536 /* RecommendCycleView.xib in Resources */,
 				632FDC611D92228000B6C536 /* CollectionCycleCell.xib in Resources */,
 				632FCEAE1D8E7CF400C9F8D6 /* CollectionPrettyCell.xib in Resources */,

@@ -25,7 +25,7 @@ protocol PhotoBrowserDismissDelegate:NSObjectProtocol {
     func indexPathForDismiss() -> NSIndexPath
 }
 
-//--------模型-----------
+//--------模板-----------
 class PhotoBrowserAnimator: NSObject,UIViewControllerTransitioningDelegate {
     
     weak var presentDelegate : PhotoBrowserPresentDelegate?
@@ -139,7 +139,7 @@ extension PhotoBrowserAnimator:UIViewControllerAnimatedTransitioning {
         
     }
 }
-//--------模型-----------
+//--------模板-----------
 
 
 

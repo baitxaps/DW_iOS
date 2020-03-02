@@ -87,12 +87,31 @@ extension AppDelegate {
 //MARK:-  oc bridge file
 extension AppDelegate {
     func testSwiftBridgeOC() {
-        
-         let p = Person()
-         p.name = "name"
-         print(p)
         // 持久化连接，只做打开数据库动作，不做关闭数据库动作
         // 后续再使用时，直接做读写操作,效率更高。通常移动端用持久化连接
+        
         SQLiteManager.sharedManager.openDB(dbName: "demo.db")
+        var p = Position(dict:["id":2,"name":"zhansan","age":18,"height":1.7])
+        if p.insertPosition() {
+            print("insertData success:\(p)")
+        }
+        
+        p = Position(dict:["id":3,"name":"william","age":19,"height":1.8])
+        if p.updatePosition() {
+            print("update success:\(p)")
+        }
+        
+        p = Position(dict:["id":4,"name":"zhansan","age":19,"height":1.8])
+        if p.deletePosiont() {
+            print("delete success:\(p)")
+        }
+        
+        // select
+        print(Position.Positons())
+        
+        
+        let per = Person()
+        per.name = "z"
+      
     }
 }

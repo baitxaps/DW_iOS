@@ -108,9 +108,9 @@ extension AppDelegate {
         }
         
         // select
-        print(Position.Positons())
+        //print(Position.Positons())
         
-        p.manyPositions()
+       // p.manyPositions()
         
         let per = Person()
         per.name = "z"

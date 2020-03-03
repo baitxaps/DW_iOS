@@ -288,11 +288,6 @@
 				77E3315823A6467800E3416D /* HttpTools.swift */,
 				77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */,
 				777A6A5F23BCAB7B00D8229B /* KThread.swift */,
-				77A8C00523CB5EC10039970F /* Position.swift */,
-				77575511240BDF4B00972562 /* Person.h */,
-				77575512240BDF4B00972562 /* Person.m */,
-				77575514240BDF7A00972562 /* SQLite-Brideg.h */,
-				77575516240BE8D200972562 /* SQLiteManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -666,7 +661,7 @@
 		7757550C240BCA8A00972562 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7757550D240BCA9C00972562 /* db.sql */,
+				77B15AC2240E25D500791815 /* DataBase */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -702,6 +697,19 @@
 				77092AA424094534009D82AD /* ProgressImageView.swift */,
 			);
 			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
+		77B15AC2240E25D500791815 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				77A8C00523CB5EC10039970F /* Position.swift */,
+				77575511240BDF4B00972562 /* Person.h */,
+				77575512240BDF4B00972562 /* Person.m */,
+				77575514240BDF7A00972562 /* SQLite-Brideg.h */,
+				77575516240BE8D200972562 /* SQLiteManager.swift */,
+				7757550D240BCA9C00972562 /* db.sql */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		77C413CD23E592BB008EE41D /* Cells */ = {
@@ -1197,7 +1205,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/DYZB/Classes/Main/Model/SQLite-Brideg.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Weibo/Source/DataBase/SQLite-Brideg.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1220,7 +1228,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21738391-6184-4a0c-880f-0fda0bd267ea";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/DYZB/Classes/Main/Model/SQLite-Brideg.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Weibo/Source/DataBase/SQLite-Brideg.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

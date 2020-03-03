@@ -31,35 +31,38 @@ class SQLiteManager {
     
     // 数据查询操作
     // 执行SQL 返回数据结果集合
-    func execRecodSet(sql:String) {
+    func execRecodSet(sql:String)->[[String:AnyObject]]? {
         var stmt: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, sql, -1, &stmt, nil) != SQLITE_OK {
             print("SQL Error")
             sqlite3_finalize(stmt)
-            return
+            return nil
         }
         print("SQL correct")
         
-        
-        var rows = 0
-        while sqlite3_step(stmt) == SQLITE_OK {
-            rows = rows + 1
-            print("lines:\(rows)")
-            record(stmt: stmt!)
+        var result = [[String:AnyObject]]()
+        while sqlite3_step(stmt) == SQLITE_ROW {
+            result.append(record(stmt: stmt!))
+            
         }
-    
+        print(result)
         sqlite3_finalize(stmt)
+        
+        return result
     }
     
-    private func record(stmt:OpaquePointer) {
+    private func record(stmt:OpaquePointer) ->[String:AnyObject] {
         // 记录的列数
         let cols = sqlite3_column_count(stmt)
+        
+        var row = [String:AnyObject]()
         
         for col in 0..<cols {
             // 列名 Int 8 /CChar /Byte
             let cName = sqlite3_column_name(stmt, col)!
-            let name = String(cString:cName, encoding: String.Encoding.utf8)
-            
+
+            let name = String(cString: cName, encoding: String.Encoding.utf8)
+           // let name = String(cString: cName)
             // data type
             let type = sqlite3_column_type(stmt, col)
             var value :AnyObject?
@@ -73,15 +76,17 @@ class SQLiteManager {
                 value = sqlite3_column_text(stmt, col) as AnyObject
 //                let cText = UnsafePointer<UInt8>(sqlite3_column_text(stmt, col))
 //                value =  String(cString:cText, encoding:String.Encoding.utf8)
-             
             case SQLITE_NULL:
                 value = NSNull()
             default:
                 print("error type")
             }
-           print ("--\(name) --\(type)-- \(value)--")
+          //  print ("--\(name) --\(type)-- \(value)--")
+            
+            row[name!] = value
         }
-        
+        print(row)
+        return row
     }
     
     // 执行 SQL 更新 /删除 数据

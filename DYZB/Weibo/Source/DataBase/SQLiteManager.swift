@@ -10,7 +10,7 @@ import Foundation
 
 class SQLiteManager {
     static let sharedManager = SQLiteManager()
-    
+
     private var db: OpaquePointer? = nil
     func openDB(dbName:String) {
 

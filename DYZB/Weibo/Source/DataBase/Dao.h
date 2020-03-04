@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <sqlite3.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Person : NSObject
+@interface Dao : NSObject
 @property(nonatomic,strong)NSString *name;
 @end
 

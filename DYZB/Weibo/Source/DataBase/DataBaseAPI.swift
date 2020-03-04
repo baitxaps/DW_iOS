@@ -9,7 +9,7 @@
 import UIKit
 
 @objcMembers
-class Position: NSObject {
+class DataBaseAPI: NSObject {
     var id = 0
     var name:String? 
     var age :Int = 0
@@ -35,7 +35,46 @@ class Position: NSObject {
         }else {
             super.setNilValueForKey(key)
         }
+        
     }
+
+    /*
+     fmdb sql 注入
+     fmdbInsert(name: "'William',0,0);DELETE FROM T_Person; --")
+     "INSERT INTO T_Person (name,height,age) VALUES (\'\'William\',0,0);DELETE FROM T_Person; --\',18,19);"
+     */
+    func fmdbInsert(name:String) {
+        let sql = "INSERT INTO T_Person (name,height,age) VALUES ('\(name)',18,19);"
+        print(sql)
+
+        FMDBManager.sharedManager.queue.inDatabase {(db)-> Void in
+            // db.executeStatements(sql)
+            // 更安全
+            if(db.executeUpdate(sql:sql)) {
+
+            }
+        }
+      //  fmdbInsert2(name:name)
+    }
+    
+    
+    func fmdbInsert2(name:String) {
+        // ？ 占位符,不需要用单引号
+        // SQLite 首选编译 SQL，再执行的时候，动态绑定数据，同样可以避免注入
+        let sql = "INSERT INTO T_Person (name,height,age) VALUES (?,?,?);"
+        print(sql)
+        
+        FMDBManager.sharedManager.queue.inDatabase {(db)-> Void in
+            if(db.executeUpdate(sql,withArgumentsIn: ["zj",1.9,18])) {
+                
+            }
+        }
+    }
+    
+    
+    /*
+     sqlite test
+     */
     
     func manyPositions() {
         //let start = CFAbsoluteTimeGetCurrent() // 会收到系统服务影响，在做性能测试时个，可能会有误差
@@ -47,7 +86,7 @@ class Position: NSObject {
         for i in 0..<10000 {
             //Position(dict: ["name":"kevin\(i)","age":18,"height":1.7]).insertPosition()
             // 断电,回滚事务 if i == 1000 {
-            let p = Position(dict: ["name":"kevin\(i)","age":18,"height":1.7])
+            let p = DataBaseAPI(dict: ["name":"kevin\(i)","age":18,"height":1.7])
             if !p.insertPosition() {
                 SQLiteManager.sharedManager.execSQL(sql: "ROLLBACK TRANSACTION;")
                 break;
@@ -59,7 +98,7 @@ class Position: NSObject {
     }
     
     
-    class func Positons() ->[Position]? {
+    class func Positons() ->[DataBaseAPI]? {
         
         let sql = "SELECT id ,age ,height FROM T_Person;"
         
@@ -67,9 +106,9 @@ class Position: NSObject {
             return nil
         }
         
-        var arrayM = [Position]()
+        var arrayM = [DataBaseAPI]()
         for dict in array {
-            arrayM.append(Position(dict: dict))
+            arrayM.append(DataBaseAPI(dict: dict))
         }
         return arrayM
     }

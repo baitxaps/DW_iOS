@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let _ = notification.object {
                 self?.window?.rootViewController = WelcomeViewController()
             }else {
-                self?.window?.rootViewController = WBMainViewController()
+                self?.window?.rootViewController = WeiBoMainViewController()
             }
         }
         
@@ -67,7 +67,7 @@ extension AppDelegate {
             return isNewVersion ? NewFeatureViewController():WelcomeViewController()
         }
         
-        return WBMainViewController()
+        return WeiBoMainViewController()
     }
     
     private var isNewVersion:Bool {

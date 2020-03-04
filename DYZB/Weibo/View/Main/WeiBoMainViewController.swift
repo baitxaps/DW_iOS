@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBMainViewController: UITabBarController {
+class WeiBoMainViewController: UITabBarController {
 // MARK:- lazy var composedButton
     private lazy var composedButton:UIButton = UIButton(imageName:
         "tabbar_compose_icon_add", backImageName:"tabbar_compose_button")
@@ -46,7 +46,7 @@ class WBMainViewController: UITabBarController {
  重置的方式为，首先将 rect 的坐标（origin）按照(dx,dy) 进行平移，
  然后将 rect 的大小（size） 宽度缩小2倍的 dx，高度缩小2倍的 dy
 */
-extension WBMainViewController {
+extension WeiBoMainViewController {
     private func setupComposedButton() {
         tabBar.addSubview(composedButton)
         

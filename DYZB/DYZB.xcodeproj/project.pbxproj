@@ -63,7 +63,7 @@
 		771A31A923CF32DB003C784B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31A823CF32DB003C784B /* WBHomeViewController.swift */; };
 		771A31AB23CF3317003C784B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */; };
 		771A31AD23CF3323003C784B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AC23CF3323003C784B /* WBProfileViewController.swift */; };
-		771A31AF23CF3330003C784B /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AE23CF3330003C784B /* WBMainViewController.swift */; };
+		771A31AF23CF3330003C784B /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31AE23CF3330003C784B /* WeiBoMainViewController.swift */; };
 		771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B123CF47CA003C784B /* MessageTableViewController.swift */; };
 		771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B423CF63DA003C784B /* UIButton+Extension.swift */; };
 		771A31B823CF6CE5003C784B /* VisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */; };
@@ -101,8 +101,8 @@
 		776F936523F2FC6200F2057D /* UITextView+Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */; };
 		777179E52403C9A300CFD390 /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777179E42403C9A300CFD390 /* ComposeViewModel.swift */; };
 		777179EA2403F15D00CFD390 /* PicturePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777179E92403F15D00CFD390 /* PicturePickerController.swift */; };
-		7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* WeiBo.storyboard */; };
-		7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */; };
+		7772BD2C23CCC29A006035AC /* Dao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7772BD2B23CCC29A006035AC /* Dao.storyboard */; };
+		7772BD2E23CCC2CB006035AC /* DaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772BD2D23CCC2CB006035AC /* DaoViewController.swift */; };
 		77792267240FB82700E039DF /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779225A240FB82700E039DF /* FMDatabaseAdditionsVariadic.swift */; };
 		77792268240FB82700E039DF /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779225B240FB82700E039DF /* FMDatabaseVariadic.swift */; };
 		77792269240FB82700E039DF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7779225D240FB82700E039DF /* FMDatabaseQueue.m */; };
@@ -113,7 +113,6 @@
 		777A6A6023BCAB7B00D8229B /* KThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A6A5F23BCAB7B00D8229B /* KThread.swift */; };
 		77A3E3032407CB4600D41E2F /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3E3022407CB4600D41E2F /* PhotoBrowserViewController.swift */; };
 		77A3E3072407ECE500D41E2F /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3E3062407ECE500D41E2F /* PhotoBrowserCell.swift */; };
-		77A8C00423CB5AA80039970F /* Position.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A8C00323CB5AA80039970F /* Position.storyboard */; };
 		77A8C00623CB5EC10039970F /* DataBaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8C00523CB5EC10039970F /* DataBaseAPI.swift */; };
 		77B15ADE240E329700791815 /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B15ADD240E329700791815 /* FMDBManager.swift */; };
 		77C413CA23E56E7C008EE41D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C413C923E56E7C008EE41D /* User.swift */; };
@@ -206,7 +205,7 @@
 		771A31A823CF32DB003C784B /* WBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		771A31AA23CF3317003C784B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		771A31AC23CF3323003C784B /* WBProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
-		771A31AE23CF3330003C784B /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		771A31AE23CF3330003C784B /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
 		771A31B123CF47CA003C784B /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		771A31B423CF63DA003C784B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		771A31B723CF6CE5003C784B /* VisitorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorTableViewController.swift; sourceTree = "<group>"; };
@@ -246,8 +245,8 @@
 		776F936423F2FC6200F2057D /* UITextView+Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Emoticon.swift"; sourceTree = "<group>"; };
 		777179E42403C9A300CFD390 /* ComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
 		777179E92403F15D00CFD390 /* PicturePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePickerController.swift; sourceTree = "<group>"; };
-		7772BD2B23CCC29A006035AC /* WeiBo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeiBo.storyboard; sourceTree = "<group>"; };
-		7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoMainViewController.swift; sourceTree = "<group>"; };
+		7772BD2B23CCC29A006035AC /* Dao.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dao.storyboard; sourceTree = "<group>"; };
+		7772BD2D23CCC2CB006035AC /* DaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaoViewController.swift; sourceTree = "<group>"; };
 		7779225A240FB82700E039DF /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		7779225B240FB82700E039DF /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
 		7779225C240FB82700E039DF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -264,7 +263,6 @@
 		777A6A5F23BCAB7B00D8229B /* KThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KThread.swift; sourceTree = "<group>"; };
 		77A3E3022407CB4600D41E2F /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		77A3E3062407ECE500D41E2F /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
-		77A8C00323CB5AA80039970F /* Position.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Position.storyboard; sourceTree = "<group>"; };
 		77A8C00523CB5EC10039970F /* DataBaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseAPI.swift; sourceTree = "<group>"; };
 		77B15ADD240E329700791815 /* FMDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
 		77C413C923E56E7C008EE41D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -496,14 +494,13 @@
 		63F571C21D88D8DF002761B7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				77A8C00323CB5AA80039970F /* Position.storyboard */,
-				7772BD2B23CCC29A006035AC /* WeiBo.storyboard */,
+				7772BD2B23CCC29A006035AC /* Dao.storyboard */,
 				63774CAD1D86598500DCC727 /* Main.storyboard */,
 				63F571C31D88D8DF002761B7 /* MainViewController.swift */,
 				6332FCF61DB07009002F1054 /* BaseViewController.swift */,
 				63517CE71DAB8B2700ACACBF /* BaseAnchorViewController.swift */,
 				6332FD001DB07FA0002F1054 /* CustomNavigationController.swift */,
-				7772BD2D23CCC2CB006035AC /* WeiBoMainViewController.swift */,
+				7772BD2D23CCC2CB006035AC /* DaoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -612,7 +609,7 @@
 			children = (
 				774DA1E723D5EE7B003A2EF2 /* NewFeature */,
 				771A31B623CF6CC1003C784B /* Visitor */,
-				771A31AE23CF3330003C784B /* WBMainViewController.swift */,
+				771A31AE23CF3330003C784B /* WeiBoMainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -865,7 +862,6 @@
 				63A9773F1DAC788300DB9157 /* AmuseMenuViewCell.xib in Resources */,
 				632FCEA61D8E751000C9F8D6 /* CollectionHeaderView.xib in Resources */,
 				632FCEAA1D8E779600C9F8D6 /* CollectionNormalCell.xib in Resources */,
-				77A8C00423CB5AA80039970F /* Position.storyboard in Resources */,
 				63774CB11D86598500DCC727 /* Assets.xcassets in Resources */,
 				63774CAF1D86598500DCC727 /* Main.storyboard in Resources */,
 				63C0B2A11D868D300058ABDF /* Live.storyboard in Resources */,
@@ -881,7 +877,7 @@
 				63C0B2A71D868D4E0058ABDF /* Profile.storyboard in Resources */,
 				632FDC651D922CFC00B6C536 /* RecommendGameView.xib in Resources */,
 				63C0B2A41D868D400058ABDF /* Follow.storyboard in Resources */,
-				7772BD2C23CCC29A006035AC /* WeiBo.storyboard in Resources */,
+				7772BD2C23CCC29A006035AC /* Dao.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,7 +1017,7 @@
 				6332FCFF1DB07C29002F1054 /* RoomNormalViewController.swift in Sources */,
 				6332FCF31DB0659F002F1054 /* FunnyViewController.swift in Sources */,
 				773C3A2023E6AF9B00112F40 /* StatusPictureView.swift in Sources */,
-				7772BD2E23CCC2CB006035AC /* WeiBoMainViewController.swift in Sources */,
+				7772BD2E23CCC2CB006035AC /* DaoViewController.swift in Sources */,
 				77F489A424022748006D04DB /* ComposeViewController.swift in Sources */,
 				7766448C23EFF6B9002BC384 /* EmoticonView.swift in Sources */,
 				7735BA50240A4DD1001CC97E /* NetworkTools.swift in Sources */,
@@ -1044,7 +1040,7 @@
 				638C60E71DA8EDD000A370F1 /* GameModel.swift in Sources */,
 				7735BA4E240A4DAE001CC97E /* UIColor+Extension.swift in Sources */,
 				6332FCF51DB0698A002F1054 /* FunnyViewModel.swift in Sources */,
-				771A31AF23CF3330003C784B /* WBMainViewController.swift in Sources */,
+				771A31AF23CF3330003C784B /* WeiBoMainViewController.swift in Sources */,
 				638C60E91DA8EEA200A370F1 /* BaseGameModel.swift in Sources */,
 				632FDC5D1D921F7800B6C536 /* CycleModel.swift in Sources */,
 				77E3315923A6467800E3416D /* HttpTools.swift in Sources */,

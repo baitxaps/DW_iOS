@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeiBoMainViewController: UIViewController {
+class DaoViewController: UIViewController {
     private lazy var tableView :UITableView = {
         let tb = UITableView(frame:CGRect.zero,style:UITableView.Style.plain)
         tb.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -33,7 +33,7 @@ class WeiBoMainViewController: UIViewController {
 
 // MARK:- UITableViewDataSource,UITableViewDelegate
 
-extension WeiBoMainViewController:UITableViewDataSource,UITableViewDelegate {
+extension DaoViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         50
     }

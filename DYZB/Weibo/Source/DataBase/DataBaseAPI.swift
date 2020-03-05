@@ -21,12 +21,12 @@ class DataBaseAPI: NSObject {
         setValuesForKeys(dict)
     }
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
-
+    
     override var description:String {
         let keys = ["name","age","height","id"]
         return dictionaryWithValues(forKeys: keys).description
         
-       // return "\(dictionaryWithValues(forKeys: keys))"
+        // return "\(dictionaryWithValues(forKeys: keys))"
     }
     
     override func setNilValueForKey(_ key: String) {
@@ -37,44 +37,136 @@ class DataBaseAPI: NSObject {
         }
         
     }
-
+    
+    //MARK:- FMDB Test
     /*
      fmdb sql 注入
      fmdbInsert(name: "'William',0,0);DELETE FROM T_Person; --")
-     "INSERT INTO T_Person (name,height,age) VALUES (\'\'William\',0,0);DELETE FROM T_Person; --\',18,19);"
+     "INSERT INTO T_Person (name,height,age) VALUES (\'\'William\§',0,0);DELETE FROM T_Person; --\',18,19);"
      */
     func fmdbInsert(name:String) {
         let sql = "INSERT INTO T_Person (name,height,age) VALUES ('\(name)',18,19);"
         print(sql)
-
+        
         FMDBManager.sharedManager.queue.inDatabase {(db)-> Void in
             // db.executeStatements(sql)
             // 更安全
             if(db.executeUpdate(sql:sql)) {
-
+                print("executeUpdate .")
             }
         }
-      //  fmdbInsert2(name:name)
+        
+        fmdbQueryColunm()
+        // fmdbQuery()
+        // fmdbDelete(id:8)
+        // fmdbUpdate(dict: ["id":7,"name":"li","age":22,"height":1.6])
+        // fmdbInsertDict(dict: ["name":"li","age":18,"height":1.9])
+        // fmdbInsertArray(["zj",1.9,18])
+    }
+    
+    // MARK:- Query
+    func fmdbQueryColunm() {
+        let sql = "SELECT id,name,age,height FROM T_Person;"
+        FMDBManager.sharedManager.queue.inDatabase { (db) in
+            guard let rs = db.executeQuery(sql: sql) else {
+                print("no result")
+                return
+            }
+            while rs.next() {
+                let colCount = rs.columnCount
+                
+                var dict = [String:Any]()
+                
+                for col in 0..<colCount {
+                    let name = rs.columnName(for: col)
+                    let obj = rs.object(forColumnIndex: col)
+                
+                    print("列数 \(name) \(obj)")
+                    
+                    dict[name ?? ""] = obj
+                }
+            }
+        }
     }
     
     
-    func fmdbInsert2(name:String) {
+    func fmdbQuery() {
+        let sql = "SELECT id,name,age,height FROM T_Person;"
+        FMDBManager.sharedManager.queue.inDatabase { (db) in
+            guard let rs = db.executeQuery(sql: sql) else {
+                print("no result")
+                return
+            }
+            while rs.next() {
+                let id = rs.int(forColumn: "id")
+                let name = rs.string(forColumn: "name")
+                let age = rs.int(forColumn: "age")
+                let height = rs.double(forColumn: "height")
+                
+                print("\(id) \(name) \(age) \(height)")
+            }
+        }
+    }
+    
+    func fmdbDelete(id:Int) {
+        let sql = "DELETE FROM T_Person WHERE id = :id;"
+        print(sql)
+        
+        FMDBManager.sharedManager.queue.inDatabase {(db)-> Void in
+            if(db.executeUpdate(sql, withArgumentsIn:[id])) {
+                print("删除成功修改了 \(db.changes) 行")
+            }else {
+                print("失败")
+            }
+        }
+    }
+    
+    
+    
+    func fmdbUpdate(dict:[String:Any]) {
+        let sql = "UPDATE T_Person set name = :name, height = :height,age = :age \n" +
+        "WHERE id = :id;"
+        print(sql)
+        
+        FMDBManager.sharedManager.queue.inDatabase {(db)-> Void in
+            if(db.executeUpdate(sql,withParameterDictionary:dict)) {
+                print("成功更新了 \(db.changes) 行")
+            }else {
+                print("失败")
+            }
+        }
+    }
+    
+    //
+    func fmdbInsertDict(dict:[String:Any]) {
+        // ？ 占位符,不需要用单引号
+        // SQLite 首选编译 SQL，再执行的时候，动态绑定数据，同样可以避免注入
+        let sql = "INSERT INTO T_Person (name,height,age) VALUES (:name,:age,:height);"
+        print(sql)
+        
+        FMDBManager.sharedManager.queue.inDatabase {(db)-> Void in
+            if(db.executeUpdate(sql,withParameterDictionary:dict)) {
+                print("executeUpdate .")
+            }
+        }
+    }
+    
+    
+    func fmdbInsertArray(array:[Any]) {
         // ？ 占位符,不需要用单引号
         // SQLite 首选编译 SQL，再执行的时候，动态绑定数据，同样可以避免注入
         let sql = "INSERT INTO T_Person (name,height,age) VALUES (?,?,?);"
         print(sql)
         
         FMDBManager.sharedManager.queue.inDatabase {(db)-> Void in
-            if(db.executeUpdate(sql,withArgumentsIn: ["zj",1.9,18])) {
-                
+            if(db.executeUpdate(sql,withArgumentsIn: array)) {
+                print("executeUpdate .")
             }
         }
     }
     
     
-    /*
-     sqlite test
-     */
+    //MARK:- SQLite Test
     
     func manyPositions() {
         //let start = CFAbsoluteTimeGetCurrent() // 会收到系统服务影响，在做性能测试时个，可能会有误差
@@ -82,18 +174,18 @@ class DataBaseAPI: NSObject {
         
         print("start")
         // 开启事务
-        SQLiteManager.sharedManager.execSQL(sql: "BEGIN TRANSACTION;")
+        let _ = SQLiteManager.sharedManager.execSQL(sql: "BEGIN TRANSACTION;")
         for i in 0..<10000 {
-            //Position(dict: ["name":"kevin\(i)","age":18,"height":1.7]).insertPosition()
-            // 断电,回滚事务 if i == 1000 {
+            //DataBaseAPI(dict: ["name":"kevin\(i)","age":18,"height":1.7]).insertPosition()
+            // 回滚事务
             let p = DataBaseAPI(dict: ["name":"kevin\(i)","age":18,"height":1.7])
             if !p.insertPosition() {
-                SQLiteManager.sharedManager.execSQL(sql: "ROLLBACK TRANSACTION;")
+                let _ = SQLiteManager.sharedManager.execSQL(sql: "ROLLBACK TRANSACTION;")
                 break;
             }
         }
         // 提交事务
-        SQLiteManager.sharedManager.execSQL(sql: "COMMIT TRANSACTION;")
+        let _ = SQLiteManager.sharedManager.execSQL(sql: "COMMIT TRANSACTION;")
         print("end:\(CACurrentMediaTime()-start))")
     }
     
@@ -120,7 +212,7 @@ class DataBaseAPI: NSObject {
     }
     
     func updatePosition() -> Bool {
-       let sql = "UPDATE T_Person SET name ='\(name!)',age =\(age) ,height = \(height) \n" +
+        let sql = "UPDATE T_Person SET name ='\(name!)',age =\(age) ,height = \(height) \n" +
         "WHERE id =\(id);"
         
         let rows = SQLiteManager.sharedManager.execUpdate(sql: sql)

@@ -118,7 +118,7 @@ class SQLiteManager {
         return execSQL(sql: sql)
     }
     
-    // 在开发数据库时，大多数据问题，是SQL问题，借助天navicat 辅助做语法检查
+    // 在开发数据库时，大多数据问题，是SQL问题，借助navicat 辅助做语法检查
     // 加\n 避免字符串拼接错误
     private func createTable()-> Bool {
         let sql = "CREATE TABLE IF NOT EXISTS 'T_Person' (\n" +

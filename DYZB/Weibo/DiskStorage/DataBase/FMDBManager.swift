@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let dbName = "demo.db"
+private let dbName = "status.db"
 
 class FMDBManager {
     
@@ -24,6 +24,34 @@ class FMDBManager {
         
         createTable()
     }
+    
+    // Query
+    func execRecordSet(sql:String) ->[[String:Any]] {
+        var result = [[String:Any]]()
+        FMDBManager.sharedManager.queue.inDatabase { (db) in
+            guard let rs = db.executeQuery(sql: sql) else {
+                print("no result")
+                return
+            }
+            
+            while rs.next() {
+                let colCount = rs.columnCount
+                var dict = [String:Any]()
+                
+                for col in 0..<colCount {
+                    let name = rs.columnName(for: col)
+                    let obj = rs.object(forColumnIndex: col)
+                    
+                    //print("列数 \(name) \(obj)")
+                    dict[name ?? ""] = obj
+                }
+                result.append(dict)
+            }
+          //  print(result)
+        }
+        return result
+    }
+    
     
     private func createTable() {
         let path = Bundle.main.path(forResource: "db.sql", ofType: nil)!

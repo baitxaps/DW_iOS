@@ -13,3 +13,12 @@ CREATE TABLE IF NOT EXISTS 'T_Person' (
 'age' INTEGER,
 'height' REAL
 );
+
+--T_status--
+DROP TABLE IF EXISTS "T_Status";
+CREATE TABLE "T_Status" (
+  "statusid" integer NOT NULL,
+  "status" TEXT,
+  "userid" INTEGER,
+  PRIMARY KEY ("statusid")
+);

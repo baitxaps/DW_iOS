@@ -41,7 +41,7 @@ class DataBaseAPI: NSObject {
     //MARK:- FMDB Test
     /*
      fmdb sql 注入
-     fmdbInsert(name: "'William',0,0);DELETE FROM T_Person; --")
+     fmdbInsert(name: "‘William',0,0);DELETE FROM T_Person; --")
      "INSERT INTO T_Person (name,height,age) VALUES (\'\'William\§',0,0);DELETE FROM T_Person; --\',18,19);"
      */
     func fmdbInsert(name:String) {
@@ -55,8 +55,8 @@ class DataBaseAPI: NSObject {
                 print("executeUpdate .")
             }
         }
-        
-        fmdbQueryColunm()
+        manyFmdbPositions()
+        //fmdbQueryColunm()
         // fmdbQuery()
         // fmdbDelete(id:8)
         // fmdbUpdate(dict: ["id":7,"name":"li","age":22,"height":1.6])
@@ -65,31 +65,32 @@ class DataBaseAPI: NSObject {
     }
     
     // MARK:- Query
-    func fmdbQueryColunm() {
-        let sql = "SELECT id,name,age,height FROM T_Person;"
-        FMDBManager.sharedManager.queue.inDatabase { (db) in
-            guard let rs = db.executeQuery(sql: sql) else {
-                print("no result")
-                return
-            }
-            while rs.next() {
-                let colCount = rs.columnCount
+    
+    //inTransaction 加入事务
+    func manyFmdbPositions() {
+        let sql = "INSERT INTO T_Person (name,height,age) VALUES (:name,:age,:height);"
+        FMDBManager.sharedManager.queue.inTransaction { (db,rollback) -> Void in
+            for i in 0..<20 {
+                let name = "zhansan\(i)"
+                let age = 20 + arc4random() % 20
+                let dict :[String:Any] = ["name":name,"age":age,"height":height]
                 
-                var dict = [String:Any]()
-                
-                for col in 0..<colCount {
-                    let name = rs.columnName(for: col)
-                    let obj = rs.object(forColumnIndex: col)
-                
-                    print("列数 \(name) \(obj)")
-                    
-                    dict[name ?? ""] = obj
+                if !db.executeUpdate(sql,withParameterDictionary:dict) {
+                    rollback.pointee = true
+                    break
                 }
             }
         }
     }
+ 
     
+    func fmdbQueryColunm() {
+        let sql = "SELECT id,name,age,height FROM T_Person;"
+        let array = FMDBManager.sharedManager.execRecordSet(sql: sql)
+        print(array)
+    }
     
+    // 更依赖于对sql语句 的绑定
     func fmdbQuery() {
         let sql = "SELECT id,name,age,height FROM T_Person;"
         FMDBManager.sharedManager.queue.inDatabase { (db) in

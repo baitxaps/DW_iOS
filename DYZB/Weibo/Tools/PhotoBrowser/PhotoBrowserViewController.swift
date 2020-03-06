@@ -117,7 +117,7 @@ extension PhotoBrowserViewController:UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserViewCellId, for: indexPath) as! PhotoBrowserCell
-       // cell.backgroundColor = UIColor.black
+        cell.backgroundColor = UIColor.black
         cell.imageURL = urls[indexPath.item]
         cell.photoDelegate = self
         return cell

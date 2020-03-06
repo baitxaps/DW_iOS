@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS 'T_Person' (
 --T_status--
 DROP TABLE IF EXISTS "T_Status";
 CREATE TABLE "T_Status" (
-  "statusid" integer NOT NULL,
+  "statusId" integer NOT NULL,
   "status" TEXT,
-  "userid" INTEGER,
+  "userId" INTEGER,
   PRIMARY KEY ("statusid")
 );

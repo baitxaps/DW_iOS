@@ -12,51 +12,17 @@ import Kingfisher
 class StatusListViewModel {
     lazy var statusList = [StatusViewModel]()
     
-    private var params = [String:String]()
-    
-    private var tokenDict:[String:String]? {
-        if let token = UserAccountViewModel.shared.accesstoken {
-            return ["access_token":token]
-        }
-        return nil
-    }
-    
     func loadStatus(withIsPull isPull:Bool ,since_id:Int,max_id:Int, finished:@escaping (_ isSuccessed:Bool)->()) {
-        
+
         let tmp_since_id = isPull ? 0:since_id
         let tmp_max_id = isPull ? max_id - 1:0
-        
-        // 下拉
-        if tmp_since_id > 0  {
-            params["since_id"] = "\(tmp_since_id))"
-        }
-        // 上拉
-        else if tmp_max_id > 0 {
-            params["max_id"] = "\(tmp_max_id))"
-        }
-        
-        for(key,value) in (tokenDict ?? [:]) {params[key] = value}
-        
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        NetworkTools.requestData(.get, URLString: urlString, parameters:params) {(result, error) in
-            if error != nil {
-                print(error ?? "")
+
+        StatusDAL.loadStatus(since_id: tmp_since_id, max_id: tmp_max_id) { (array) in
+            guard let array = array else {
                 finished(false)
                 return
             }
-            
-            print(result)
-            guard let result = result as?[String:AnyObject] else {
-                finished(false)
-                return
-                
-            }
-            
-            guard let array = result["statuses"] as? [[String:AnyObject]] else {
-                print("format error")
-                finished(false)
-                return
-            }
+
             var dataList = [StatusViewModel]()
             for dict in array {
                 dataList.append(StatusViewModel(status: Status(dict:dict)))

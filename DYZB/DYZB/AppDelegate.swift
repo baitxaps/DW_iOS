@@ -90,11 +90,13 @@ extension AppDelegate {
     
     func testSwiftBridgeFMDB() {
        // let shared = FMDBManager.sharedManager
-        let p = DataBaseAPI(dict: [:])
+       // let p = DataBaseAPI(dict: [:])
         
         // SQL 注入
-        p.fmdbInsert(name: "William,0,0);DELETE FROM T_Person; --")
+//        p.fmdbInsert(name: "William,0,0);DELETE FROM T_Person; --")
 //        p.fmdbInsert(name: "William")
+        
+       let _ =  FMDBManager.sharedManager
     }
 
     

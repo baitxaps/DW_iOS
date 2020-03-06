@@ -124,6 +124,7 @@
 		77D964D423E2FF2500964BC3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D964D323E2FF2500964BC3 /* WelcomeViewController.swift */; };
 		77DBD5DD23A7BBBE005C6DB3 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */; };
 		77E3315923A6467800E3416D /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E3315823A6467800E3416D /* HttpTools.swift */; };
+		77ED1AAA241107D100758C55 /* StatusDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED1AA9241107D100758C55 /* StatusDAL.swift */; };
 		77EDE5DB23D0A16700C33036 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDE5DA23D0A16700C33036 /* VisitorView.swift */; };
 		77F489A424022748006D04DB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A324022748006D04DB /* ComposeViewController.swift */; };
 		77F489A8240244B1006D04DB /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */; };
@@ -274,6 +275,7 @@
 		77D964D323E2FF2500964BC3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		77DBD5DC23A7BBBE005C6DB3 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		77E3315823A6467800E3416D /* HttpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
+		77ED1AA9241107D100758C55 /* StatusDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDAL.swift; sourceTree = "<group>"; };
 		77EDE5DA23D0A16700C33036 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		77F489A324022748006D04DB /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		77F489A7240244B1006D04DB /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
@@ -741,13 +743,14 @@
 		77B15AC2240E25D500791815 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				7757550D240BCA9C00972562 /* db.sql */,
 				77575511240BDF4B00972562 /* Dao.h */,
 				77575512240BDF4B00972562 /* Dao.m */,
+				77ED1AA9241107D100758C55 /* StatusDAL.swift */,
 				77A8C00523CB5EC10039970F /* DataBaseAPI.swift */,
 				77575516240BE8D200972562 /* SQLiteManager.swift */,
 				77B15ADD240E329700791815 /* FMDBManager.swift */,
 				77575514240BDF7A00972562 /* SQLite-Brideg.h */,
-				7757550D240BCA9C00972562 /* db.sql */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -1034,6 +1037,7 @@
 				77C413D323E5A35F008EE41D /* StatusCellBottomView.swift in Sources */,
 				7766448F23EFF6B9002BC384 /* EmoticonPackage.swift in Sources */,
 				771A31AD23CF3323003C784B /* WBProfileViewController.swift in Sources */,
+				77ED1AAA241107D100758C55 /* StatusDAL.swift in Sources */,
 				77792267240FB82700E039DF /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				7753597123E438F400F178F5 /* UIView+IndicatorView.swift in Sources */,
 				7766448B23EFF6B9002BC384 /* EmoticonManager.swift in Sources */,

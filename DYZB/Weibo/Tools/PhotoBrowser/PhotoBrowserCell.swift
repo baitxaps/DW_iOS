@@ -11,14 +11,16 @@ import Foundation
 import Kingfisher
 
 protocol PhotoBrowseCellDelegate:NSObjectProtocol {
-    func photoBrowserCellDidTapImage()
+    func photoBrowserCellShouldDismiss()
+    
+    func photoBrowserCellDidZoom(scale:CGFloat)
 }
 
 class PhotoBrowserCell: UICollectionViewCell {
-    weak var phtotDelegate:PhotoBrowseCellDelegate?
+    weak var photoDelegate:PhotoBrowseCellDelegate?
     
     @objc private func onTapImage() {
-        phtotDelegate?.photoBrowserCellDidTapImage()
+        photoDelegate?.photoBrowserCellShouldDismiss()
     }
     
     /*
@@ -179,6 +181,14 @@ extension PhotoBrowserCell:UIScrollViewDelegate {
     // scale被缩放的比例
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         print("scale finished \(view!) \(view!.bounds)")
+        
+        // 缩放比例小于1 ，直接关闭
+        if scale < 1 {
+            photoDelegate?.photoBrowserCellShouldDismiss()
+            return
+        }
+        
+        
         var ofY = (scrollView.bounds.height - view!.frame.height) * 0.5
         var ofX = (scrollView.bounds.width - view!.frame.width) * 0.5
         
@@ -201,6 +211,8 @@ extension PhotoBrowserCell:UIScrollViewDelegate {
     // 只要缩放就会被调用
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         print(imageView.transform)
+        
+        photoDelegate?.photoBrowserCellDidZoom(scale: imageView.transform.a)
     }
 }
 

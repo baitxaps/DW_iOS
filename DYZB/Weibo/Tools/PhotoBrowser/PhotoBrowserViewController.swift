@@ -58,7 +58,7 @@ class PhotoBrowserViewController: UIViewController {
     private var urls:[URL]
     private var currentIndexPath:NSIndexPath
     
-    private lazy var collectionView :UICollectionView = UICollectionView (frame:CGRect.zero,collectionViewLayout: PhotoBrowserViewLayout())
+    lazy var collectionView :UICollectionView = UICollectionView (frame:CGRect.zero,collectionViewLayout: PhotoBrowserViewLayout())
     private lazy var closeBtn :UIButton = UIButton(title: "关闭", fontSize: 14, color: UIColor.white, imageName:nil, backColor: UIColor.darkGray)
     
     private lazy var saveBtn :UIButton = UIButton(title: "保存", fontSize: 14, color: UIColor.white, imageName:nil, backColor: UIColor.darkGray)
@@ -117,18 +117,38 @@ extension PhotoBrowserViewController:UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserViewCellId, for: indexPath) as! PhotoBrowserCell
-        cell.backgroundColor = UIColor.black
+       // cell.backgroundColor = UIColor.black
         cell.imageURL = urls[indexPath.item]
-        cell.phtotDelegate = self
+        cell.photoDelegate = self
         return cell
     }
 }
 
 // MARK - PhotoBrowseCellDelegate
 extension PhotoBrowserViewController:PhotoBrowseCellDelegate {
-    func photoBrowserCellDidTapImage() {
+    func photoBrowserCellShouldDismiss() {
        // imageViewForDismiss()
         close()
+    }
+    
+    func photoBrowserCellDidZoom(scale:CGFloat) {
+        let isHidden = scale < 1
+        hideControls(isHidden:isHidden)
+        
+        if isHidden  {
+            view.alpha = scale
+            view.transform = CGAffineTransform(scaleX: scale,y: scale)
+        }else {
+            view.alpha = 1
+            view.transform = CGAffineTransform.identity
+        }
+    }
+    
+    private func hideControls(isHidden:Bool) {
+        closeBtn.isHidden = isHidden
+        saveBtn.isHidden = isHidden
+        
+        collectionView.backgroundColor = isHidden ? UIColor.clear: UIColor.black
     }
 }
 

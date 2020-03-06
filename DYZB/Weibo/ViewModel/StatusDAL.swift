@@ -7,26 +7,53 @@
 //
 
 import Foundation
+// 7 days
+private let maxCacheDateTime:TimeInterval = 7 * 24 * 60 * 60
 
 // 数据访问层
 class StatusDAL {
+    // 清理缓存
+    /*
+     SQLite 的数据不断的增加数据，数据库文件的大小，会不断的增加
+     但是：如果删除了数据，数据库的大小，不会变小！
+     */
+    class func clearDataCache() {
+        let date = Date(timeIntervalSinceNow: -maxCacheDateTime)
+          
+        let df = DateFormatter()
+        // 指定区域，在模拟器不需要，但是真机一定需要
+        df.locale = Locale(identifier:"en")
+        
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let dateStr = df.string(from: date)
+        print(dateStr)
+        
+        // 先写SELECT*, 无问题之后，再替换成DELETE
+        let sql = "DELETE FROM T_Status WHERE createTime < ?;"
+        
+        FMDBManager.sharedManager.queue.inDatabase { (db) in
+            if db.executeUpdate(sql, withArgumentsIn: [dateStr]) {
+                print("删除了 \(db.changes) 条记录")
+            }
+        }
+    }
+    
+    
     class func loadStatus(since_id:Int,max_id:Int,finished:@escaping([[String:AnyObject]]?) ->()) {
         //1 本地有数据，返回本地缓存数据
         let array = checkCacheData(since_id:since_id,max_id:max_id)
         if array?.count ?? 0 > 0 {
-            print("查询到数据 \(array!.count)")
+            print("查询到数据 \(array!.count) :条")
             finished(array!)
             return
         }
         
         //2 没有数据加载网络数据
         var params = [String:Any]()
-        if since_id > 0  {// 下拉
-            params["since_id"] = "\(since_id))"
-        }
-        else if max_id > 0 {// 上拉
-            params["max_id"] = "\(max_id))"
-        }
+
+        params["since_id"] = "\(since_id))"//下拉
+        params["max_id"] = "\(max_id > 0 ? max_id - 1 : 0)" //上拉
         
         guard let token = UserAccountViewModel.shared.accesstoken else { 
             finished(nil)
@@ -71,7 +98,7 @@ class StatusDAL {
      AND statusId < 4479239376475591 -- 上拉刷新
      ORDER BY statusId DESC LIMIT 20
      */
-    class func checkCacheData(since_id:Int,max_id:Int) -> [[String:AnyObject]]? {
+    private class func checkCacheData(since_id:Int,max_id:Int) -> [[String:AnyObject]]? {
         guard let userId = UserAccountViewModel.shared.account?.uid else {
             print("用户没有登录")
             return nil
@@ -112,7 +139,7 @@ class StatusDAL {
      INSERT OR REPLACE INTO T_Status (statusid, status,userId) VALUES (1,'T_Status',1001)
      */
     // DiskStorage
-    class func saveCacheData(array:[[String:AnyObject]]) {
+    private class func saveCacheData(array:[[String:AnyObject]]) {
         guard let userId = UserAccountViewModel.shared.account?.uid else {
             print("用户没有登录")
             return

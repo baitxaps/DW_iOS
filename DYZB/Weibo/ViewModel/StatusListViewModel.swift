@@ -12,10 +12,12 @@ import Kingfisher
 class StatusListViewModel {
     lazy var statusList = [StatusViewModel]()
     
-    func loadStatus(withIsPull isPull:Bool ,since_id:Int,max_id:Int, finished:@escaping (_ isSuccessed:Bool)->()) {
+    // 移动端下拉刷新、上拉加载更多
+    // pullup:是否上拉刷新标记
+    func loadStatus(withPullup pullup:Bool ,since_id:Int,max_id:Int, finished:@escaping (_ isSuccessed:Bool)->()) {
 
-        let tmp_since_id = isPull ? 0:since_id
-        let tmp_max_id = isPull ? max_id - 1:0
+        let tmp_since_id = pullup ? 0:since_id
+        let tmp_max_id = pullup ? max_id - 1:0
 
         StatusDAL.loadStatus(since_id: tmp_since_id, max_id: tmp_max_id) { (array) in
             guard let array = array else {
@@ -59,7 +61,7 @@ class StatusListViewModel {
             let url = vm.thumbnailUrls![0]
 
             group.enter()
-            KingfisherManager.shared.downloader.downloadImage(with: url, options:[KingfisherOptionsInfoItem.forceRefresh,KingfisherOptionsInfoItem.onFailureImage(nil)]) { (result) in
+            KingfisherManager.shared.downloader.downloadImage(with: url, options:[KingfisherOptionsInfoItem.forceRefresh]) { (result) in
                 //(Result<ImageLoadingResult, KingfisherError>
                 switch result {
                 case .failure(let error):

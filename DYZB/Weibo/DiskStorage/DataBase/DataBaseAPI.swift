@@ -55,8 +55,8 @@ class DataBaseAPI: NSObject {
                 print("executeUpdate .")
             }
         }
-        manyFmdbPositions()
-        //fmdbQueryColunm()
+        // manyFmdbPositions()
+        // fmdbQueryColunm()
         // fmdbQuery()
         // fmdbDelete(id:8)
         // fmdbUpdate(dict: ["id":7,"name":"li","age":22,"height":1.6])

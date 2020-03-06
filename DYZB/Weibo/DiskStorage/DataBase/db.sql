@@ -14,11 +14,16 @@ CREATE TABLE IF NOT EXISTS 'T_Person' (
 'height' REAL
 );
 
---T_status--
+
+-- 创建 T_status 表
+-- createTime text: (datetime('now','localtime'))
 DROP TABLE IF EXISTS "T_Status";
 CREATE TABLE "T_Status" (
-  "statusId" integer NOT NULL,
-  "status" TEXT,
-  "userId" INTEGER,
-  PRIMARY KEY ("statusid")
+  "statusId" INTEGER NOT NULL,
+  "status" text,
+  "userId" integer,
+  "createTime" text DEFAULT (datetime('now','localtime')),
+  PRIMARY KEY ("statusId")
 );
+
+

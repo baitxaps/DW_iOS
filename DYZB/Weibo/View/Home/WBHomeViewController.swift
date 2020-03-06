@@ -90,7 +90,7 @@ extension WBHomeTableViewController {
         let since_id = self.listViewModel.statusList.first?.status.id ?? 0
         let max_id = self.listViewModel.statusList.last?.status.id ?? 0
         
-        listViewModel.loadStatus(withIsPull:pullupView.isAnimating, since_id:since_id, max_id:max_id) { (isSuccess) in
+        listViewModel.loadStatus(withPullup:pullupView.isAnimating, since_id:since_id, max_id:max_id) { (isSuccess) in
             self.refreshControl?.endRefreshing()
             self.pullupView.stopAnimating()
             

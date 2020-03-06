@@ -53,6 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = WBAppearanceTintColor
     }
     
+    
+    func applicationDidEnterBackground(_ application: UIApplication){
+        StatusDAL.clearDataCache()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name( WBSwitchRootViewControllerNotification), object: nil)
     }

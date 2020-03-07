@@ -34,8 +34,8 @@ extension Date {
     /// - returns: 日期
     static func sinaDate(string: String) -> Date? {
         // 设置日期格式 EEEE:星期，zzz：时区
-        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
-        
+        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss zzzz yyyy"
+        dateFormatter.locale = Locale(identifier: "en")
         // 转换并且返回日期
         return dateFormatter.date(from: string)
     }

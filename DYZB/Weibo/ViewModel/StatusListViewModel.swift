@@ -12,6 +12,8 @@ import Kingfisher
 class StatusListViewModel {
     lazy var statusList = [StatusViewModel]()
     
+    var pulldownCount: Int?
+    
     // 移动端下拉刷新、上拉加载更多
     // pullup:是否上拉刷新标记
     func loadStatus(withPullup pullup:Bool ,since_id:Int,max_id:Int, finished:@escaping (_ isSuccessed:Bool)->()) {
@@ -29,7 +31,9 @@ class StatusListViewModel {
             for dict in array {
                 dataList.append(StatusViewModel(status: Status(dict:dict)))
             }
-            print("get:\(dataList.count) datas")
+            
+            DLog(message:"刷新到:\(dataList.count) 条数据")
+            self.pulldownCount = since_id > 0 ? dataList.count : nil
             
             // join the data
             if tmp_max_id > 0 {
@@ -54,7 +58,6 @@ class StatusListViewModel {
         for vm in dataList {
             let count = vm.thumbnailUrls?.count ?? 0
             if count  > 1 || count == 0 {
-                finished(true)
                 continue
             }
             
@@ -82,11 +85,11 @@ class StatusListViewModel {
                     print(response)
                 }
             }
-            
-            group.notify(queue: DispatchQueue.main) {
-               print("cache dataLength:\(dataLength/1024) K")
-                finished(true)
-            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            print("cache dataLength:\(dataLength/1024) K")
+            finished(true)
         }
     }
 }

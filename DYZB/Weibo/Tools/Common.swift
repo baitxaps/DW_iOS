@@ -5,7 +5,6 @@
 //  Created by hairong chen on  9/14.
 //  Copyright @huse.cn All rights reserved.
 //
-
 import UIKit
 
 let kStatusBarH : CGFloat = 20

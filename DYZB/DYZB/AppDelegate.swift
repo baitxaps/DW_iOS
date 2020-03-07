@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QorumLogs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,9 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //testSwiftBridgeOC()
         testSwiftBridgeFMDB()
-        
+        dlogTest()
         window?.makeKeyAndVisible()
-        DLog(message: "------printLogDebug------")
+     
+        
         NotificationCenter.default.addObserver(forName:NSNotification.Name( WBSwitchRootViewControllerNotification), object: nil, queue: nil) { [weak self] (notification) in
             print(Thread.current)
             print(notification)
@@ -92,12 +94,31 @@ extension AppDelegate {
 
 //MARK:-  oc bridge file
 extension AppDelegate {
+    func dlogTest() {
+        DLog(message: "------printLogDebug------")
+        
+        QorumLogs.enabled = true
+     // QorumLogs.test()
+        
+        QLShortLine()
+        QL2("userAccount: \(UserAccountViewModel.shared.account?.uid ?? "")")
+        QLShortLine()
+        
+       // 测试的时候，可以限定输出文件
+       // QorumLogs.onlyShowThisFile(WBHomeTableViewController.self)
+        
+        // 程序发布的时候，希望只显示错误信息
+        QorumLogs.minimumLogLevelShown = 4
+        QL4("严重错误!")
+        
+        
+    }
     
     func testSwiftBridgeFMDB() {
        // let shared = FMDBManager.sharedManager
        // let p = DataBaseAPI(dict: [:])
         
-        // SQL 注入
+       // SQL 注入
 //        p.fmdbInsert(name: "William,0,0);DELETE FROM T_Person; --")
 //        p.fmdbInsert(name: "William")
         

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import QorumLogs
+
 let StatusCellNormalId = "StatusCellNormalId"
 let StatusCellRetweetedId = "StatusCellRetweetedId"
 
@@ -77,6 +79,13 @@ class WBHomeTableViewController: VisitorTableViewController {
     }()
     
     private lazy var photoBrowserAnimator:PhotoBrowserAnimator = PhotoBrowserAnimator()
+    
+    private lazy var pulldownTipLabel:UILabel = {
+        let label = UILabel(title: "", fontSize: 18, color: UIColor.white)
+        label.backgroundColor = UIColor.orange
+        navigationController?.navigationBar.insertSubview(label, at: 0)
+        return label
+    }()
 }
 
 
@@ -97,10 +106,36 @@ extension WBHomeTableViewController {
             if !isSuccess {
                 return
             }
+            
+            self.showPulldownTip()
+            
             self.tableView.reloadData()
         }
     }
     
+    // MARK:- show Pulldown Tip
+    private func showPulldownTip() {
+        guard let count = listViewModel.pulldownCount else {
+            return
+        }
+        QL1("下拉刷新\(count)")
+        
+        pulldownTipLabel.text = (count == 0) ? "没有新微博" :"刷新到 \(count) 条微博"
+        
+       // let offset:CGFloat = isIPhoneXType() ? 64 : 44
+        let height:CGFloat = 44
+        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: height)
+        pulldownTipLabel.frame = rect.offsetBy(dx: 0,dy:-2 * height)
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            self.pulldownTipLabel.frame = rect.offsetBy(dx: 0,dy:height)
+        }) { (_)->Void in
+            UIView.animate(withDuration: 1.0) {
+                self.pulldownTipLabel.frame = rect.offsetBy(dx: 0,dy:-2 * height)
+            }
+        }
+    }
+
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  self.listViewModel.statusList.count 

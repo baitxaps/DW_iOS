@@ -16,7 +16,7 @@ pod 'NVActivityIndicatorView'
 pod 'DGElasticPullToRefresh'
 
 pod 'Toast-Swift', '~> 5.0.1' #https://github.com/scalessec/Toast-Swift
-pod 'QorumLogs' #Stable release for Swift 3.0
+#pod 'QorumLogs' #Stable release for Swift 3.0
 
 end
 
@@ -24,6 +24,9 @@ end
 #pod install --no-repo-update .
 
 #swift 常用第三方框架记录
+#XcodeColors plugin
+#https://github.com/robbiehanson/xcodeColors
+
 #https://www.jianshu.com/p/e0bd1d7ff374
 #网络
 

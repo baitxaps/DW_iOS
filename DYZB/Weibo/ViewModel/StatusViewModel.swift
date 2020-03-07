@@ -27,6 +27,11 @@ class StatusViewModel:CustomStringConvertible {
         return cell.rowHeight(vm: self)
     }()
     
+    // 计算型属性
+    var createAt:String? {
+        return Date.sinaDate(string: status.created_at ?? "")?.dateDescription
+    }
+    
     var userProfileUrl:URL {
         return URL(string: status.user?.profile_image_url ?? "")!
     }

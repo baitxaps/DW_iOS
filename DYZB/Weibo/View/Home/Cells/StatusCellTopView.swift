@@ -18,7 +18,7 @@ class StatusCellTopView: UIView {
             memberIconView.image = viewModel?.userMemberImage
             vipIconView.image = viewModel?.userVipImage
             
-            timeLabel.text = viewModel?.status.created_at
+            timeLabel.text = viewModel?.createAt
             QL1(viewModel?.status.created_at)
             
             sourceLabel.text = viewModel?.status.source

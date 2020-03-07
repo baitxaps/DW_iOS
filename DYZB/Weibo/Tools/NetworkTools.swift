@@ -66,6 +66,7 @@ class NetworkTools {
             
         }, to: URL(string:URLString)!) { (result) in
             print("数据准备完成")
+            
             switch result {
             case .success(let upload, _, _):
                 upload.responseString(completionHandler: { (respone) in
@@ -80,22 +81,30 @@ class NetworkTools {
         }
     }
     
-    // file length 5m
+    //upload the file length limit to 5mb
     class func limitToupload(URLString: String, parameters: [String: AnyObject]?, data:Data, name: String, finishedCallback :@escaping (_ result :Any?,_ error:Error?) ->()){
         Alamofire.upload(multipartFormData: { (formData) in
+            
             formData.append(data, withName: name, fileName: "pic", mimeType: "application/octet-stream")
+            
         }, usingThreshold: 5 * 1024 * 1024, to: URLString, method:.post, headers: nil) { (encodingResult) in
             switch encodingResult {
+                
             case .success(let upload, _, _):
+                
                 upload.responseJSON { (response) in
+                    
                     if response.result.isFailure {
-                        print("网络请求失败\(response.result.error )")
+                        print("网络请求失败\(response.result.error)")
                     }
+                    
                     finishedCallback(response.result.value as Any ,response.result.error)
                 }
                 
             case .failure(let err):
+                
                 finishedCallback(nil,err)
+                
                 break
             }
         }

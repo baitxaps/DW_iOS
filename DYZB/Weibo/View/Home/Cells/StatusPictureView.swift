@@ -78,6 +78,10 @@ private class StatusPictureViewCell:UICollectionViewCell {
     var imageURL:URL? {
         didSet {
             iconView.kf.setImage(with: imageURL, placeholder:nil)
+            
+            let ext = ((imageURL?.absoluteString ?? "") as NSString).pathExtension.lowercased()
+            
+            gifIconView.isHidden = (ext != "gif")
         }
     }
     
@@ -93,8 +97,14 @@ private class StatusPictureViewCell:UICollectionViewCell {
     private func setupUI() {
         
         contentView.addSubview(iconView)
+        contentView.addSubview(gifIconView)
         iconView.snp.makeConstraints { (make) in
             make.edges.equalTo(contentView.snp.edges)
+        }
+        
+        gifIconView.snp.makeConstraints { (make) in
+            make.right.equalTo(iconView.snp.right)
+            make.bottom.equalTo(iconView.snp.bottom)
         }
     }
     
@@ -104,6 +114,8 @@ private class StatusPictureViewCell:UICollectionViewCell {
         iv.contentMode = UIView.ContentMode.scaleAspectFill
         return iv
     }()
+    
+    private lazy var gifIconView:UIImageView = UIImageView(imageName: "timeline_image_gif")
 }
 
 extension StatusPictureView {

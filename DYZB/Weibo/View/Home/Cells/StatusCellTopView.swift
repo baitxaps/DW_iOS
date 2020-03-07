@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QorumLogs
 
 class StatusCellTopView: UIView {
     var viewModel:StatusViewModel? {
@@ -17,7 +18,9 @@ class StatusCellTopView: UIView {
             memberIconView.image = viewModel?.userMemberImage
             vipIconView.image = viewModel?.userVipImage
             
-            timeLabel.text = "刚刚"//viewModel?.status.created_at
+            timeLabel.text = viewModel?.status.created_at
+            QL1(viewModel?.status.created_at)
+            
             sourceLabel.text = viewModel?.status.source
         }
     }

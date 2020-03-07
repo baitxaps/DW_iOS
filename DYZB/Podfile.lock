@@ -5,6 +5,7 @@ PODS:
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
+  - QorumLogs (0.9)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - DGElasticPullToRefresh
   - Kingfisher (~> 5.7.1)
   - NVActivityIndicatorView
+  - QorumLogs
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
   - SnapKit (~> 5.0.0)
@@ -32,6 +34,7 @@ SPEC REPOS:
     - DGElasticPullToRefresh
     - Kingfisher
     - NVActivityIndicatorView
+    - QorumLogs
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -44,6 +47,7 @@ SPEC CHECKSUMS:
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
@@ -51,6 +55,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 49ee5f51e68b971f8c916dd7b5feb40ee7404430
+PODFILE CHECKSUM: 3035e3b3f148d2d714e3aa6e85f0704a88712096
 
 COCOAPODS: 1.5.3

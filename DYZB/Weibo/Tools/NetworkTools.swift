@@ -63,6 +63,18 @@ class NetworkTools {
         Alamofire.upload(multipartFormData: { (formData) in
             // 加更多参数
             formData.append(data, withName: name, fileName: "pic", mimeType: "application/octet-stream")
+            // 遍历参数字典，生成对应的参数数据
+            if let parameters = parameters {
+                
+                for (k,v) in parameters {
+                    
+                    let str = v as! String
+                    let strData = str.data(using: String.Encoding.utf8)
+                    
+                    // strData 是V的二进制数据，name是k
+                    formData.append(strData!, withName: k)
+                }
+            }
             
         }, to: URL(string:URLString)!) { (result) in
             print("数据准备完成")
@@ -81,12 +93,30 @@ class NetworkTools {
         }
     }
     
-    //upload the file length limit to 5mb
+    /*
+     upload the file length limit to 5mb
+     文件上传和字典参数
+     appendBody 方法中，如果带mimeType 是拼接上传文件的方法
+     appendBody,如果不带 mimeType 是拼接普通的二进制参数方法
+     */
     class func limitToUpload(URLString: String, parameters: [String: AnyObject]?, data:Data, name: String, finishedCallback :@escaping (_ result :Any?,_ error:Error?) ->()){
         Alamofire.upload(multipartFormData: { (formData) in
             
+            // 拼接上传二进制数据
             formData.append(data, withName: name, fileName: "pic", mimeType: "application/octet-stream")
             
+            // 遍历参数字典，生成对应的参数数据
+            if let parameters = parameters {
+                
+                for (k,v) in parameters {
+                    
+                    let str = v as! String
+                    let strData = str.data(using: String.Encoding.utf8)
+                    
+                    // strData 是V的二进制数据，name是k
+                    formData.append(strData!, withName: k)
+                }
+            }
         }, usingThreshold: 5 * 1024 * 1024, to: URLString, method:.post, headers: nil) { (encodingResult) in
             switch encodingResult {
                 

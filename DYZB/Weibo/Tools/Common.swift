@@ -60,3 +60,12 @@ func safeBottomHeight() ->CGFloat {
     return UIApplication.shared.windows[0].safeAreaInsets.bottom
 }
 
+func DLog<T>(message:T ,
+     file:String = #file,
+      method:String = #function,
+      line:Int = #line)
+{
+    #if DEBUG
+    print("\((file as NSString).lastPathComponent)[\(line)],\(method):\(message)")
+    #endif
+}

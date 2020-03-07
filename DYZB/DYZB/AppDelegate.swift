@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         testSwiftBridgeFMDB()
         
         window?.makeKeyAndVisible()
-        
+        DLog(message: "------printLogDebug------")
         NotificationCenter.default.addObserver(forName:NSNotification.Name( WBSwitchRootViewControllerNotification), object: nil, queue: nil) { [weak self] (notification) in
             print(Thread.current)
             print(notification)

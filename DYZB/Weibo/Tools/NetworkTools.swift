@@ -82,7 +82,7 @@ class NetworkTools {
     }
     
     //upload the file length limit to 5mb
-    class func limitToupload(URLString: String, parameters: [String: AnyObject]?, data:Data, name: String, finishedCallback :@escaping (_ result :Any?,_ error:Error?) ->()){
+    class func limitToUpload(URLString: String, parameters: [String: AnyObject]?, data:Data, name: String, finishedCallback :@escaping (_ result :Any?,_ error:Error?) ->()){
         Alamofire.upload(multipartFormData: { (formData) in
             
             formData.append(data, withName: name, fileName: "pic", mimeType: "application/octet-stream")

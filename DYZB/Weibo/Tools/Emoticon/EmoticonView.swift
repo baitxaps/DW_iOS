@@ -102,6 +102,7 @@ private extension EmoticonView {
         toolbar.layoutIfNeeded()
         
         toolbar.tintColor = UIColor.darkGray
+
         var items:[UIBarButtonItem] = [UIBarButtonItem]()
         var index = 0
         for title in packages {
@@ -117,7 +118,7 @@ private extension EmoticonView {
     }
     
     private func perpareCollectionView() {
-        collectionView.backgroundColor = UIColor.lightGray
+        collectionView.backgroundColor = UIColor.white
         collectionView.register(EmoticonViewCell.self, forCellWithReuseIdentifier: EmoticonViewCellId)
         
         collectionView.dataSource = self
@@ -147,6 +148,11 @@ extension EmoticonView:UICollectionViewDataSource,UICollectionViewDelegate {
         let em = packages[indexPath.section].emoticons[indexPath.item]
         
         selectedEmoticonCallBack(em)
+        
+        // 加入最近表情,第0个分组不参加排序
+        if indexPath.section > 0 {
+            EmoticonManager.sharedManager.addFavorite(em: em)
+        }
     }
 }
 

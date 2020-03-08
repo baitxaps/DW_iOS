@@ -25,6 +25,22 @@ class EmoticonManager {
     static let sharedManager = EmoticonManager()
     
     lazy var packages = [EmoticonPackage]()
+    
+    // 最近表情,加入packages[0]中
+    func addFavorite(em:Emoticon) {
+        // 排序用
+        em.times = em.times + 1
+        
+        if !packages[0].emoticons.contains(em) {
+            packages[0].emoticons.insert(em, at: 0)
+            
+            // 删除倒数第二个按钮(emoticons保持21个，最后一个是删除按钮)
+            packages[0].emoticons.remove(at: packages[0].emoticons.count - 2)
+        }
+        
+        packages[0].emoticons.sort { $0.times > $1.times }
+    }
+    
     private init() {
         loadPlist()
     }

@@ -44,6 +44,8 @@ extension StatusRetweetedCell {
     override func setupUI() {
         super.setupUI()
         
+        retweetedLabel.labelDelegate = self
+        
         contentView.insertSubview(backButtom, belowSubview:pictureView)
         contentView.insertSubview(retweetedLabel,aboveSubview: backButtom)
         

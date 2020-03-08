@@ -153,6 +153,7 @@ extension WBHomeTableViewController {
             pullupView.startAnimating()
             loadData()
         }
+        cell.cellDelegate = self
         
         return cell
     }
@@ -166,7 +167,17 @@ extension WBHomeTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicked:\(indexPath.row)")
     }
+}
+
+// MARK:- StatusCellDelegate
+
+extension WBHomeTableViewController :StatusCellDelegate {
     
+    func statusCellDidClickUrl(url:URL) {
+        let vc = HomeWebViewControler(url:url)
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     
     //MARK: - ----------test---------------
@@ -188,4 +199,3 @@ extension WBHomeTableViewController {
     }
     //-------------------------
 }
-

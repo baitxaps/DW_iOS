@@ -8,12 +8,20 @@
 
 import UIKit
 import FFLabel
+import QorumLogs
 
 let StatusCellMargin:CGFloat = 12
 let StatusCellIconWidth:CGFloat = 35
 
+protocol StatusCellDelegate:NSObjectProtocol {
+    func statusCellDidClickUrl(url:URL)
+}
+
 // weibo cell
 class StatusCell: UITableViewCell {
+    // Clicked  the URL
+    weak var cellDelegate:StatusCellDelegate?
+    
     //MARK:- viewModel
     var viewModel:StatusViewModel? {
         didSet {
@@ -73,6 +81,8 @@ extension StatusCell {
         contentView.addSubview(pictureView)
         contentView.addSubview(bottomView)
         
+        contentLabel.labelDelegate = self 
+        
         topView.snp.makeConstraints { (make) in
             make.top.equalTo(contentView.snp.top)
             make.left.equalTo(contentView.snp.left)
@@ -95,8 +105,17 @@ extension StatusCell {
 }
 
 
-
-
+extension StatusCell: FFLabelDelegate {
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        QL2(text)
+        
+        if text.hasPrefix("http://") {
+            guard let url = URL(string: text) else {return}
+            
+            cellDelegate?.statusCellDidClickUrl(url: url)
+        }
+    }
+}
 
 
 

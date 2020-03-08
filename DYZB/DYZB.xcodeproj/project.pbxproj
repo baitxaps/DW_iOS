@@ -115,6 +115,7 @@
 		77A3E3072407ECE500D41E2F /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3E3062407ECE500D41E2F /* PhotoBrowserCell.swift */; };
 		77A8C00623CB5EC10039970F /* DataBaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8C00523CB5EC10039970F /* DataBaseAPI.swift */; };
 		77B15ADE240E329700791815 /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B15ADD240E329700791815 /* FMDBManager.swift */; };
+		77B8D4B72414C578003157EA /* HomeWebViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B8D4B62414C578003157EA /* HomeWebViewControler.swift */; };
 		77C413CA23E56E7C008EE41D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C413C923E56E7C008EE41D /* User.swift */; };
 		77C413CC23E58FC8008EE41D /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C413CB23E58FC8008EE41D /* StatusViewModel.swift */; };
 		77C413CF23E5A2EB008EE41D /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C413CE23E5A2EB008EE41D /* StatusCell.swift */; };
@@ -268,6 +269,7 @@
 		77A3E3062407ECE500D41E2F /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
 		77A8C00523CB5EC10039970F /* DataBaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseAPI.swift; sourceTree = "<group>"; };
 		77B15ADD240E329700791815 /* FMDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
+		77B8D4B62414C578003157EA /* HomeWebViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWebViewControler.swift; sourceTree = "<group>"; };
 		77C413C923E56E7C008EE41D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		77C413CB23E58FC8008EE41D /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		77C413CE23E5A2EB008EE41D /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 				772A804823E982780058AA34 /* RefreshView */,
 				77C413CD23E592BB008EE41D /* Cells */,
 				771A31A823CF32DB003C784B /* WBHomeViewController.swift */,
+				77B8D4B62414C578003157EA /* HomeWebViewControler.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1074,6 +1077,7 @@
 				63A977391DAC744D00DB9157 /* AmuseMenuView.swift in Sources */,
 				77792268240FB82700E039DF /* FMDatabaseVariadic.swift in Sources */,
 				77D8F14023EEDF7700935B2D /* String+Emoji.swift in Sources */,
+				77B8D4B72414C578003157EA /* HomeWebViewControler.swift in Sources */,
 				77C413D123E5A344008EE41D /* StatusCellTopView.swift in Sources */,
 				771A31B223CF47CA003C784B /* MessageTableViewController.swift in Sources */,
 				771A31B523CF63DA003C784B /* UIButton+Extension.swift in Sources */,

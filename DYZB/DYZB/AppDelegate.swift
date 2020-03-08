@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //testSwiftBridgeOC()
         testSwiftBridgeFMDB()
-        dlogTest()
+        DLogTest()
         window?.makeKeyAndVisible()
      
         
@@ -94,7 +94,7 @@ extension AppDelegate {
 
 //MARK:-  oc bridge file
 extension AppDelegate {
-    func dlogTest() {
+    func DLogTest() {
         DLog(message: "------printLogDebug------")
         
         QorumLogs.enabled = true

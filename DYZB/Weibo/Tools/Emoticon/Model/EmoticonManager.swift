@@ -76,7 +76,7 @@ extension EmoticonManager {
  
     /*
      将给定的字符串转换成属性文本
-     关键点：要按照匹配结果倒序替换属性文本！
+     关键点：要按照匹配结果倒序替换属性文本
      */
     func emotionText(string:String,font: UIFont) ->NSAttributedString {
         let strM = NSMutableAttributedString(string: string)

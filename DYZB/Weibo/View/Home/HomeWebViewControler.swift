@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class HomeWebViewControler: UIViewController {
     
     private lazy var webView = UIWebView()
     private var url:URL
+    private lazy var indicator = NVActivityIndicatorView()
     
     init(url:URL) {
         self.url = url
@@ -24,6 +26,7 @@ class HomeWebViewControler: UIViewController {
     
     override func loadView() {
         view = webView
+        webView.delegate = self
         title = "网页"
     }
     
@@ -31,5 +34,14 @@ class HomeWebViewControler: UIViewController {
         super.viewDidLoad()
         webView.loadRequest(URLRequest(url: url))
     }
+}
 
+extension HomeWebViewControler:UIWebViewDelegate {
+    func webViewDidStartLoad(_ webView: UIWebView) {
+       indicator.startAnimating()
+    }
+
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        indicator.stopAnimating()
+    }
 }

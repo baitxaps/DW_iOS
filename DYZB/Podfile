@@ -16,7 +16,8 @@ pod 'NVActivityIndicatorView'
 pod 'DGElasticPullToRefresh'
 
 pod 'Toast-Swift', '~> 5.0.1' #https://github.com/scalessec/Toast-Swift
-#pod 'QorumLogs' #Stable release for Swift 3.0
+pod 'QorumLogs' #Stable release for Swift 3.0
+pod 'FFLabel'
 
 end
 

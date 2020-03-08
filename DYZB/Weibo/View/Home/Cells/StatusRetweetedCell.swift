@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FFLabel
+
 // RetweetedCell
 class StatusRetweetedCell: StatusCell {
     // 继承父类的属性：不需要super,先执行父类的didset,再执行子类的didset
@@ -31,7 +33,7 @@ class StatusRetweetedCell: StatusCell {
         return btn
     }()
     
-    private lazy var retweetedLabel:UILabel = UILabel(title: "转发微博", fontSize:14.0, color: UIColor.darkGray, screenInset: StatusCellMargin)
+    private lazy var retweetedLabel:FFLabel = FFLabel(title: "转发微博", fontSize:14.0, color: UIColor.darkGray, screenInset: StatusCellMargin)
     
     
     override func awakeFromNib() {super.awakeFromNib() }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FFLabel
 
 let StatusCellMargin:CGFloat = 12
 let StatusCellIconWidth:CGFloat = 35
@@ -53,7 +54,7 @@ class StatusCell: UITableViewCell {
     
     private lazy var topView : StatusCellTopView = StatusCellTopView()
     
-    lazy var contentLabel :UILabel = UILabel(title: "微博正文", fontSize: 15 ,color: UIColor.darkGray,screenInset: StatusCellMargin)
+    lazy var contentLabel :FFLabel = FFLabel(title: "微博正文", fontSize: 15 ,color: UIColor.darkGray,screenInset: StatusCellMargin)
 
     lazy var pictureView:StatusPictureView = StatusPictureView()
     

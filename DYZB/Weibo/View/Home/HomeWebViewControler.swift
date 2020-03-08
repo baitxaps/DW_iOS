@@ -27,6 +27,7 @@ class HomeWebViewControler: UIViewController {
     override func loadView() {
         view = webView
         webView.delegate = self
+        webView.addSubview(indicator)
         title = "网页"
     }
     

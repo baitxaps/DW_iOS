@@ -12,7 +12,10 @@ class StatusRetweetedCell: StatusCell {
     // 继承父类的属性：不需要super,先执行父类的didset,再执行子类的didset
        override var viewModel:StatusViewModel? {
             didSet {
-                retweetedLabel.text = viewModel?.retweetedText
+                let text = viewModel?.retweetedText ?? ""
+                
+//              retweetedLabel.attributedText = viewModel?.retweetedText
+                retweetedLabel.attributedText = EmoticonManager.sharedManager.emotionText(string: text, font: retweetedLabel.font)
                 
                 pictureView.snp.updateConstraints { (make) in
                     let count = viewModel?.thumbnailUrls?.count

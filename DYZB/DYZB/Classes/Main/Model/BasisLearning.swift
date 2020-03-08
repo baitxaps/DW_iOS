@@ -58,6 +58,61 @@ import UIKit
  //////////////////////////////////////////////
  //it
  //////////////////////////////////////////////
+class Test: NSObject {
+    var name: String? {
+        didSet {
+            print("It was set")
+        }
+    }
+
+    func testit() {
+        // name = (name)    // No longer works with Swift 3.1 (bug SR-4464)
+        // (name) = name    // No longer works with Swift 3.1
+        // (name) = (name)  // No longer works with Swift 3.1
+        (name = name)
+        name = [name][0]
+        name = [name].last!
+        name = [name].first!
+        name = [1:name][1]!
+        name = name ?? nil
+        name = nil ?? name
+        name = name ?? name
+        name = {name}()
+        name = Optional(name)!
+       // name = ImplicitlyUnwrappedOptional(name)
+        name = true ? name : name
+        name = false ? name : name
+        let temp = name; name = temp
+        name = name as Any as? String
+        name = (name,0).0
+        name = (0,name).1
+        setValue(name, forKey: "name") // requires class derive from NSObject
+        name = Unmanaged.passUnretained(self).takeUnretainedValue().name
+        name = unsafeBitCast(name, to: type(of: name))
+        name = unsafeDowncast(self, to: type(of: self)).name
+//        perform(#selector(setter:name), with: name) // requires class derive from NSObject
+//  name = (self as Test).name
+  /*       unsafeBitCast(dlsym(dlopen("/usr/lib/libobjc.A.dylib",RTLD_NOW),"objc_msgSend"),to:(@convention(c)(Any?,Selector!,Any?)->Void).self)(self,#selector(setter:name),name) // requires class derive from NSObject
+//        unsafeBitCast(class_getMethodImplementation(type(of: self), #selector(setter:name)), to:(@convention(c)(Any?,Selector!,Any?)->Void).self)(self,#selector(setter:name),name) // requires class derive from NSObject
+//        unsafeBitCast(method(for: #selector(setter:name)),to:(@convention(c)(Any?,Selector,Any?)->Void).self)(self,#selector(setter:name),name) // requires class derive from NSObject
+//        _ = UnsafeMutablePointer(&name)
+//        _ = UnsafeMutableRawPointer(&name)
+//        _ = UnsafeMutableBufferPointer(start: &name, count: 1)
+//        withUnsafePointer(to: &name) { name = $0.pointee }
+
+        //Using NSInvocation, requires class derive from NSObject
+      
+        let invocation : NSObject = unsafeBitCast(method_getImplementation(class_getClassMethod(NSClassFromString("NSInvocation"), NSSelectorFromString("invocationWithMethodSignature:"))),to:(@convention(c)(AnyClass?,Selector,Any?)->Any).self)(NSClassFromString("NSInvocation"),NSSelectorFromString("invocationWithMethodSignature:"),unsafeBitCast(method(for: NSSelectorFromString("methodSignatureForSelector:"))!,to:(@convention(c)(Any?,Selector,Selector)->Any).self)(self,NSSelectorFromString("methodSignatureForSelector:"),#selector(setter:name))) as! NSObject
+        unsafeBitCast(class_getMethodImplementation(NSClassFromString("NSInvocation"), NSSelectorFromString("setSelector:")),to:(@convention(c)(Any,Selector,Selector)->Void).self)(invocation,NSSelectorFromString("setSelector:"),#selector(setter:name))
+        var localVarName = name
+        withUnsafePointer(to: &localVarName) { unsafeBitCast(class_getMethodImplementation(NSClassFromString("NSInvocation"), NSSelectorFromString("setArgument:atIndex:")),to:(@convention(c)(Any,Selector,OpaquePointer,NSInteger)->Void).self)(invocation,NSSelectorFromString("setArgument:atIndex:"), OpaquePointer($0),2) }
+        invocation.perform(NSSelectorFromString("invokeWithTarget:"), with: self)
+ */
+    }
+}
+
+
+
 class Person__:NSObject {
     var name :String?
     var height :Float = 0

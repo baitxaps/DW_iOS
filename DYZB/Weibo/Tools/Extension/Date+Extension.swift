@@ -14,6 +14,13 @@ private let dateFormatter = DateFormatter()
 private let calendar = Calendar.current
 
 extension Date {
+    static func getCurrentTime() -> String {
+        let nowDate = Date()
+        
+        let interval = Int(nowDate.timeIntervalSince1970)
+        
+        return "\(interval)"
+    }
     
     // 计算与当前系统时间偏差 delta 秒数的日期字符串
     // 在 Swift 中，如果要定义结构体的 `类`函数，使用 static 修饰 -> 静态函数

@@ -11,9 +11,10 @@ import UIKit
 private let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
+    
     // MARK:- 懒加载属性
     fileprivate lazy var pageTitleView : PageTitleView = {[weak self] in
-        let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
+        let titleFrame = CGRect(x: 0, y: (isIPhoneXType() ?kxStatusBarH : kStatusBarH)  + kNavigationBarH , width: kScreenW, height: kTitleViewH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         titleView.delegate = self
@@ -24,7 +25,7 @@ class HomeViewController: UIViewController {
         
         // 1.确定内容的frame
         let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabbarH
-        let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
+        let contentFrame = CGRect(x: 0, y: (isIPhoneXType() ?kxStatusBarH : kStatusBarH)  + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
         
         // 2.确定所有的子控制器
         var childVcs = [UIViewController]()
@@ -96,6 +97,7 @@ class HomeViewController: UIViewController {
 // MARK:- 设置UI界面
 extension HomeViewController {
     fileprivate func setupUI() {
+       // edgesForExtendedLayout = []
         // 0.不需要调整UIScrollView的内边距
         automaticallyAdjustsScrollViewInsets = false
         

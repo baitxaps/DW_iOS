@@ -8,12 +8,18 @@
 import UIKit
 
 let kStatusBarH : CGFloat = 20
+let kxStatusBarH : CGFloat = 44
 let kNavigationBarH : CGFloat = 44
 let kTabbarH : CGFloat = 44
 
 let kScreenW = UIScreen.main.bounds.width
 let kScreenH = UIScreen.main.bounds.height
 let kIndicator:CGFloat = 100
+
+//#define kNavBarHeight                44.f
+//#define kStatusBarHeight             (IsiPhoneX ? 44 : 20)
+//#define kNavBarAndStatusBarHeight    (kNavBarHeight+kStatusBarHeight)
+//#define kFullScreenOryY              (IsiPhoneX ? 0 : 20)
 
 // the same like .pch file
 let WBAppearanceTintColor = UIColor.orange

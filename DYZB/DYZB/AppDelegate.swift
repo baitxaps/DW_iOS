@@ -11,7 +11,7 @@ import QorumLogs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    #if false
+    #if true
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         setupAppearance()
@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // WBMainViewController()
         // NewFeatureViewController()
         
+        TestMemoryLayout()
         //testSwiftBridgeOC()
         testSwiftBridgeFMDB()
         DLogTest()
@@ -94,6 +95,12 @@ extension AppDelegate {
 
 //MARK:-  oc bridge file
 extension AppDelegate {
+    
+    func TestMemoryLayout() {
+       var obj = SeniorLearning()
+        obj.testEnum()
+    }
+    
     func DLogTest() {
         DLog(message: "------printLogDebug------")
         

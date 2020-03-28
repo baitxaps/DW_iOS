@@ -432,7 +432,7 @@
 		63774CBB1D865C9E00DCC727 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				77F670F4242F2CE100CFF4A1 /* Storyboard */,
+				77F670F4242F2CE100CFF4A1 /* StoryBoard */,
 				63774CBF1D865C9E00DCC727 /* Main */,
 				6332FCF81DB07BE4002F1054 /* Room */,
 				63774CBD1D865C9E00DCC727 /* Home */,
@@ -757,7 +757,7 @@
 			path = Compose;
 			sourceTree = "<group>";
 		};
-		77F670F4242F2CE100CFF4A1 /* Storyboard */ = {
+		77F670F4242F2CE100CFF4A1 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
 				77F670F5242F2CE100CFF4A1 /* LaunchScreen.storyboard */,
@@ -768,7 +768,7 @@
 				77F670FA242F2CE100CFF4A1 /* Follow.storyboard */,
 				77F670FB242F2CE100CFF4A1 /* Live.storyboard */,
 			);
-			path = Storyboard;
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {

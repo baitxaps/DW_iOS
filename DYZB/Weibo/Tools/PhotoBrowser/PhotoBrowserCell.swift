@@ -162,8 +162,13 @@ class PhotoBrowserCell: UICollectionViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(onTapImage))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tap)
+        
+        let swip = UISwipeGestureRecognizer(target: self, action: #selector(onTapImage))
+        swip.direction = [.down,.up];
+        imageView.addGestureRecognizer(swip)
     }
-    
+//    UISwipeGestureRecognizerDirectionUp    = 1 << 2,
+//      UISwipeGestureRecognizerDirectionDown  = 1 << 3
     lazy var scrollView:UIScrollView = UIScrollView()
     lazy var imageView:UIImageView = UIImageView()
     private lazy var placeHolder:ProgressImageView = ProgressImageView()

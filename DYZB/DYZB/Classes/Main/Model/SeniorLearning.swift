@@ -34,6 +34,7 @@ class SeniorLearning: NSObject {
         print(MemoryLayout<TestEnum>.stride)
         print(MemoryLayout<TestEnum>.alignment)
     }
-    
 
 }
+// 寄存器读值：register read rax
+// 寄存器写值：register write rax 0x1

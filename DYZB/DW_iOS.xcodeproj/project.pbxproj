@@ -179,7 +179,7 @@
 		63744BF01D8F862C00BF4B96 /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		63744BF21D8F875B00BF4B96 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		63744BF41D8FC37600BF4B96 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
-		63774CA61D86598500DCC727 /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63774CA61D86598500DCC727 /* DW_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DW_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63774CA91D86598500DCC727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63774CAE1D86598500DCC727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63774CB01D86598500DCC727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -411,7 +411,7 @@
 		63774CA71D86598500DCC727 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				63774CA61D86598500DCC727 /* DYZB.app */,
+				63774CA61D86598500DCC727 /* DW_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -806,9 +806,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		63774CA51D86598500DCC727 /* DYZB */ = {
+		63774CA51D86598500DCC727 /* DW_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63774CB81D86598500DCC727 /* Build configuration list for PBXNativeTarget "DYZB" */;
+			buildConfigurationList = 63774CB81D86598500DCC727 /* Build configuration list for PBXNativeTarget "DW_iOS" */;
 			buildPhases = (
 				4C7FC5D0890F0234F6B287BF /* [CP] Check Pods Manifest.lock */,
 				BA13321CF9D05FAA5F673385 /* 📦 Check Pods Manifest.lock */,
@@ -823,9 +823,9 @@
 			);
 			dependencies = (
 			);
-			name = DYZB;
+			name = DW_iOS;
 			productName = DYZB;
-			productReference = 63774CA61D86598500DCC727 /* DYZB.app */;
+			productReference = 63774CA61D86598500DCC727 /* DW_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -846,7 +846,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 63774CA11D86598500DCC727 /* Build configuration list for PBXProject "DYZB" */;
+			buildConfigurationList = 63774CA11D86598500DCC727 /* Build configuration list for PBXProject "DW_iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -860,7 +860,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63774CA51D86598500DCC727 /* DYZB */,
+				63774CA51D86598500DCC727 /* DW_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1302,7 +1302,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63774CA11D86598500DCC727 /* Build configuration list for PBXProject "DYZB" */ = {
+		63774CA11D86598500DCC727 /* Build configuration list for PBXProject "DW_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63774CB61D86598500DCC727 /* Debug */,
@@ -1311,7 +1311,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63774CB81D86598500DCC727 /* Build configuration list for PBXNativeTarget "DYZB" */ = {
+		63774CB81D86598500DCC727 /* Build configuration list for PBXNativeTarget "DW_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63774CB91D86598500DCC727 /* Debug */,

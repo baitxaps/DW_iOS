@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "63774CA51D86598500DCC727"
-               BuildableName = "DYZB.app"
-               BlueprintName = "DYZB"
-               ReferencedContainer = "container:DYZB.xcodeproj">
+               BuildableName = "DW_iOS.app"
+               BlueprintName = "DW_iOS"
+               ReferencedContainer = "container:DW_iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63774CA51D86598500DCC727"
-            BuildableName = "DYZB.app"
-            BlueprintName = "DYZB"
-            ReferencedContainer = "container:DYZB.xcodeproj">
+            BuildableName = "DW_iOS.app"
+            BlueprintName = "DW_iOS"
+            ReferencedContainer = "container:DW_iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63774CA51D86598500DCC727"
-            BuildableName = "DYZB.app"
-            BlueprintName = "DYZB"
-            ReferencedContainer = "container:DYZB.xcodeproj">
+            BuildableName = "DW_iOS.app"
+            BlueprintName = "DW_iOS"
+            ReferencedContainer = "container:DW_iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "685580B8458E905DF9D49C9645193D5D"
-               BuildableName = "Pods_DYZB.framework"
-               BlueprintName = "Pods-DYZB"
+               BuildableName = "Pods_DW_iOS.framework"
+               BlueprintName = "Pods-DW_iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "685580B8458E905DF9D49C9645193D5D"
-            BuildableName = "Pods_DYZB.framework"
-            BlueprintName = "Pods-DYZB"
+            BuildableName = "Pods_DW_iOS.framework"
+            BlueprintName = "Pods-DW_iOS"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -131,7 +131,7 @@
 		77F670DF242F1DC600CFF4A1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F670D8242F1DC500CFF4A1 /* Profile.storyboard */; };
 		77F670E0242F1DC600CFF4A1 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F670DA242F1DC500CFF4A1 /* Live.storyboard */; };
 		77F670E1242F1DC600CFF4A1 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F670DC242F1DC600CFF4A1 /* Follow.storyboard */; };
-		F098FD8D4E4E6AA1645261FF /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */; };
+		F098FD8D4E4E6AA1645261FF /* Pods_DW_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BBD3C57BC4974AD56EEE4C /* Pods_DW_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -148,7 +148,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4BABF964E5DAEA7F29B631FB /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
+		4BABF964E5DAEA7F29B631FB /* Pods-DW_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DW_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DW_iOS/Pods-DW_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		632FCEA11D8E6CCB00C9F8D6 /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		632FCEA31D8E751000C9F8D6 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		632FCEA41D8E751000C9F8D6 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 		63F571C71D88D917002761B7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63F571CC1D88E9D2002761B7 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		63F571D01D88F249002761B7 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
-		678BB79C5E664F5183D33499 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
-		70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		678BB79C5E664F5183D33499 /* Pods-DW_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DW_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-DW_iOS/Pods-DW_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		70BBD3C57BC4974AD56EEE4C /* Pods_DW_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DW_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77092AA424094534009D82AD /* ProgressImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressImageView.swift; sourceTree = "<group>"; };
 		770BF40B23A4E09E0053FAA2 /* BasisLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisLearning.swift; sourceTree = "<group>"; };
 		771A31A823CF32DB003C784B /* WBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77575510240BCCDA00972562 /* libsqlite3.tbd in Frameworks */,
-				F098FD8D4E4E6AA1645261FF /* Pods_DYZB.framework in Frameworks */,
+				F098FD8D4E4E6AA1645261FF /* Pods_DW_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,11 +419,11 @@
 		63774CA81D86598500DCC727 /* DW_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				77F670E2242F1E3100CFF4A1 /* Info.plist */,
 				63774CBB1D865C9E00DCC727 /* Classes */,
 				63774CA91D86598500DCC727 /* AppDelegate.swift */,
 				63774CB01D86598500DCC727 /* Assets.xcassets */,
 				63774CB21D86598500DCC727 /* LaunchScreen.storyboard */,
+				77F670E2242F1E3100CFF4A1 /* Info.plist */,
 			);
 			path = DW_iOS;
 			sourceTree = "<group>";
@@ -788,8 +788,8 @@
 		7DBEE80F939F92D9A14C24EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4BABF964E5DAEA7F29B631FB /* Pods-DYZB.debug.xcconfig */,
-				678BB79C5E664F5183D33499 /* Pods-DYZB.release.xcconfig */,
+				4BABF964E5DAEA7F29B631FB /* Pods-DW_iOS.debug.xcconfig */,
+				678BB79C5E664F5183D33499 /* Pods-DW_iOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -798,7 +798,7 @@
 			isa = PBXGroup;
 			children = (
 				7757550F240BCCDA00972562 /* libsqlite3.tbd */,
-				70BBD3C57BC4974AD56EEE4C /* Pods_DYZB.framework */,
+				70BBD3C57BC4974AD56EEE4C /* Pods_DW_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -824,7 +824,7 @@
 			dependencies = (
 			);
 			name = DW_iOS;
-			productName = DYZB;
+			productName = DW_iOS;
 			productReference = 63774CA61D86598500DCC727 /* DW_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -904,7 +904,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-DW_iOS/Pods-DW_iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DGElasticPullToRefresh/DGElasticPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/FFLabel/FFLabel.framework",
@@ -937,7 +937,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DW_iOS/Pods-DW_iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C7FC5D0890F0234F6B287BF /* [CP] Check Pods Manifest.lock */ = {
@@ -955,7 +955,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DYZB-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DW_iOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -974,7 +974,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DW_iOS/Pods-DW_iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA13321CF9D05FAA5F673385 /* 📦 Check Pods Manifest.lock */ = {
@@ -1250,7 +1250,7 @@
 		};
 		63774CB91D86598500DCC727 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BABF964E5DAEA7F29B631FB /* Pods-DYZB.debug.xcconfig */;
+			baseConfigurationReference = 4BABF964E5DAEA7F29B631FB /* Pods-DW_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1274,7 +1274,7 @@
 		};
 		63774CBA1D86598500DCC727 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 678BB79C5E664F5183D33499 /* Pods-DYZB.release.xcconfig */;
+			baseConfigurationReference = 678BB79C5E664F5183D33499 /* Pods-DW_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";

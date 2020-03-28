@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  DYZB
+//  DW_iOS
 //
 //  Created by hairong chen on  9/12.
 //  Copyright @huse.cn All rights reserved.
@@ -11,7 +11,7 @@ import QorumLogs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    #if false
+    #if true
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         setupAppearance()

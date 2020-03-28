@@ -1,6 +1,6 @@
 //
 //  CollectionBaseCell.swift
-//  DYZB
+//  DW_iOS
 //
 //  Created by hairong chen on  9/19.
 //  Copyright @huse.cn All rights reserved.

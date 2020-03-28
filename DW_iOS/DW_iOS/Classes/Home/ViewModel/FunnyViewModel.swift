@@ -1,6 +1,6 @@
 //
 //  FunnyViewModel.swift
-//  DYZB
+//  DW_iOS
 //
 //  Created by hairong chen on  10/14.
 //  Copyright @huse.cn All rights reserved.

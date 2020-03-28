@@ -1,6 +1,6 @@
 //
 //  StatusPictureView.swift
-//  DYZB
+//  DW_iOS
 //
 //  Created by hairong chen on 2020/2/2.
 //  Copyright © 2020 @huse.cn. All rights reserved.

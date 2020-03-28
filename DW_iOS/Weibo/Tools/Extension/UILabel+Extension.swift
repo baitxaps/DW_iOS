@@ -1,6 +1,6 @@
 //
 //  UILabel+Extensiton.swift
-//  DYZB
+//  DW_iOS
 //
 //  Created by hairong chen on 2020/1/17.
 //  Copyright © 2020 @huse.cn. All rights reserved.

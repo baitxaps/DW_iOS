@@ -1,6 +1,6 @@
 //
 //  ProgressImageView.swift
-//  DYZB
+//  DW_iOS
 //
 //  Created by hairong chen on 2020/2/28.
 //  Copyright © 2020 @huse.cn. All rights reserved.

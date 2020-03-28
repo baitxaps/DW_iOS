@@ -1,6 +1,6 @@
 //
 //  AmuseMenuView.swift
-//  DYZB
+//  DW_iOS
 //
 //  Created by hairong chen on  10/11.
 //  Copyright @huse.cn All rights reserved.

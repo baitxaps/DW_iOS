@@ -61,7 +61,7 @@ class SeniorLearning: NSObject {
  rip 作为指令指针，存储着CPU下一条要执行的指令的地址
  一旦CPU读取一条指令，rip会自动指向下一条指令（存储下一条指令的地址）
  
- 
+ 5.[xx.class] = xx.self
  
  
  

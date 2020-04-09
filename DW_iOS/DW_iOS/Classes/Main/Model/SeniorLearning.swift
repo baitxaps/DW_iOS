@@ -63,9 +63,71 @@ class SeniorLearning: NSObject {
  
  5.[xx.class] = xx.self
  
+ 6. 计算属性，本质是方法，不占用实例的内存
+ 在初始化器中设置属性不会触发willSet didSet
  
- 
- 
+ 8.Any:任意类型：枚举，结构体，类，函数类型
+   AnyObject:代表任意类类型，(在协议后写上AnyObject代表只有类能遵守这个协议)
 */
 
+// 7. 下标重写
+class Cirle {
+    var radius:Int = 0
+    var diameter:Int {
+        set {
+            print("circle SetDiameter")
+            radius = newValue / 2
+        }
+        get {
+            print("circle getDiameter")
+            return radius * 2
+        }
+    }
+}
 
+class SubCircle:Cirle {
+    override var radius:Int {
+        set {
+            print("SubCircle SetRadius")
+            super.radius = newValue > 0 ? newValue:0
+        }
+        get {
+            print("SubCircle getRadius")
+            return super.radius * 2
+        }
+    }
+    
+    override var diameter:Int {
+         set {
+            print("SubCircle SetDiameter")
+            super.diameter = newValue > 0 ? newValue:0
+         }
+         get {
+            print("SubCircle getDiameter")
+            return super.radius
+         }
+     }
+}
+
+func TestSubcribe() {
+    var circle:Cirle = Cirle()
+    circle.radius = 6
+    print(circle.diameter)//circle getDiameter 12
+
+    circle.diameter = 20
+    print(circle.radius)//circle SetDiameter   10
+    
+    circle = SubCircle()
+    circle.radius = 6   //SubCircle SetRadius    SubCircle getDiameter    6
+    print(circle.diameter)
+    
+    circle.diameter = 20
+    print(circle.radius)
+    /*
+    SubCircle SetDiameter
+    circle SetDiameter
+    SubCircle SetRadius
+    SubCircle getRadius
+    20
+     */
+}

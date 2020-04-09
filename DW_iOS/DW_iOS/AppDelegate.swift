@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //testSwiftBridgeOC()
         testSwiftBridgeFMDB()
         DLogTest()
+        TestSubcribe()
         window?.makeKeyAndVisible()
      
         

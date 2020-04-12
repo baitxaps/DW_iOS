@@ -1,0 +1,32 @@
+//index.html
+<!DOCTYPE html> <html>
+<head> </head>
+<body>
+    <h1>My First HTML</h1>
+    <script type="text/javascript">
+     var user = new Object();
+     user.name = "zs";
+     user.age = 18;
+    function User(name,age)
+    {
+        this.name = name;
+        this.age = age;
+        this.getUser = function()
+        {
+         return this.name + "" + this.age;
+        }
+    }
+    console.log(user.name);
+    console.log(user.age);
+    console.log(user.getUser());
+    
+    var a;
+    function myfun() {
+    a = " iOS Application";
+    var b = "Develop Technology";
+    alert (a + b);
+    }
+    myfun();
+    </script>
+  </body>
+</html>

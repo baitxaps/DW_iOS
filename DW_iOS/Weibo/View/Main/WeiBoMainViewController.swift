@@ -61,7 +61,7 @@ extension WeiBoMainViewController {
     private func addChild() {
         addChild(vc: WBHomeTableViewController(),title: "首页",imageName: "tabbar_home")
         addChild(vc: PicturePickerController(),title: "消息",imageName: "tabbar_message_center")
-//        addChild(vc: MessageTableViewController(),title: "消息",imageName: "tabbar_message_center")
+//       addChild(vc: MessageTableViewController(),title: "消息",imageName: "tabbar_message_center")
      // addChild(vc: UIViewController(),title:"" ,imageName:"")
         addChild(UIViewController())
         addChild(vc: WBDiscoverTableViewController(),title: "发现",imageName: "tabbar_discover")

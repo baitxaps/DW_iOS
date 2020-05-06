@@ -11,7 +11,7 @@ import QorumLogs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    #if false
+    #if true
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         setupAppearance()
@@ -22,10 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // WBMainViewController()
         // NewFeatureViewController()
         
-        TestMemoryLayout()
-        //testSwiftBridgeOC()
-        testSwiftBridgeFMDB()
-        DLogTest()
+       // TestMemoryLayout()
+        testSwiftBridgeOC()
+//        testSwiftBridgeFMDB()
+//        DLogTest()
         window?.makeKeyAndVisible()
      
         
@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     //
     private var defaultRootViewController:UIViewController {
-        
+       
         if UserAccountViewModel.shared.userLogin {
             return isNewVersion ? NewFeatureViewController():WelcomeViewController()
         }
@@ -161,6 +161,6 @@ extension AppDelegate {
         
         let dao = Dao()
         dao.name = "z"
-      
+        dao.test();
     }
 }
